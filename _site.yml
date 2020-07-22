@@ -5,39 +5,39 @@ navbar:
     - text: "R Help"
       menu:
         - text: "R Commands"
-          href: RCommands.html
+          href: ./RCommands.html
         - text: "R Markdown Hints"
-          href: RMarkdownHints.html
+          href: ./RMarkdownHints.html
         - text: "R Cheatsheets & Notes"
-          href: RCheatSheetsAndNotes.html
+          href: ./RCheatSheetsAndNotes.html
         - text: "Data Sources"
-          href: DataSources.html
+          href: ./DataSources.html
     - text: "Describing Data"
       menu:
         - text: "Graphical Summaries"
-          href: GraphicalSummaries.html
+          href: ./GraphicalSummaries.html
         - text: "Numerical Summaries"
-          href: NumericalSummaries.html
+          href: ./NumericalSummaries.html
     - text: "Making Inference"
       menu:
         - text: "Making Inference"
-          href: MakingInference.html
+          href: ./MakingInference.html
         - text: "t Tests"
-          href: tTests.html
+          href: ./tTests.html
         - text: "Wilcoxon Tests"
-          href: WilcoxonTests.html
+          href: ./WilcoxonTests.html
         - text: "ANOVA"
-          href: ANOVA.html
+          href: ./ANOVA.html
         - text: "Kruskal-Wallis"
-          href: Kruskal.html
+          href: ./Kruskal.html
         - text: "Linear Regression"
-          href: LinearRegression.html
+          href: ./LinearRegression.html
         - text: "Logistic Regression"
-          href: LogisticRegression.html
+          href: ./LogisticRegression.html
         - text: "Chi Squared Tests"
-          href: ChiSquaredTests.html
+          href: ./ChiSquaredTests.html
         - text: "Randomization Testing"
-          href: PermutationTests.html
+          href: ./PermutationTests.html
     - text: "Analyses"
       menu:
         - text: "Analysis Rubric"
@@ -57,6 +57,6 @@ output_dir: '.'
 output: 
   html_document:
     theme: cerulean
-    css: styles.css
+    css: ./site_libs/styles.css
     highlight: tango
   
