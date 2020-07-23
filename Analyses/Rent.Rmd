@@ -54,7 +54,7 @@ ggplot(data = Rent, aes(x = MilesToCampus, y = Price)) +
 
 <!-- Write a few statements here that explain your graphic and what it shows. -->
 
-The plot doesn't show a comparison of distance to cost. I find that interesting because Lord Harold Samuel said "Location, Location, Location." This means that location is the most important. It would make since to have the closer to campus you are the more expensive. 
+The plot doesn't show a comparison of distance to cost. I find that interesting because Lord Harold Samuel said "Location, Location, Location." This means that location is the most important. It would make since to have the closer to campus you are the more expensive but the data doesn't prove that point. 
 
 ```{r wrangle, warning=FALSE}
 # Use this R-chunk to ...
