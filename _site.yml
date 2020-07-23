@@ -8,8 +8,6 @@ navbar:
           href: ./RCommands.html
         - text: "R Markdown Hints"
           href: ./RMarkdownHints.html
-        - text: "R Cheatsheets & Notes"
-          href: ./RCheatSheetsAndNotes.html
         - text: "Data Sources"
           href: ./DataSources.html
     - text: "Describing Data"

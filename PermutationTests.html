@@ -362,9 +362,6 @@ $(document).ready(function () {
       <a href="./RMarkdownHints.html">R Markdown Hints</a>
     </li>
     <li>
-      <a href="./RCheatSheetsAndNotes.html">R Cheatsheets &amp; Notes</a>
-    </li>
-    <li>
       <a href="./DataSources.html">Data Sources</a>
     </li>
   </ul>
@@ -563,10 +560,10 @@ $(document).ready(function () {
 <pre><code>## [1] 1</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Less than p-value:</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="kw">sum</span>(permutedTestStats <span class="op">&lt;=</span><span class="st"> </span>observedTestStat)<span class="op">/</span>N</span></code></pre></div>
-<pre><code>## [1] 0.003</code></pre>
+<pre><code>## [1] 5e-04</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Correct two sided p-value for this study:</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="dv">2</span><span class="op">*</span><span class="kw">sum</span>(permutedTestStats <span class="op">&lt;=</span><span class="st"> </span>observedTestStat)<span class="op">/</span>N</span></code></pre></div>
-<pre><code>## [1] 0.006</code></pre>
+<pre><code>## [1] 0.001</code></pre>
 <h5 id="other-examples-from-students">Other Examples from Students</h5>
 <p><a href="javascript:showhide('ItTest')">Independent Samples t Test (and Wilcoxon) <span style="font-size:8pt;">(click to show/hide)</span></a></p>
 <div id="ItTest" style="display:none;">

@@ -1,5 +1,5 @@
 ---
-title: "Statistics Notebook"
+title: "Table of Contents"
 ---
 
 <!-- You can delete the following copyright statement if you wish: -->
@@ -17,9 +17,6 @@ title: "Statistics Notebook"
 <!-- </div><!-- End gray text section --> 
 
 <!-- <!-- End of download and copyright instructions. --> 
-
-
-## Table of Contents 
 
 
 <!-- This is how to comment text out. You can comment out the above instructions if you wish. Comments allow the text to remain in the Rmd file, but not be displayed in the html file. -->
@@ -434,7 +431,7 @@ Add your own notes about appropriate inferential procedures for this type of dat
   <span class="tooltipimagetext">Y is a single categorical variable of interest, like gender. X is another categorical variable of interest, like "hair color". This type of data would help us understand if men or women are more likely to have certain hair colors than the other gender.</span>
 </div>
 
-## Caterogical Y | Categorical X {.tabset .tabset-pills}
+## Categorical Y | Categorical X {.tabset .tabset-pills}
 
 ### Graphics
 <div style="padding-left:125px;color:lightgray;">
