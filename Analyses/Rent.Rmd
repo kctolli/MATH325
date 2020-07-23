@@ -1,5 +1,6 @@
 ---
 title: "Rent"
+subtitle: "Week 1 Analysis"
 output: 
   html_document:
     theme: cerulean
@@ -8,14 +9,15 @@ output:
     toc_float: true
 ---
 
-**Week 1 Analysis**
-
 ```{r, include=FALSE}
 library(mosaic)
 library(pander)
 library(tidyverse)
 library(DT) 
-Rent <- read_csv("../Data/Rent.csv")
+library(knitr)
+Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>% 
+  mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
+  mutate(Price = as.numeric(round(Price, digits = 0)))
 ```
 
 <br />
@@ -36,12 +38,17 @@ datatable(Rent, options=list(lengthMenu = c(3,10,30)), extensions="Responsive")
 
 <!-- Present an interesting graphic using the Rent data set. Do not create the same graphics that are shown in the [Good Example Analysis](./Analyses/StudentHousing.html), but you can certainly use those graphics as a guide to inspire you on what to do yourself. -->
 
+The plot below shows the distribution of distance to campus and cost per semester. 
 
-```{r}
+```{r graphical, warning=FALSE}
 # Use this R-chunk to...
 # ...Create an interesting graphic using the Rent data set.
 
-
+ggplot(data = Rent, aes(x = MilesToCampus, y = Price)) +
+  geom_point() +
+  facet_wrap(~Gender) + 
+  theme_bw() +
+  labs(x = "Distance to Campus (miles)", y = "Entry-level Cost for Single Housing per Semester")
 ```
 
 
@@ -49,14 +56,23 @@ datatable(Rent, options=list(lengthMenu = c(3,10,30)), extensions="Responsive")
 
 ...delete this and type here...
 
+```{r wrangle, warning=FALSE}
+# Use this R-chunk to ...
+# ...Wrangle, manipulate, and clean the data set.
+dat1 <- Rent %>% 
+  group_by(MilesToCampus, Gender) %>% 
+  summarise(meanprice = as.numeric(round(mean(Price), digits = 0)), 
+            medianprice = as.numeric(round(median(Price), digits = 0)),  
+            maxprice = as.numeric(round(max(Price), digits = 0)),  
+            minprice = as.numeric(round(min(Price), digits = 0)),  
+            .groups = 'drop') 
+```
 
-
-
-```{r}
+```{r numerical, warning=FALSE}
 # Use this R-chunk to...
 # ...compute and display a meaningful table of numerical summaries supporting your above graphic.
 
-
+datatable(dat1, options=list(lengthMenu = c(3,10, 30)), extensions="Responsive")
 ```
 
 <!-- Write a few statements here that introduce your table of numerical summaries and what they show. -->
