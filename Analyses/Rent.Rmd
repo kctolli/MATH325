@@ -54,7 +54,7 @@ ggplot(data = Rent, aes(x = MilesToCampus, y = Price)) +
 
 <!-- Write a few statements here that explain your graphic and what it shows. -->
 
-...delete this and type here...
+The plot doesn't show a comparison of distance to cost. I find that interesting because Lord Harold Samuel said "Location, Location, Location." This means that location is the most important. It would make since to have the closer to campus you are the more expensive. 
 
 ```{r wrangle, warning=FALSE}
 # Use this R-chunk to ...
@@ -77,12 +77,9 @@ datatable(dat1, options=list(lengthMenu = c(3,10, 30)), extensions="Responsive")
 
 <!-- Write a few statements here that introduce your table of numerical summaries and what they show. -->
 
-...delete this and type here...
+This table shows the numerical analyses of prices grouped by distance and gender. The table allows us to view the data of mean, median, max and min price which helps with understanding introduced in the graph above. 
 
 
 ## Conclusion
 
-...delete this and type an interesting final conclusion about what your graphic and numerical summaries show...
-
-
-
+There are some interesting conclusions we can learn from the data. One is female housing is more expensive and also closer to campus than male housing. Also most student housing is closer than .5 miles to campus. A great English language adage is, "A picture is worth a thousand words" meaning that complex and sometimes multiple ideas can be conveyed by a single still image, which conveys its meaning or essence more effectively than a mere verbal description. I believe this applies to data visualizations so there are many other insists learned from this analysis.  

@@ -14,7 +14,7 @@ library(mosaic)
 library(car)
 library(DT)
 library(pander)
-library(readr)
+library(tidyverse)
 choc <- read_csv("../Data/Chocolate.csv")
 ```
 
