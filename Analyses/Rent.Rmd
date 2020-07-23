@@ -72,7 +72,7 @@ dat1 <- Rent %>%
 # Use this R-chunk to...
 # ...compute and display a meaningful table of numerical summaries supporting your above graphic.
 
-datatable(dat1, options=list(lengthMenu = c(3,10, 30)), extensions="Responsive")
+datatable(dat1, options=list(lengthMenu = c(3,10, 30)))
 ```
 
 <!-- Write a few statements here that introduce your table of numerical summaries and what they show. -->
