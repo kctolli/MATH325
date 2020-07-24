@@ -37,7 +37,9 @@ Write your response to Stephanie below. Use the "Rent" dataset, good statistical
 
 Dear Stephanie,
 
-&emsp; The Apartment I would recommend for you is Birch Plaza. It fits all you are looking for in an apartment. Birch Plaza has a capacity of 343 which allows you to meet new people. It is .062 miles from campus making it one of the closest to campus. The monthly cost is 280 dollars which is the cheapest apartment per month. I hope this helps. 
+&emsp; The Apartment I would recommend for you is Birch Plaza. It fits all you are looking for in an apartment. Birch Plaza has a capacity of 343 which allows you to meet new people. It is .062 miles from campus making it one of the closest apartments to campus. The monthly cost is 280 dollars which is the cheapest cost per month of apartments in Rexburg. I hope this helps. 
+
+See table captioned *Stephanie's Question* below
 
 Kyle Tolliver
 
