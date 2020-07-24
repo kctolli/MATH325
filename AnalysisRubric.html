@@ -11,7 +11,7 @@
 
 
 
-<title>Data</title>
+<title>Analysis Rubric</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
@@ -233,6 +236,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -240,6 +306,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -360,42 +436,89 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Data</h1>
+<h1 class="title toc-ignore">Analysis Rubric</h1>
 
 </div>
 
 
-<div id="sources" class="section level2">
-<h2>Sources</h2>
+<p><br /></p>
+<div id="a-quote-to-remember" class="section level4">
+<h4>A Quote to Remember</h4>
+<p>When critiquing other people’s work, remember that “The Lord’s way consists of helping people help themselves.” <sup><a href="https://www.lds.org/ensign/2015/06/helping-others-in-the-lords-way?lang=eng">1</a></sup></p>
+<p><br /></p>
+</div>
+<div id="rubric-categories" class="section level2">
+<h2>Rubric Categories</h2>
+<p>There are five main elements to a good statistical analysis.</p>
 <ul>
-<li><a href="http://www.kaggle.com">Kaggle</a></li>
-<li><a href="https://archive.ics.uci.edu/ml/datasets.php">UCI Machine Learning Repository</a></li>
-<li><a href="https://www.data.gov/">U.S. Open Data Portal</a></li>
-<li><a href="http://data.europa.eu/euodp/en/data/">EU Open Data Portal</a></li>
-<li><a href="https://www.google.com/publicdata/directory">Google Public Data Explorer</a></li>
-<li><a href="https://healthdata.gov/search/type/dataset">U.S. Health Data</a></li>
+<li><strong>{ } Questions and Hypotheses</strong></li>
 </ul>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>Does the analysis clearly state its question with proper motivation for why the question is interesting? If the data for the analysis came from a sample, are the proper statistical hypotheses being stated along with the question? (Census data does not require the use of statistical hypotheses.)</p>
 </div>
-<div id="sets" class="section level2">
-<h2>Sets</h2>
 <ul>
-<li><a href="./Data/Cadillac.txt">Cadillac</a></li>
-<li><a href="./Data/CarPrices.csv">Car Prices</a></li>
-<li><a href="./Data/Chocolate.csv">Chocolate</a></li>
-<li><a href="./Data/CivicCorolla.csv">Civic Corolla</a></li>
-<li><a href="./Data/ClassSurvey.csv">Class Survey</a></li>
-<li><a href="./Data/DCRevelationDates.csv">DC Revelation Dates</a></li>
-<li><a href="./Data/GSS2012.csv">GSS 2012</a></li>
-<li><a href="./Data/HighSchoolSeniors.csv">High School Senior</a></li>
-<li><a href="./Data/late.csv">Late</a></li>
-<li><a href="./Data/mouse.csv">Mouse</a></li>
-<li><a href="./Data/Olympics.csv">Olympics</a></li>
-<li><a href="./Data/Rent.csv">Rent</a></li>
+<li><strong>{ } Data Analysis</strong></li>
 </ul>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>This is the most difficult part of an analysis to check, but there are two main parts. First, is the analysis technique appropriate for the data? Second, is the analysis properly performed from start to finish?</p>
+</div>
+<ul>
+<li><strong>{ } Graphical Summaries</strong></li>
+</ul>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>A good graphical summary should follow the “stand alone” principal. This means that the graphic communicates all the necessary information all on its own. If it were removed from the analysis, one could still understand what it is presenting.</p>
+</div>
+<ul>
+<li><strong>{ } Interpretation</strong></li>
+</ul>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>This is the most important part of the analysis. Does the analysis reach a conclusion that is soundly supported by data, cited references, or statistical analysis? Does the analysis clearly answer the stated question?</p>
+</div>
+<ul>
+<li><strong>{ } Presentation</strong></li>
+</ul>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>This is certainly subject to opinions on style, but is still a useful criterion to consider. First, does the document flow cleanly from beginning to end? Was it interesting to read? Was it nice to look at? Was it organized? Were colors, fonts, section headers, and other stylistic elements used in a way that improved the reading experience? Did any stylistic elements take away from or clutter up the message that was being delivered?</p>
+</div>
+<p><br /></p>
+</div>
+<div id="category-points" class="section level2">
+<h2>Category Points</h2>
+<p>Each Rubric Category is graded with a <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong>, or <strong>{3}</strong>.</p>
+<div style="padding-left:15px;">
+<p><strong>{3}</strong> Excellent quality.</p>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>This analysis could be included in the Math 325 Notebook as an example of a very well done analysis.</p>
+</div>
+<p><strong>{2}</strong> Fair quality.</p>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>Some important but not overly dramatic improvements are needed before this could be used as an example of a very well done analysis.</p>
+</div>
+<p><strong>{1}</strong> Poor quality.</p>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>Some substantial work is needed before this analysis could be used as an example of a very well done analysis.</p>
+</div>
+<p><strong>{0}</strong> Element missing</p>
+<div style="padding-left:60px;font-size:.8em;width:80%;">
+<p>It seems the student forgot to include this element.</p>
+</div>
+</div>
+<p></br></p>
+<p>Continued resubmissions are expected until you achieve a {<strong>3</strong>} in each Category.</p>
+<p><br/></p>
+</div>
+<div id="assignments" class="section level2">
+<h2>Assignments</h2>
+<ol style="list-style-type: decimal">
+<li><a href="./Analyses/Rent.html">Rent</a></li>
+<li><a href="./Analyses/Stephanie.html">Stephanie</a></li>
+</ol>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -428,6 +551,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

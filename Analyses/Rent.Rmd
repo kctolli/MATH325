@@ -9,7 +9,7 @@ output:
     toc_float: true
 ---
 
-```{r, include=FALSE}
+```{r load, include=FALSE}
 library(mosaic)
 library(pander)
 library(tidyverse)
@@ -26,11 +26,13 @@ Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>%
 
 Here is a data table showing the available approved housing apartment options at BYU-Idaho for single students. There are 122 entries comprising 57 female and 65 male apartment options.
 
-```{r, warning=FALSE}
+```{r base, warning=FALSE}
 # Code to get you started. 
 # View(...) works great in the Console, but datatable(...) must be
 # used instead within an R-chunk.
-datatable(Rent, options=list(lengthMenu = c(3,10,30)), extensions="Responsive")
+datatable(Rent, options=list(lengthMenu = c(3,10,30)), 
+          extensions="Responsive",
+          caption = 'Table 1: Base dataset')
 ```
 
 
@@ -72,7 +74,8 @@ dat1 <- Rent %>%
 # Use this R-chunk to...
 # ...compute and display a meaningful table of numerical summaries supporting your above graphic.
 
-datatable(dat1, options=list(lengthMenu = c(3,10, 30)))
+datatable(dat1, options=list(lengthMenu = c(3,10,30)), 
+          caption = "Table 2: Distance, Gender and Price Comparisons")
 ```
 
 <!-- Write a few statements here that introduce your table of numerical summaries and what they show. -->

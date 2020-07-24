@@ -13,11 +13,10 @@ output:
 library(mosaic)
 library(tidyverse)
 library(pander)
-library(DT) # If you get an error stating: 
-            # Error in library(DT): there is no package called 'DT'
-            # You will need to run: install.packages("DT") 
-            # in your Console, then try "Knit HTML" again.
-Rent <- read_csv("../Data/Rent.csv")
+library(DT) 
+Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>% 
+  mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
+  mutate(Price = as.numeric(round(Price, digits = 0)))
 ```
 
 <br />
@@ -38,26 +37,31 @@ Write your response to Stephanie below. Use the "Rent" dataset, good statistical
 
 Dear Stephanie,
 
-Write your response here... (delete this line).
+&emsp; The Apartment I would recommend for you is Birch Plaza. It fits all you are looking for in an apartment. Birch Plaza has a capacity of 343 which allows you to meet new people. It is .062 miles from campus making it one of the closest to campus. The monthly cost is 280 dollars which is the cheapest apartment per month. I hope this helps. 
+
+Kyle Tolliver
 
 
 <!-- Hint, you should probably subset the Rent dataset to only show the "Approved Women's Housing" since Stephanie won't be interested in Male Housing options. Notice how this text in green doesn't show up in the HTML output because we used the HTML comment tags around this text. --> 
 
-```{r}
+```{r base, warning=FALSE}
 # Code to get you started, be sure to use a subset of Rent instead of Rent in this code though.
-datatable(Rent, options=list(lengthMenu = c(3,10,30)), extensions="Responsive")
+datatable(Rent, options=list(lengthMenu = c(3,10,30)), 
+          extensions="Responsive",
+          caption = 'Table 1: Base dataset')
 ```
 
-```{r}
-female_rent <- Rent %>% 
-  select(- UtilityDeposit, - Address, - Phone, - FloorPlans, - Website, - Description, - ParkingStalls, - Latitude, - Longitude) %>% # Unneeded variables
-  filter(Gender == "F") %>% select(- Gender) %>%  # filter to female housing
-  select(- PrivateRoomPrice) %>% # Remove private room -- She said she would like to meet people
-  mutate(MonthlyCost = Price/3.5) #Find rent per month
+```{r wrangle, warning=FALSE}
+female_rent <- Rent  %>% filter(Gender == "F") %>%  
+  mutate(MonthlyCost = as.numeric(round(Price/3.5, digits = 1))) %>%  
+  select(- Gender, - PrivateRoomPrice, - Price) %>%
+  filter(Capacity > 100, MonthlyCost <= 350) %>% 
+  select(- UtilityDeposit, - Address, - Phone, - FloorPlans, - Website, - Description, - ParkingStalls, - Latitude, - Longitude, - Deposit, - WalkingMinutes) %>% 
+  arrange(MilesToCampus, MonthlyCost, Capacity)
 ```
 
-```{r}
-datatable(female_rent, options=list(lengthMenu = c(3,10,30)))
+```{r numerical, warning=FALSE}
+pander(female_rent, caption = "Table 2: Stephanie's Question")
 ```
 
 

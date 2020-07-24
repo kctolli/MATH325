@@ -2,7 +2,8 @@
 title: "Analysis Rubric"
 output: 
   html_document:
-    theme: cerulean
+    toc: true
+    toc_float: true
 ---
 
 <br />
@@ -15,7 +16,7 @@ When critiquing other people's work, remember that "The Lord’s way consists of
 <br />
 
 
-### Rubric Categories
+## Rubric Categories
 
 There are five main elements to a good statistical analysis.
 
@@ -53,7 +54,7 @@ This is certainly subject to opinions on style, but is still a useful criterion 
 <br />
 
 
-### Category Points
+## Category Points
 
 Each Rubric Category is graded with a **{0}**, **{1}**, **{2}**, or **{3}**. 
   
@@ -92,3 +93,9 @@ It seems the student forgot to include this element.
 Continued resubmissions are expected until you achieve a {**3**} in each Category. 
 
 <br/>
+
+
+## Assignments
+
+1. [Rent](./Analyses/Rent.html)
+2. [Stephanie](./Analyses/Stephanie.html)

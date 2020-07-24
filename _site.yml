@@ -39,15 +39,13 @@ navbar:
     - text: "Analyses"
       menu:
         - text: "Analysis Rubric"
-          href: ./Analyses/AnalysisRubric.html
-        - text: "Good Example Analysis"
-          href: ./Analyses/StudentHousing.html
-        - text: "Poor Example Analysis"
-          href: ./Analyses/StudentHousingPOOR.html
-        - text: "Rent Analysis"
-          href: ./Analyses/Rent.html
-        - text: "Stephanie Analysis"
-          href: ./Analyses/Stephanie.html
+          href: ./AnalysisRubric.html
+        - text: "Examples"
+          menu:  
+          - text: "Good Analysis"
+            href: ./Analyses/StudentHousing.html
+          - text: "Poor Analysis"
+            href: ./Analyses/StudentHousingPOOR.html
 
           
 output_dir: '.'
