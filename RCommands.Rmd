@@ -173,12 +173,6 @@ You may also be interested in trying any of the following:
 
 </div>
 
-
-
-
-
-
-
 <a href="javascript:showhide('plotcarsdist')">
 <div class="hoverchunk">
 <span class="tooltipr">
@@ -220,15 +214,9 @@ Hint: pressing the "up" arrow on your keyboard brings up the last command you ty
 
 <br/>
 
-
-<div style="background-color:skyblue;padding:10px;">
-**Completion Code:** abc123R
-</div>
-
+<div style="background-color:skyblue;padding:10px;">**Completion Code:** abc123R</div>
 
 </div>
-
-
 
 <br/>
 
