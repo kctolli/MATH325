@@ -1,9 +1,6 @@
 ---
 title: "Chocolate"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
+subtitle: "Kruskal-Wallis Test"
 ---
 
 ```{r, include=FALSE}
@@ -15,6 +12,7 @@ library(car)
 library(DT)
 library(pander)
 library(tidyverse)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 choc <- read_csv("../Data/Chocolate.csv")
 ```
 

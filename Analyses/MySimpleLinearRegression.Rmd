@@ -1,9 +1,5 @@
 ---
 title: "Simple Linear Regression"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
 ---
 
 ```{r, message=FALSE, warning=FALSE}

@@ -1,9 +1,6 @@
 ---
-title: "High School Seniors t Test"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
+title: "High School Seniors"
+subtitle: "t Test"
 ---
 
 ```{r, message=FALSE, warning=FALSE}
@@ -11,6 +8,8 @@ library(tidyverse)
 library(DT)
 library(pander)
 library(readr)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 HSS <- read_csv("../Data/HighSchoolSeniors.csv")
 #Remember: select "Session, Set Working Directory, To Source File Location", and then play this R-chunk into your console to read the HSS data into R. 

@@ -1,9 +1,6 @@
 ---
 title: "Day Care Fines"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
+subtitle: "ANOVA"
 ---
 
 <script type="text/javascript">
@@ -19,6 +16,8 @@ library(DT)
 library(pander)
 library(car)
 library(tidyverse)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # To get the "late" dataset into your R Console, 
 # you need to go to your file menu of R-Studio and select

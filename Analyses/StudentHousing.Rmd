@@ -1,9 +1,6 @@
 ---
 title: "Student Housing Costs"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
+subtitle: "Good"
 ---
 
 ```{r, message=FALSE, warning=FALSE}
@@ -11,6 +8,7 @@ library(mosaic)
 library(DT)
 library(pander)
 library(plotly)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 Rent <- read.csv("../Data/Rent.csv", header=TRUE)
 ```
 

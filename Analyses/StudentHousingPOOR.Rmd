@@ -1,14 +1,13 @@
 ---
 title: "Student Housing Costs"
-output: 
-  html_document:
-    theme: cerulean
+subtitle: "Poor"
 ---
 
 
 ```{r, include=FALSE}
 library(mosaic)
 Rent <- read.csv("../Data/Rent.csv", header=TRUE)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 <br />

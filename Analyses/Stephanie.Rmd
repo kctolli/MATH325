@@ -1,12 +1,6 @@
 ---
 title: "Stephanie's Housing Request"
-subtitle: "Week 2 Analysis" 
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
-    toc: true
-    toc_float: true
+date: "Week 2" 
 ---
 
 ```{r, include=FALSE}
@@ -14,6 +8,7 @@ library(mosaic)
 library(tidyverse)
 library(pander)
 library(DT) 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>% 
   mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
   mutate(Price = as.numeric(round(Price, digits = 0)))

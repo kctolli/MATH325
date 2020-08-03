@@ -1,0 +1,9 @@
+output_dir: '.'
+
+output: 
+  html_document:
+    css: ../site_libs/styles.css
+    theme: cerulean
+    toc: true
+    toc_float: true
+    code_folding: hide

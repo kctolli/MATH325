@@ -1,9 +1,6 @@
 ---
 title: "Recalling Words"
-output: 
-  html_document:
-    theme: cerulean
-    code_folding: hide
+subtitle: "Wilcoxon Test"
 ---
 
 <script type="text/javascript">
@@ -18,6 +15,7 @@ library(mosaic)
 library(car)
 library(pander)
 library(DT) #You may need to run: install.packages("DT") 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 ```{r, eval=FALSE}
