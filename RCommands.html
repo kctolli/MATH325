@@ -844,6 +844,7 @@ div.tocify {
 <li><code>NameOfDataset</code> is the name of a dataset, like <code>cars</code> or <code>airquality</code> or <code>KidsFeet</code>.</li>
 <li><code>columnName</code> is the name of one of the columns from the dataset. You can use <code>colnames(NameOfDataset)</code> or <code>View(NameOfDataset)</code> to see the names.</li>
 <li><code>filteringRules</code> consists of some <strong>Logical Expression</strong> (see table below) that selects only the rows from the original dataset that meet the criterion.</li>
+<li>Controls what rows that are used – <em>By Filtering Rows</em></li>
 </ul>
 <div style="padding-left:30px;">
 <table>
@@ -1037,6 +1038,7 @@ div.tocify {
 <li><code>select( )</code> is the function that selects out certain columns of the dataset.</li>
 <li><code>NameOfDataset</code> is the name of a dataset, like <code>cars</code> or <code>airquality</code> or <code>KidsFeet</code>.</li>
 <li><code>listOfColumnNames</code> is a vector of names of columns from the dataset, usually supplied inside a combine <code>c(...)</code> statement.</li>
+<li>Controls the columns being used – <em>By Selecting Columns</em></li>
 </ul>
 <p><strong>Example Code</strong></p>
 <a href="javascript:showhide('select1')">
@@ -1107,6 +1109,8 @@ div.tocify {
 <li><code>nameYouLike</code> is just that. Some name you come up with.</li>
 <li><code>some_stats_function(...)</code> is a stats function like <code>mean(...)</code>, <code>sd(...)</code>, <code>n(...)</code> or so on.</li>
 <li><code>columnName</code> is the name of a column from the dataset that you want to compute numerical summaries on.</li>
+<li>Quantitative in Gummarize</li>
+<li>Qualitative in Group By</li>
 </ul>
 <p><strong>Example Code</strong></p>
 <a href="javascript:showhide('summarisegroupby1')">
@@ -1216,6 +1220,7 @@ div.tocify {
 <li><code>%&gt;%</code> is the pipe operator that “pipes data” down into R commands on the next line.</li>
 <li><code>nameYouLike</code> is just that. Some name you come up with that will be the name of a new column in the dataset.</li>
 <li><code>some_transformation</code> is just that. See the example codes for ideas.</li>
+<li>Create or Transform columns in data</li>
 </ul>
 <p><strong>Example Code</strong></p>
 <a href="javascript:showhide('mutate1')">

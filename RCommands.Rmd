@@ -761,6 +761,7 @@ The numbers within the row of the table next to the "G" show how many Girls had 
 
 Used to reduce a dataset to a smaller set of rows than the original dataset contained.
 
+
 **Usage** 
 
 `filter(NameOfDataset, columnName filteringRules)`
@@ -769,7 +770,7 @@ Used to reduce a dataset to a smaller set of rows than the original dataset cont
 * `NameOfDataset` is the name of a dataset, like `cars` or `airquality` or `KidsFeet`.
 * `columnName` is the name of one of the columns from the dataset. You can use `colnames(NameOfDataset)` or `View(NameOfDataset)` to see the names.
 * `filteringRules` consists of some **Logical Expression** (see table below) that selects only the rows from the original dataset that meet the criterion.
-
+* Controls what rows that are used -- *By Filtering Rows*
 
 <div style="padding-left:30px;">
 
@@ -1175,14 +1176,9 @@ birthmonth
 </div>
 
 
-
-
 </div>
 <br />
 <hr />
-
-
-
 
 
 
@@ -1198,6 +1194,7 @@ Used to select out certain columns from a dataset.
 * `select( )` is the function that selects out certain columns of the dataset.
 * `NameOfDataset` is the name of a dataset, like `cars` or `airquality` or `KidsFeet`.
 * `listOfColumnNames` is a vector of names of columns from the dataset, usually supplied inside a combine `c(...)` statement.
+* Controls the columns being used -- *By Selecting Columns*
 
 **Example Code**
 
@@ -1375,6 +1372,8 @@ OR
 * `nameYouLike` is just that. Some name you come up with.
 * `some_stats_function(...)` is a stats function like `mean(...)`, `sd(...)`, `n(...)` or so on.
 * `columnName` is the name of a column from the dataset that you want to compute numerical summaries on.
+* Quantitative in Gummarize
+* Qualitative in Group By
 
 
 **Example Code**
@@ -1568,6 +1567,7 @@ Transform a column of data.
 * `%>%` is the pipe operator that "pipes data" down into R commands on the next line.
 * `nameYouLike` is just that. Some name you come up with that will be the name of a new column in the dataset.
 * `some_transformation` is just that. See the example codes for ideas.
+* Create or Transform columns in data
 
 **Example Code**
 
