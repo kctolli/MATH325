@@ -1372,7 +1372,7 @@ OR
 * `nameYouLike` is just that. Some name you come up with.
 * `some_stats_function(...)` is a stats function like `mean(...)`, `sd(...)`, `n(...)` or so on.
 * `columnName` is the name of a column from the dataset that you want to compute numerical summaries on.
-* Quantitative in Gummarize
+* Quantitative in Summarize
 * Qualitative in Group By
 
 
