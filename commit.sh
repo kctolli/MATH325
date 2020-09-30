@@ -1,5 +1,5 @@
 #!/bin/sh
-cd G:/MATH325
+cd D:/MATH325
 git add --all
 timestamp() {
   date +"at %H:%M on %m/%d/%Y"

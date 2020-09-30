@@ -11,21 +11,13 @@ library(tidyverse)
 library(pander)
 library(DT) 
 library(leaflet)
-#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>% 
   mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
-  mutate(Price = as.numeric(round(Price, digits = 0)))
+  mutate(Price = as.numeric(round(Price, digits = 0))) %>%  
+  mutate(MonthlyCost = as.numeric(round(Price/3.5, digits = 1)))
 
 female_rent <- Rent  %>% filter(Gender == "F") 
-```
-
-```{r wrangle, warning=FALSE}
-Stephanie <- female_rent %>%  
-  mutate(MonthlyCost = as.numeric(round(Price/3.5, digits = 1))) %>%  
-  select(- Gender, - PrivateRoomPrice, - Price) %>%
-  filter(Capacity > 100, MonthlyCost <= 350) %>% 
-  select(- UtilityDeposit, - Address, - Phone, - FloorPlans, - Website, - Description, - ParkingStalls, - Latitude, - Longitude, - Deposit, - WalkingMinutes) %>% 
-  arrange(MilesToCampus, MonthlyCost, Capacity)
 ```
 
 <br />
@@ -53,26 +45,29 @@ Here is a list of every apartment option in Rexburg. You would want to just focu
 datatable(Rent, options=list(lengthMenu = c(3,10,30)), 
           extensions="Responsive",
           caption = 'Table 1: Base dataset')
-
-datatable(female_rent, options=list(lengthMenu = c(3,10,30)), 
-          extensions="Responsive",
-          caption = 'Table 2: Female Housing dataset')
 ```
 
 ```{r numerical, warning=FALSE}
-pander(Stephanie, caption = "Table 3: Stephanie's Question")
+Stephanie <- female_rent %>%  
+  select(- Gender, - PrivateRoomPrice, - Price) %>%
+  filter(Capacity > 100, MonthlyCost <= 350) %>% 
+  select(- UtilityDeposit, - Address, - Phone, - FloorPlans, - Website, - Description, - ParkingStalls, - Latitude, - Longitude, - Deposit, - WalkingMinutes) %>% 
+  arrange(MilesToCampus, MonthlyCost, Capacity)
+
+pander(Stephanie, caption = "Table 2: Stephanie's Question")
 ```
 
-&emsp; The Apartment I would recommend given the data from the table above is Birch Plaza. It fits all you are looking for in an apartment. Birch Plaza has a capacity of 343 which allows you to meet new people. It is .062 miles from campus making it one of the closest apartments to campus. The monthly cost is 280 dollars which is the cheapest cost per month of apartments in Rexburg. 
+&emsp; The Apartment I would recommend given the data from the table above is Birch Plaza. It fits all you are looking for in an apartment. Birch Plaza has a capacity of 343 which allows you to meet new people. It is .062 miles from campus making it one of the closest apartments to campus. The monthly cost is 280 dollars which is a pretty cheap monthly cost compared to other apartments in Rexburg. 
 
-This is a picture of Birch Plaza. You can literally see the BYUI Stadium from the parking lot.
+Below is a picture of Birch Plaza. You can literally see the BYUI Stadium from the parking lot. So it's literally across the street from campus. 
 
 ![](https://www.liveherehousing.com/photos/n1077.jpg)
 
-This vizualization show Birch Plaza as a circle and other apartments as triangles. This graph helps show apartments with respect to distance and cost. We can see that visually Birch Plaza is the best compared to other apartments. 
+This visualization show Birch Plaza as a circle and other apartments as triangles. This graph helps show apartments with respect to distance and cost. We can see that visually Birch Plaza is the best compared to other apartments. 
 
 ```{r viz, message=FALSE, warning=FALSE, paged.print=FALSE}
-Stephanie %>% mutate(apartmentforyou = ifelse(Apartment == "BIRCH PLAZA", "Birch Plaza", "Other")) %>% 
+Stephanie %>% 
+  mutate(apartmentforyou = ifelse(Apartment == "BIRCH PLAZA", "Birch Plaza", "Other")) %>% 
   ggplot() + 
   geom_point(aes(x = MonthlyCost, y = MilesToCampus, color = Capacity, shape = apartmentforyou, size = Capacity)) + 
   #scale_size_manual(values = c(6, 3)) + 
