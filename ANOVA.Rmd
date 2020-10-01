@@ -606,7 +606,7 @@ plot(tmp, which=1:2, pch=16)
 
 <div style="padding-left:125px;">
 
-**Examples:** [chickwts](./Analyses/ANOVA/Examples/chickwtsOneWayANOVA.html) (One-way)
+**Examples:** [chickwts](./Analyses/Examples/chickwtsOneWayANOVA.html) (One-way)
 </div>
 
 
@@ -827,7 +827,7 @@ This model could be expanded to include any number of new terms in the model. Th
 
 <div style="padding-left:125px;">
 
-**Examples:** [warpbreaks](./Analyses/ANOVA/Examples/warpbreaksTwoWayANOVA.html) (Two-way), [CO2](./Analyses/ANOVA/Examples/CO2ThreeWayANOVA.html)  (three-way)
+**Examples:** [warpbreaks](./Analyses/Examples/warpbreaksTwoWayANOVA.html) (Two-way), [CO2](./Analyses/Examples/CO2ThreeWayANOVA.html)  (three-way)
 </div>
 
 ----
@@ -887,7 +887,7 @@ Only one block and one factor is required. Multiple blocks and multiple factors 
 ###
 
 <div style="padding-left:125px;">
-**Examples**: [ChickWeight](./Analyses/ANOVA/Examples/ChickWeightANOVABlock.html)
+**Examples**: [ChickWeight](./Analyses/Examples/ChickWeightANOVABlock.html)
 
 </div>
 

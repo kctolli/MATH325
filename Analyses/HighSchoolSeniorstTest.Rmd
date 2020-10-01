@@ -3,7 +3,7 @@ title: "High School Seniors"
 subtitle: "t Test"
 ---
 
-```{r, message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(DT)
 library(pander)
