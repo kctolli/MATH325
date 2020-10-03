@@ -15,12 +15,12 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 dat <- read_csv("../Data/HighSchoolSeniors.csv") %>% na.omit()
 #Remember: select "Session, Set Working Directory, To Source File Location", and then play this R-chunk into your console to read the HSS data into R. 
 
-HSS <- dat %>% select(Gender, Ageyears, Video_Games_Hours, Social_Websites_Hours, Texting_Messaging_Hours, Computer_Use_Hours, Watching_TV_Hours)
+df <- dat %>% select(Gender, Video_Games_Hours, Social_Websites_Hours, Texting_Messaging_Hours, Computer_Use_Hours, Watching_TV_Hours)
 ```
 
 ```{r View, eval=FALSE, include=FALSE}
-View(HSS)
-names(HSS)
+View(df)
+names(df)
 ```
 
 
@@ -38,8 +38,7 @@ names(HSS)
 
 ## Questions and Hypotheses
 
-How does electronic use time relate to gender? 
-Do males spend more time on electronics? 
+How does electronic use time relate to gender? Do males spend more time on electronics? 
 
 $$
   H_0: \mu_\text{electronic use} - \mu_\text{gender} = 0
@@ -54,53 +53,55 @@ $$
 Brief Glimpse (Names) of the Data
 
 ```{r base}
-names(HSS)
+names(df)
 ```
 
 ```{r wrangling}
-newHSS <- HSS %>% 
+HSS <- df %>% 
   mutate(Electronic_Use = Video_Games_Hours + Social_Websites_Hours + Texting_Messaging_Hours + Computer_Use_Hours + Watching_TV_Hours) %>% 
   select(- Video_Games_Hours, - Social_Websites_Hours, - Texting_Messaging_Hours, - Computer_Use_Hours,  - Watching_TV_Hours) %>% 
   filter(Electronic_Use <= 160)
 ```
 
+Mutate all hours spent on video games, social websites, texting, computer use and watching tv by add them up and creating an electronic use variable. 
+
+```{r names}
+names(HSS)
+```
+
+This is the Numerical Summary used for this data set.
+
 ```{r numerical}
-datatable(newHSS, options=list(lengthMenu = c(5,10,50)), extensions="Responsive")
+datatable(HSS, options=list(lengthMenu = c(5,10,50)), extensions="Responsive")
 ```
 
 ## Graphical Summaries
 
-Where do the outliers lay? What gender has more outliers? Which gender's data stays closer to mean? 
+Where do the outliers lay? What gender has more outliers? Which gender's data stays closer to mean? What gender has a higher total electronic use time per week? 
 
-```{r graphical1}
-ggplot(data = newHSS) + 
+```{r graphical}
+ggplot(data = HSS) + 
   geom_boxplot(aes(x = Gender, y = Electronic_Use)) +
   theme_bw()
-```
 
-
-
-
-What gender has a higher total electronic use time per week? 
-
-```{r graphical2}
-ggplot(data = newHSS) + 
+ggplot(data = HSS) + 
   geom_col(aes(x = Gender, y = Electronic_Use)) +
   theme_bw()
 ```
 
-
-
+Based on the graphical summaries my hypothesis was wrong. Since the graphs side more on the female side. Yet we aren't for sure on what the true conclusions. We can try t-tests which will give a closer and more exact conclusion. 
 
 ## Interpretation
 
-Based on the graphical summaries my hypothesis was wrong. Yet we aren't for sure on what the true conclusions. We can try t-tests which will give a closer and more exact conclusion. 
-
 ```{r tests}
-t.test(Electronic_Use ~ Gender, data = newHSS, mu = 0, alternative = "two.sided", conf.level = 0.95)
+t.test(Electronic_Use ~ Gender, data = HSS, mu = 0, alternative = "two.sided", conf.level = 0.95)
 ```
 
-```{r qqplot}
-qqPlot(Electronic_Use ~ Gender, data = newHSS)
-```
+Above is the results of an independent samples t-test. An independent samples t test is used when a value is hypothesized for the difference between two (possibly) different population means, $\mu_1 - \mu_2$. The mean of the data for females is higher than for males. Which means that the overall and average of the electronic use is greater for females compared to males. I find this interesting since males tend to play more video games than females. 
+
+
+
+<!-- ```{r qqplot} -->
+<!-- qqPlot(Electronic_Use ~ Gender, data = newHSS) -->
+<!-- ``` -->
 
