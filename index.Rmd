@@ -97,7 +97,7 @@ Add your own notes about graphics to use for this type of data here.
 Add your own notes about appropriate inferential procedures for this type of data here.
 
 
-
+* Use T-tests
 
 
 
