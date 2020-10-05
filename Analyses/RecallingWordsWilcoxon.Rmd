@@ -27,7 +27,7 @@ View(Friendly)
 
 <br />
 
-#### Background
+## Background
 
 Many teachers and other educators are interested in understanding how to best deliver new content to students. In general, they have two choices of how to do this.
 
@@ -41,7 +41,7 @@ A study was performed to determine whether the *Meshed* or *Before* approaches t
 
 <div style="padding-left:15px;">
 
-##### <a href="javascript:showhide('uniquename')">The Experiment <span style="font-size:8pt;">(click to view)</span></a>
+### <a href="javascript:showhide('uniquename')">The Experiment <span style="font-size:8pt;"></span></a>
 
 
 <div id="uniquename" style="display:none;">
@@ -64,7 +64,7 @@ The data records the number of correctly recalled words (out of the 40 possible)
 
 </div>
 
-##### <a href="javascript:showhide('uniquename2')">The Data <span style="font-size:8pt;">(click to view)</span></a>
+### <a href="javascript:showhide('uniquename2')">The Data <span style="font-size:8pt;"></span></a>
 
 <div id="uniquename2" style="display:none;">
 

@@ -94,10 +94,14 @@ Add your own notes about graphics to use for this type of data here.
 <div style="padding-left:125px;color:lightgray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
+<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
 
 
-* Use T-tests
+* T-tests 
+  + One Sample
+  + Paired Sample
+* Wilcoxon Tests 
+  + Signed-Rank
 
 
 
@@ -162,10 +166,14 @@ Add your own notes about graphics to use for this type of data here.
 <div style="padding-left:125px;color:lightgray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
+<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
 
 
-
+* T-tests 
+  + Independent
+* Wilcoxon 
+  + Rank Sum
+    - Mann-Whitney
 
 
 

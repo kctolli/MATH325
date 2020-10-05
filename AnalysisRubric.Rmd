@@ -99,3 +99,5 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 
 1. [Rent](./Analyses/Rent.html)
 2. [Stephanie](./Analyses/Stephanie.html)
+3. [High School Seniors](./Analyses/HighSchoolSeniorstTest.html)
+4. [Recalling Words](./Analyses/RecallingWordsWilcoxon.html)
