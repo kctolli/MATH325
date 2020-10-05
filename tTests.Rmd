@@ -64,7 +64,7 @@ $H_0: \mu = \text{some number}$
 $H_a: \mu \ \left\{\underset{<}{\stackrel{>}{\neq}}\right\} \ \text{some number}$
 </div>
 
-**Examples**: [sleepOne](./Analyses/t Tests/Examples/SleepOneSamplet.html)
+**Examples**: [sleepOne](./Analyses/Examples/SleepOneSamplet.html)
 
 </div>
 
@@ -345,7 +345,7 @@ $H_0: \mu_d = \text{some number, but typically 0}$
 $H_a: \mu_d \ \left\{\underset{<}{\stackrel{>}{\neq}}\right\} \ \text{some number, but typically 0}$
 </div>
 
-**Examples**: [sleepPaired](./Analyses/t Tests/Examples/SleepPairedt.html) [studentPaired](./Analyses/t Tests/Examples/Student1Paired.html)
+**Examples**: [sleepPaired](./Analyses/Examples/SleepPairedt.html) [studentPaired](./Analyses/Examples/Student1Paired.html)
 
 </div>
 
@@ -418,9 +418,10 @@ conf.level = 0.95)
 </div>
 </a>
 <div id="tTestPaired" style="display:none;">
+
 ```{r, echo=FALSE}
-sleep1 <- filter(sleep, group==1)
-sleep2 <- filter(sleep, group==2)
+sleep1 <- dplyr::filter(sleep, group==1)
+sleep2 <- dplyr::filter(sleep, group==2)
 ```
 
 <table class="rconsole">
@@ -811,7 +812,7 @@ $H_0: \mu_1 - \mu_2 = \text{some number, but typically 0}$
 $H_a: \mu_1 - \mu_2 \ \left\{\underset{<}{\stackrel{>}{\neq}}\right\} \ \text{some number, but typically 0}$
 </div>
 
-**Examples**: [sleepInd](./Analyses/t Tests/Examples/SleepIndependentt.html) [student1](./Analyses/t Tests/Examples/Student1Independent.html) [student2](./Analyses/t Tests/Examples/Student2Independent.html)
+**Examples**: [sleepInd](./Analyses/tExamples/SleepIndependentt.html) [student1](./Analyses/Examples/Student1Independent.html) [student2](./Analyses/Examples/Student2Independent.html)
 
 
 </div>
