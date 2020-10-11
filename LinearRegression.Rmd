@@ -3773,7 +3773,7 @@ Note that the default of the `loess` function in R is to use quadratic regressio
 ##
 
 <div style="padding-left:125px;">
-**Examples:** [bodyweight](./Analyses/Linear Regression/Examples/BodyWeightSLR.html), [cars](./Analyses/Linear Regression/Examples/carsSLR.html) 
+**Examples:** [bodyweight](./Analyses/Examples/BodyWeightSLR.html), [cars](./Analyses/Examples/carsSLR.html) 
 </div>
 
 
@@ -6224,7 +6224,7 @@ However, any subset of coefficients could be tested in a similar way using a cus
 ##
 
 <div style="padding-left:125px;">
-**Examples:** [Civic Vs Corolla](./Analyses/Linear Regression/Examples/CivicVsCorollaMLR.html) [cadillacs](./Analyses/Linear Regression/Examples/cadillacsMLR.html) 
+**Examples:** [Civic Vs Corolla](./Analyses/Examples/CivicVsCorollaMLR.html) [cadillacs](./Analyses/Examples/cadillacsMLR.html) 
 </div>
 
 ----

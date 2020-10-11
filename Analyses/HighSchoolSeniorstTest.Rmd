@@ -95,14 +95,23 @@ Based on the graphical summaries my hypothesis was wrong. Since the graphs side 
 ## Interpretation
 
 ```{r tests}
-t.test(Electronic_Use ~ Gender, data = HSS, mu = 0, alternative = "two.sided", conf.level = 0.95)
+ttest = t.test(Electronic_Use ~ Gender, data = HSS, mu = 0, alternative = "two.sided", conf.level = 0.95)
 ```
+
+```{r display, eval = FALSE, include = FALSE}
+ttest
+```
+
+```{r pander}
+pander(ttest)
+```
+
 
 Above is the results of an independent samples t-test. An independent samples t test is used when a value is hypothesized for the difference between two (possibly) different population means, $\mu_1 - \mu_2$. The mean of the data for females is higher than for males. Which means that the overall and average of the electronic use is greater for females compared to males. I find this interesting since males tend to play more video games than females. 
 
 
 
 <!-- ```{r qqplot} -->
-<!-- qqPlot(Electronic_Use ~ Gender, data = newHSS) -->
+<!-- qqPlot(Electronic_Use ~ Gender, data = HSS) -->
 <!-- ``` -->
 

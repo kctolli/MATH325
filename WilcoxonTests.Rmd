@@ -70,7 +70,7 @@ $H_0: \text{median of differences} = 0$
 $H_a: \text{median of differences} \ \left\{\underset{<}{\stackrel{>}{\neq}}\right\} \ 0$
 </div>
 
-**Examples**: [sleep](./Analyses/Wilcoxon Tests/Examples/SleepPairedWilcoxon.html), [CornHeights](./Analyses/Wilcoxon Tests/Examples/CornHeightsPairedWilcoxon.html)
+**Examples**: [sleep](./Analyses/Examples/SleepPairedWilcoxon.html), [CornHeights](./Analyses/Examples/CornHeightsPairedWilcoxon.html)
 
 </div>
 
@@ -670,7 +670,7 @@ If these hypotheses are used, then the distributions do not have to be identical
 (Note: Men's heights are *stochastically greater* than women's heights because men are generally taller than women, but not all men are taller than all women.) 
 
 
-**Examples**: [BugSpray](./Analyses/Wilcoxon Tests/Examples/BugSprayWilcoxonRankSum.html), [MoralIntegration](./Analyses/Wilcoxon Tests/Examples/MoralIntegration.html)
+**Examples**: [BugSpray](./Analyses/Examples/BugSprayWilcoxonRankSum.html), [MoralIntegration](./Analyses/Examples/MoralIntegration.html)
 
 </div>
 

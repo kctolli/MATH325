@@ -163,12 +163,12 @@ list(feed1\$weight,feed2\$weight,feed3\$weight,feed4\$weight,feed5\$weight,feed6
 </a>
 <div id="kruskal2" style="display:none;">
 ```{r, echo=FALSE}
-feed1 <- filter(chickwts, feed=="horsebean")
-feed2 <- filter(chickwts, feed=="linseed")
-feed3 <- filter(chickwts, feed=="soybean")
-feed4 <- filter(chickwts, feed=="sunflower")
-feed5 <- filter(chickwts, feed=="meatmeal")
-feed6 <- filter(chickwts, feed=="casein")
+feed1 <- dplyr::filter(chickwts, feed=="horsebean")
+feed2 <- dplyr::filter(chickwts, feed=="linseed")
+feed3 <- dplyr::filter(chickwts, feed=="soybean")
+feed4 <- dplyr::filter(chickwts, feed=="sunflower")
+feed5 <- dplyr::filter(chickwts, feed=="meatmeal")
+feed6 <- dplyr::filter(chickwts, feed=="casein")
 kruskal.test(list(feed1$weight, feed2$weight, feed3$weight, feed4$weight, feed5$weight, feed6$weight))
 ```
 
@@ -296,7 +296,7 @@ In the bottle-cap data, $p = 0.059$, which represents the probability of $H$ bei
 ### 
 
 <div style="padding-left:125px;">
-**Examples:** [wages](./Analyses/Kruskal-Wallis Test/Examples/wagesKruskal.html), [pigweights](./Analyses/Kruskal-Wallis Test/Examples/pigweightsKruskal.html)
+**Examples:** [wages](./Analyses/Examples/wagesKruskal.html), [pigweights](./Analyses/Examples/pigweightsKruskal.html)
 </div>
 
 

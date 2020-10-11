@@ -565,7 +565,7 @@ knitr::kable(tmp$residuals)
 </table>
 
 <div style="padding-left:125px;">
-**Examples**: [StudentRatings](./Analyses/Chi Squared Tests/Examples/Math325StudentRatings.html) | [HairEyeColor](./Analyses/Chi Squared Tests/Examples/HairEyeColorChiSquaredTest.html)
+**Examples**: [StudentRatings](./Analyses/Examples/Math325StudentRatings.html) | [HairEyeColor](./Analyses/Examples/HairEyeColorChiSquaredTest.html)
 </div>
 
 ----
@@ -774,7 +774,7 @@ The interpretation of the Nonparametric Chi-squared Test is exactly the same as 
 </table>
 
 <div style="padding-left:125px;">
-**Examples**: [Cowlick](./Analyses/Chi Squared Tests/Examples/CowlickNonparChiSquare.html) 
+**Examples**: [Cowlick](./Analyses/Examples/CowlickNonparChiSquare.html) 
 </div>
 
 ----

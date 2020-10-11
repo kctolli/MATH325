@@ -14,11 +14,12 @@ subtitle: "Wilcoxon Test"
 library(mosaic)
 library(car)
 library(pander)
+library(tidyverse)
 library(DT) #You may need to run: install.packages("DT") 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE}
 # Play the chunk above and this one to get the data into your Console
 View(Friendly)
 ?Friendly
@@ -73,7 +74,7 @@ The results from the study can be found in the `Friendly` data set in R after lo
 Click the "Code" button to see the data.
 
 
-```{r}
+```{r Data_table, message=FALSE, warning=FALSE}
 datatable(Friendly, options=list(lengthMenu = c(3,10,30)))
 ```
 
@@ -90,6 +91,51 @@ datatable(Friendly, options=list(lengthMenu = c(3,10,30)))
 
 
 
+## Questions and Hypotheses
 
+What type of learning is a better method, Meshed or Before? I think that Meshed learning is better compared to Before learning. 
 
+$$
+  H_0: \text{Before} = 0
+$$
 
+$$
+  H_a: \text{Meshed} > 0
+$$
+
+## Data Analysis
+
+```{r numerical, message=FALSE, warning=FALSE}
+friendly <- dplyr::filter(Friendly, condition %in% c("Meshed", "Before"))
+
+friendly %>% 
+    group_by(condition) %>% 
+    summarise(minimum = min(correct),
+              average = mean(correct),
+              median = median(correct),
+              maximum = max(correct)) %>% 
+    pander()
+```
+
+First step in analysis is analyzing number. This is done by Numerical Summaries. First filter to the condition of learning. Then create a table with the minimum, average, median, and maximum. These numbers help figure out the values for recalling information. 
+
+## Graphical Summaries
+
+```{r graphical, message=FALSE, warning=FALSE}
+ggplot(friendly, aes(x = condition, y = correct)) + geom_boxplot() + theme_bw()
+```
+
+The graph shows us that the recall rate is higher with before method then meshed. Although there are more outliers when using the Before method.  
+
+## Interpretation
+
+```{r tests, message=FALSE, warning=FALSE}
+wilcox.test(correct ~ condition, data = friendly, mu = 0, alternative = "greater", paired = TRUE, conf.level = 0.95) %>% 
+    pander()
+t.test(correct ~ condition, data = friendly, mu = 0, alternative = "greater", paired = TRUE, conf.level = 0.95) %>% 
+    pander()
+```
+
+According to the Wilcoxon test my hypothesis was correct that using the meshed method is better compared to the before method. The t-test also proves the hypothesis, the t-test gives about the same result values as the Wilcoxon test.
+
+We can conclude that meshed learning can be proven more useful compared to before learning. The Numerical and Graphical Summaries conclude that the methods are closely related that statistical tests have to determine the better learning method. 
