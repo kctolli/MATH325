@@ -26,14 +26,26 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # the top right corner of this gray R-Chunk. 
 
 ## Wide data from original article:
-late <- read.csv("../Data/late.csv", header=TRUE) 
+late <- read.csv("../Data/late.csv", header=TRUE) %>% 
+  na.omit()
 
 ## Change to "long" data for use in R:
 Late <- pivot_longer(late, #Start with wide data set late
-               cols = starts_with("Week"), #Find columns to gather from long data
-               names_to = "Week", #New column name of Weeks in long data
-               names_prefix = "Week", #Remove prefix of Week from Week1, Week2, ...
-               values_to = "NumberofLateChildren") #Name of data column in long data
+            cols = starts_with("Week"), #Find columns to gather from long data
+            names_to = "Week", #New column name of Weeks in long data
+            names_prefix = "Week", #Remove prefix of Week from Week1, Week2, ...
+            values_to = "NumberofLateChildren") #Name of data column in long data
+    
+Late$Week <- as.numeric(as.character(Late$Week))
+
+Late <- Late %>% 
+    mutate(Quarter = case_when(Week >= 1 & Week <= 5 ~ "First",
+                               Week > 5 & Week <= 10 ~ "Second",
+                               Week > 10 & Week <= 15 ~ "Third",
+                               Week > 15 & Week <= 20 ~ "Forth"),
+        Quarter = factor(Quarter, levels=c("First", "Second", "Third", "Forth"), 
+                        ordered=TRUE)) %>% 
+  na.omit()
 
 ```
 
@@ -41,32 +53,9 @@ Late <- pivot_longer(late, #Start with wide data set late
 
 ----
 
-<!--If you want to give your critiquers some ideas about what you have questions on and would like help with, place those details here.-->
-
-**Comments to Critiquers:** 
-
-
-
-<!--End your comments to your critiquers before this line.-->
-
-----
-
-
 ## Background {.tabset .tabset-fade}
 
 ### Overview
-<!-- Be sure to add your own background here before beginning the Analysis. -->
-
-
-
-
-
-
-
-<!--End your background before here.-->
-<!--Click the little black arrow to 
-the left to expand/hide these next sections.-->
-### Study Details
 
 <div style="color:#a8a8a8;">
 This background is quoted directly from the article ["A Fine is a Price"](http://rady.ucsd.edu/faculty/directory/gneezy/pub/docs/fine.pdf). 
@@ -92,6 +81,37 @@ the penalty that was introduced. A fine of NIS 10 is relatively small but not in
 
 </div>
 
+### Hypothesis
+
+The test done is a Two Way ANOVA
+
+1. Does the type of `Week` affect the average number of late children? Factor: `Week` with levels $A$ and $B$.
+$$
+  H_0: \mu_A = \mu_B = \mu
+$$
+$$
+  H_a: \mu_A \neq \mu_B 
+$$
+
+2. Does the `Treatment` affect the average number of late children? Factor: `Treatment` with levels $L$, $M$, and $H$.
+$$
+  H_0: \mu_L = \mu_M = \mu_H = \mu
+$$
+$$
+  H_a: \mu_i \neq \mu \ \text{for at least one}\ i\in\{1=L,2=M,3=H\}
+$$
+
+3. Does the effect of `Treatment` change for different types of `Week`? (Does the effect of `Week` change for different levels of `Treatment`?) In other words, is there an interaction between `Week` and `Treatment`?
+
+$$
+  H_0: \text{The effect of Treatment is the same for all Weeks.}
+$$
+$$
+  H_a: \text{The effect of Treatment is not the same for all types of Weeks.}
+$$
+
+A significance level of $\alpha = 0.05$ will be used for this study.
+
 
 ### The Data (Wide)
 
@@ -112,14 +132,86 @@ The `Late` Day Care Center data is shown here in the "long data format".
 pander(Late)
 ```
 
+<!--If you want to give your critiquers some ideas about what you have questions on and would like help with, place those details here.-->
 
- 
+<!-- ### Comments to Critiquers: -->
+
+
+
+<!--End your comments to your critiquers before this line.-->
+
+
+
 ##  
+
+----
+
 <!-- You can begin writing again after here.-->
 
 
 
-## Analysis
+## Data Analysis
 
+### Basic Statistics
 
+```{r message=FALSE, warning=FALSE}
+StatsLate <- Late %>%  
+    group_by(Week) %>% 
+    summarise(min = min(NumberofLateChildren),
+              avg = mean(NumberofLateChildren),
+              med = median(NumberofLateChildren),
+              max = max(NumberofLateChildren),
+              sd = sd(NumberofLateChildren), 
+              var = var(NumberofLateChildren)) 
 
+pander(StatsLate)
+```
+
+### ANOVA Test
+
+```{r}
+myaov <- aov(NumberofLateChildren ~ Quarter+Treatment+Quarter:Treatment, data=Late)
+
+pander(myaov)
+```
+
+```{r}
+par(mfrow = c(1,2))
+plot(myaov, which=1:2)
+```
+
+### Graphical Summaries
+
+#### Quarters
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+xyplot(NumberofLateChildren ~ Quarter, data=Late, type=c("p","a"), main="Significance of Quarter", col='gray') 
+```
+
+```{r message=FALSE, warning=FALSE}
+ggplot(Late) + 
+  geom_point(aes(x=Quarter, y=NumberofLateChildren)) +
+  ggtitle("Significance of Quarter")
+```
+
+#### Treatment
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+xyplot(NumberofLateChildren ~ Treatment, data=Late, type=c("a","p"), main="Significance of Treatment", col='gray') 
+```
+
+```{r message=FALSE, warning=FALSE}
+ggplot(Late) + 
+  geom_point(aes(x=Treatment, y=NumberofLateChildren)) +
+  ggtitle("Significance of Treatment")
+```
+
+#### Treatment Depending on Quarter
+
+```{r message=FALSE, warning=FALSE}
+xyplot(NumberofLateChildren ~ Quarter, data=Late, groups=Treatment, type=c("p","a"), main="Significance of the Interaction", auto.key=list(corner=c(1,1)))
+```
+
+## Interpretation
+
+The graphs above show the interaction of late children, treatment and quarter. The first quarter has the least about of late. Also the control treatment has the least amount of late children. The control treatment decreases the lateness of children over the quarters where as the fine treatment increases the lateness of children over the quarters. 
