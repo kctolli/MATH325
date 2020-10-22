@@ -150,21 +150,23 @@ pander(Late)
 
 
 
-## Data Analysis
+## Data Analysis {.tabset .tabset-fade}
 
 ### Basic Statistics
 
 ```{r message=FALSE, warning=FALSE}
-StatsLate <- Late %>%  
-    group_by(Week) %>% 
-    summarise(min = min(NumberofLateChildren),
-              avg = mean(NumberofLateChildren),
-              med = median(NumberofLateChildren),
-              max = max(NumberofLateChildren),
-              sd = sd(NumberofLateChildren), 
-              var = var(NumberofLateChildren)) 
+StatsLate <- favstats(NumberofLateChildren ~ Week, data = Late)
+    # group_by(Week) %>% 
+    # summarise(min = min(NumberofLateChildren),
+    #           avg = mean(NumberofLateChildren),
+    #           med = median(NumberofLateChildren),
+    #           max = max(NumberofLateChildren),
+    #           sd = sd(NumberofLateChildren), 
+    #           var = var(NumberofLateChildren)) 
 
-pander(StatsLate)
+
+
+pander(StatsLate[,-10])
 ```
 
 ### ANOVA Test

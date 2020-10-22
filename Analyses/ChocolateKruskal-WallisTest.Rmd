@@ -13,14 +13,16 @@ library(DT)
 library(pander)
 library(tidyverse)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-choc <- read_csv("../Data/Chocolate.csv")
+choc <- read_csv("../Data/Chocolate.csv") %>% 
+  mutate(Cocao = as.factor(as.character(Cocao)))
 ```
 
 ```{r, eval=FALSE}
+getwd()
 View(choc)
 ```
 
-----
+<!-- ---- -->
 
 <!-- Instructions:
 
@@ -55,20 +57,93 @@ Note this dataset and description come from: © 2018 Kaggle Inc for further deta
 
 
 If you want to give your critiquers some ideas about what you have questions on and would like help with, place those details here.-->
-**Comments to Critiquers:** 
+<!-- **Comments to Critiquers:**  -->
 
 
 
 <!--End your comments to your critiquers before this line.-->
 
-----
+<!-- ---- -->
 
 <!--Begin writing your Analysis after this point.-->
 
-## Background
+<!-- ## Background {.tabset .tabset-fade} -->
+
+## Hypothesis
+
+The test done using Kruskal-Wallis. Typically, the hypotheses of the Kruskal-Wallis test are:
+
+$$
+  H_0: \text{All samples are from the same distribution.}
+$$
 
 
+$$
+  H_a: \text{At least one sample's distribution is stochastically different.}
+$$
+
+However, according to the original authors, what the alternative to the Kruskal-Wallis test really is, “is a tendency for observations in at least one of the populations to be larger (or smaller) than all the observations together, when paired randomly. In many cases, this is practically equivalent to the mean of at least one population differing from the others.” Thus, it could also be appropriate to use the ANOVA style hypotheses
+
+$$
+  H_0: \mu_\text{Rating} = \mu_\text{Cocao} = \mu
+$$
+
+$$
+  H_a: \mu_\text{Rating} \neq \mu_\text{Cocao}
+$$
 
 
+## Data Analysis {.tabset .tabset-fade}
 
+### Basic Statistics
 
+```{r}
+pander(favstats(Rating ~ Cocao, data = choc)[,-10])
+```
+
+### Kruskal-Wallis Test
+
+```{r}
+mykruskal <- kruskal.test(Rating ~ Cocao, data=choc)
+pander(mykruskal)
+```
+
+```{r}
+boxplot(Rating ~ Cocao, data=choc, type=c("p","a"), col='grey', xlab="Percent of Cocoa", ylab="Rating of Chocolate", main="Rating vs Percent Cocoa")
+```
+
+### ANOVA Test
+
+```{r}
+myaov <- aov(Rating ~ Cocao, data=choc)
+pander(myaov)
+```
+
+```{r message=FALSE, warning=FALSE}
+par(mfrow = c(1,2))
+plot(myaov, which=1:2)
+```
+
+### The Data
+
+```{r, out.width=300}
+pander(choc, split.tables = Inf)
+```
+
+## Interpretation
+
+In this analysis I compared the percent of cocoa to rating of chocolate. 
+
+Rating is on a 1 to 5 scale. 
+
+    5 = Elite 
+    4 = Premium 
+    3 = Satisfactory
+    2 = Disappointing 
+    1 = Unpleasant  
+
+Between 60% and 75% has the greatest rating. The highest rating is 70% cocoa and the highest average rating is 69%. 53% cocoa has the lowest rating. We can learn the frequency of the chocolate rating from the below graph. 
+
+```{r}
+hist(choc$Rating, breaks=15, col='sandybrown', xlab="Rating of Chocolate", main="Chocolate Rating")
+```
