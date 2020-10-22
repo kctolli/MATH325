@@ -2,7 +2,8 @@
 title: "Math 325 Study Guide"
 output: 
   html_document:
-    theme: cerulean
+    toc: true
+    toc_float: true
 ---
 
 ## General Concepts

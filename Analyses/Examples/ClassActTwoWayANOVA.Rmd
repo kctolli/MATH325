@@ -1,0 +1,32 @@
+---
+title: "Class Activity"
+subtitle: "Two-Way ANOVA"
+output: html_document
+---
+
+
+```{r include=FALSE}
+library(car) 
+library(tidyverse)
+library(mosaic)
+```
+
+## ANOVA Test
+
+```{r}
+Blackmore <- Blackmore %>%
+   mutate(ageGroup = case_when(age >= 8 & age <= 10 ~ "Youth",
+                                                      age > 10 & age <= 12 ~ "Pre-Teen",
+                                                      age > 12 & age <= 14 ~ "Early-Teen",
+                                                      age > 14 & age <= 18 ~ "Late-Teen"),
+                ageGroup = factor(ageGroup, levels=c("Youth", "Pre-Teen", "Early-Teen", "Late-Teen"), ordered=TRUE))
+
+myaov <- aov(exercise ~ group+ageGroup+group:ageGroup, data = Blackmore)
+```
+
+## Diagnostic Plots
+
+```{r}
+par(mfrow = c(1,2))
+plot(myaov, which=1:2)
+```
