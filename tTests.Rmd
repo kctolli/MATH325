@@ -1288,7 +1288,7 @@ $$
 Select the p-value of the test from the options below.
 
 ```{r}
-BirthsWedThu <- filter(Births78, wday %in% c("Wed","Thu"))
+BirthsWedThu <- dplyr::filter(Births78, wday %in% c("Wed","Thu"))
 
 t.test(births ~ wday, data=BirthsWedThu, mu=0, alternative="two.sided", conf.level=0.95)
 ```

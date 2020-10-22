@@ -23,7 +23,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -441,6 +440,12 @@ div.tocify {
 </div>
 
 
+<script type="text/javascript">
+ function showhide(id) {
+    var e = document.getElementById(id);
+    e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+ }
+</script>
 <p><br /></p>
 <div id="a-quote-to-remember" class="section level4">
 <h4>A Quote to Remember</h4>
@@ -505,7 +510,43 @@ div.tocify {
 </div>
 <p></br></p>
 <p>Continued resubmissions are expected until you achieve a {<strong>3</strong>} in each Category.</p>
+<br/> <br />
+<hr />
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<div style="padding-left:15px;">
+<span class="tooltipr"> <a href="javascript:showhide('hovertobegin')">Click Here</a> <span class="tooltipRtext">To see Data Sets and Sources </span> </span>
+<div id="hovertobegin" style="display:none;padding-left:20px;">
 <p><br/></p>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><a href="http://www.kaggle.com">Kaggle</a></li>
+<li><a href="https://archive.ics.uci.edu/ml/datasets.php">UCI Machine Learning Repository</a></li>
+<li><a href="https://www.data.gov/">U.S. Open Data Portal</a></li>
+<li><a href="http://data.europa.eu/euodp/en/data/">EU Open Data Portal</a></li>
+<li><a href="https://www.google.com/publicdata/directory">Google Public Data Explorer</a></li>
+<li><a href="https://healthdata.gov/search/type/dataset">U.S. Health Data</a></li>
+</ul>
+<h4 id="sets">Sets</h4>
+<ul>
+<li><a href="./Data/Cadillac.txt">Cadillac</a></li>
+<li><a href="./Data/CarPrices.csv">Car Prices</a></li>
+<li><a href="./Data/Chocolate.csv">Chocolate</a></li>
+<li><a href="./Data/CivicCorolla.csv">Civic Corolla</a></li>
+<li><a href="./Data/ClassSurvey.csv">Class Survey</a></li>
+<li><a href="./Data/DCRevelationDates.csv">DC Revelation Dates</a></li>
+<li><a href="./Data/GSS2012.csv">GSS 2012</a></li>
+<li><a href="./Data/HighSchoolSeniors.csv">High School Senior</a></li>
+<li><a href="./Data/late.csv">Late</a></li>
+<li><a href="./Data/mouse.csv">Mouse</a></li>
+<li><a href="./Data/Olympics.csv">Olympics</a></li>
+<li><a href="./Data/Rent.csv">Rent</a></li>
+</ul>
+</div>
+</div>
+<br /> <br />
+<hr />
 </div>
 <div id="assignments" class="section level2">
 <h2>Assignments</h2>
@@ -514,6 +555,8 @@ div.tocify {
 <li><a href="./Analyses/Stephanie.html">Stephanie</a></li>
 <li><a href="./Analyses/HighSchoolSeniorstTest.html">High School Seniors</a></li>
 <li><a href="./Analyses/RecallingWordsWilcoxon.html">Recalling Words</a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
 </ol>
 </div>
 

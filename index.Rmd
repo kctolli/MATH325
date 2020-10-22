@@ -31,24 +31,21 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 [Customization Help](RMarkdownHints.html)
 
+It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.
 
+#### Calculating the p-Value
 
+Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true. 
 
+A p-value can be calculated whenever we have two things.
 
+A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
 
+The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
 
+A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.
 
-
-
-
-
-
-
-
-
-
-
-
+All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.
 
 
 <!-- End your notes before here. ------------------------------------- -->
@@ -64,12 +61,10 @@ This page, and all pages of this notebook, are meant to be customized to become 
 ## One Quantitative Response Variable Y {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 
-
-Add your own notes about graphics to use for this type of data here.
 
 
 
@@ -91,17 +86,17 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 <!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
 
 
 * T-tests 
-  + One Sample
-  + Paired Sample
+  + One Sample `t.test(NameOfYourData$Y, mu = YourNull, alternative = YourAlternative, conf.level = 0.95`
+  + Paired Sample `t.test(NameOfYourData$Y1, NameOfYourData$Y2, paired = TRUE, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
 * Wilcoxon Tests 
-  + Signed-Rank
+  + Signed-Rank `wilcox.test(object1, object2, mu = YourNull, alternative = YourAlternative, paired = TRUE, conf.level = 0.95)`
 
 
 
@@ -133,10 +128,10 @@ Add your own notes about graphics to use for this type of data here.
 ## Quantitative Y | Categorical X (2 Groups) {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+
 
 
 
@@ -163,17 +158,16 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 <!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
 
 
 * T-tests 
-  + Independent
+  + Independent `t.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
 * Wilcoxon 
-  + Rank Sum
-    - Mann-Whitney
+  + Rank Sum (Mann-Whitney) `wilcox.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
 
 
 
@@ -205,10 +199,10 @@ Add your own notes about graphics to use for this type of data here.
 ## Quantitative Y | Categorical X (3+ Groups) {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -232,10 +226,15 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-* Anova
+* ANOVA
+  + One-way `aov(y ~ A, data=YourDataSet)`
+  + Two-way `aov(y ~ A+B+A:B, data=YourDataSet)`
+  + Block Design `aov(y ~ Block+A+B+A:B, data=YourDataSet)`
+* Kruskal-Wallis 
+  + Rank Sum `kruskal.test(x ~ g, data=YourDataSet)`
 
 
 
@@ -256,10 +255,10 @@ Add your own notes about graphics to use for this type of data here.
 ## Quantitative Y | Quantitative X {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -277,7 +276,7 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 Add your own notes about appropriate inferential procedures for this type of data here.
@@ -303,10 +302,10 @@ Add your own notes about appropriate inferential procedures for this type of dat
 ## Quantitative Y | Multiple X {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -324,7 +323,7 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 Add your own notes about appropriate inferential procedures for this type of data here.
@@ -350,10 +349,10 @@ Add your own notes about appropriate inferential procedures for this type of dat
 ## Binomial Y | Quantitative X {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -369,7 +368,7 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 Add your own notes about appropriate inferential procedures for this type of data here.
@@ -395,10 +394,10 @@ Add your own notes about appropriate inferential procedures for this type of dat
 ## Binomial Y | Multiple X {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -414,7 +413,7 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 Add your own notes about appropriate inferential procedures for this type of data here.
@@ -440,10 +439,10 @@ Add your own notes about appropriate inferential procedures for this type of dat
 ## Categorical Y | Categorical X {.tabset .tabset-pills}
 
 ### Graphics
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about graphics to use for this type of data here.
+ 
 
 
 
@@ -458,7 +457,7 @@ Add your own notes about graphics to use for this type of data here.
 </div>
 
 ### Tests
-<div style="padding-left:125px;color:lightgray;">
+<div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 Add your own notes about appropriate inferential procedures for this type of data here.
