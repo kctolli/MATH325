@@ -67,6 +67,8 @@ All p-value computation methods can be classified into two broad categories, par
 
 
 
+<!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
+
 
 
 

@@ -8,4 +8,5 @@ pacman::p_load(pacman,
                tidyverse, 
                mosaic, 
                car,
-               pander)
+               pander, 
+               DT)
