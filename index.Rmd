@@ -60,17 +60,20 @@ All p-value computation methods can be classified into two broad categories, par
 
 ## One Quantitative Response Variable Y {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-
-
+#### Numerical 
 
 <!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
 
+* Mean (average) - Center of Mass - `mean(object)`
+* Median - Middle Data Point - `median(object)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
 
-
+#### Graphics
 
 <a href="GraphicalSummaries.html#histogram">
   <img class="myhover" src="./Images/histogram.png" alt="Histogram" title="Histogram">
@@ -103,17 +106,6 @@ All p-value computation methods can be classified into two broad categories, par
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!--- End of Add content area.  ------------------>
 </div>
 
@@ -129,22 +121,22 @@ All p-value computation methods can be classified into two broad categories, par
 
 ## Quantitative Y | Categorical X (2 Groups) {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 
+#### Numerical 
 
+* Mean (average) - Center of Mass - `mean(object)`
+* Median - Middle Data Point - `median(object)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+* n - Sample size - `n()`
 
+--- Use Group by groups
 
-
-
-
-
-
-
-
-
+#### Graphics
 
 
 <a href="GraphicalSummaries.html#boxplots">
@@ -172,19 +164,6 @@ All p-value computation methods can be classified into two broad categories, par
   + Rank Sum (Mann-Whitney) `wilcox.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--- End of Add content area.  ------------------>
 </div>
 
@@ -200,20 +179,29 @@ All p-value computation methods can be classified into two broad categories, par
 
 ## Quantitative Y | Categorical X (3+ Groups) {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
- 
+#### Numerical 
 
+* Minimum - Smallest occurring data value - `min(object)`
+* Maximum - Largest occurring data value - `max(object)`
+* Mean (average) - Center of Mass - `mean(object)`
+* Median - Middle Data Point - `median(object)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+* n - Sample size - `n()`
 
+<br/>
 
+--- *Use favstats(x ~ g, data=YourDataSet) *
 
+  - x is a numeric vector of data values that represents the quantatitive response variable.
+  - g is a qualitative grouping variable defining which groups each value in x belongs to. 
+  - YourDataSet is the name of your data set.
 
-
-
-
-
+#### Graphics
 
 
 
@@ -256,14 +244,17 @@ All p-value computation methods can be classified into two broad categories, par
 
 ## Quantitative Y | Quantitative X {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
- 
+
+
+#### Numerical 
 
 
 
+#### Graphics
 
 
 
@@ -303,7 +294,7 @@ Add your own notes about appropriate inferential procedures for this type of dat
 
 ## Quantitative Y | Multiple X {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -311,7 +302,11 @@ Add your own notes about appropriate inferential procedures for this type of dat
 
 
 
+#### Numerical 
 
+
+
+#### Graphics
 
 
 
@@ -350,13 +345,18 @@ Add your own notes about appropriate inferential procedures for this type of dat
 
 ## Binomial Y | Quantitative X {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
+#### Numerical 
 
+
+
+
+#### Graphics
 
 
 
@@ -395,13 +395,17 @@ Add your own notes about appropriate inferential procedures for this type of dat
 
 ## Binomial Y | Multiple X {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
+#### Numerical 
 
+
+
+#### Graphics
 
 
 
@@ -440,13 +444,17 @@ Add your own notes about appropriate inferential procedures for this type of dat
 
 ## Categorical Y | Categorical X {.tabset .tabset-pills}
 
-### Graphics
+### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
+#### Numerical 
 
+
+
+#### Graphics
 
 
 

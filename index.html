@@ -20,7 +20,6 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -413,11 +412,19 @@ $(document).ready(function () {
 </div>
 <div id="one-quantitative-response-variable-y" class="section level2 tabset tabset-pills">
 <h2>One Quantitative Response Variable Y</h2>
-<div id="graphics" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical">Numerical</h4>
 <!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
+<ul>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+</ul>
+<h4 id="graphics">Graphics</h4>
 <p><a href="GraphicalSummaries.html#histogram"> <img class="myhover" src="Images/histogram.png" alt="Histogram" title="Histogram"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotsingle.png" alt="Dot Plot" title="Dot Plot"> </a> <a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotsingle.png" alt="Boxplot" title="Boxplot"> </a></p>
 <!--- End your notes before here.  ------------------>
 </div>
@@ -453,10 +460,20 @@ $(document).ready(function () {
 </div>
 <div id="quantitative-y-categorical-x-2-groups" class="section level2 tabset tabset-pills">
 <h2>Quantitative Y | Categorical X (2 Groups)</h2>
-<div id="graphics-1" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-1" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-1">Numerical</h4>
+<ul>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+<li>n - Sample size - <code>n()</code></li>
+</ul>
+<p>— Use Group by groups</p>
+<h4 id="graphics-1">Graphics</h4>
 <p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplot.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotdouble.png" alt="Dot Plot" title="Side-by-side Dot Plots"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -492,10 +509,28 @@ $(document).ready(function () {
 </div>
 <div id="quantitative-y-categorical-x-3-groups" class="section level2 tabset tabset-pills">
 <h2>Quantitative Y | Categorical X (3+ Groups)</h2>
-<div id="graphics-2" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-2" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-2">Numerical</h4>
+<ul>
+<li>Minimum - Smallest occurring data value - <code>min(object)</code></li>
+<li>Maximum - Largest occurring data value - <code>max(object)</code></li>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+<li>n - Sample size - <code>n()</code></li>
+</ul>
+<p><br/></p>
+<p>— <em>Use favstats(x ~ g, data=YourDataSet) </em></p>
+<ul>
+<li>x is a numeric vector of data values that represents the quantatitive response variable.</li>
+<li>g is a qualitative grouping variable defining which groups each value in x belongs to.</li>
+<li>YourDataSet is the name of your data set.</li>
+</ul>
+<h4 id="graphics-2">Graphics</h4>
 <p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotthree.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots 3+ Groups"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplottriple.png" alt="Side-by-side Dot Plots" title="Side-by-side Dot Plots 3+ Groups"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -532,10 +567,12 @@ $(document).ready(function () {
 </div>
 <div id="quantitative-y-quantitative-x" class="section level2 tabset tabset-pills">
 <h2>Quantitative Y | Quantitative X</h2>
-<div id="graphics-3" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-3" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-3">Numerical</h4>
+<h4 id="graphics-3">Graphics</h4>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplot.png" alt="Scatterplot" title="Scatterplot"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -561,10 +598,12 @@ $(document).ready(function () {
 </div>
 <div id="quantitative-y-multiple-x" class="section level2 tabset tabset-pills">
 <h2>Quantitative Y | Multiple X</h2>
-<div id="graphics-4" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-4" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-4">Numerical</h4>
+<h4 id="graphics-4">Graphics</h4>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotmany.png" alt="Scatterplot" title="Scatterplot with Color and Sizing"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -590,10 +629,12 @@ $(document).ready(function () {
 </div>
 <div id="binomial-y-quantitative-x" class="section level2 tabset tabset-pills">
 <h2>Binomial Y | Quantitative X</h2>
-<div id="graphics-5" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-5" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-5">Numerical</h4>
+<h4 id="graphics-5">Graphics</h4>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomY.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -619,10 +660,12 @@ $(document).ready(function () {
 </div>
 <div id="binomial-y-multiple-x" class="section level2 tabset tabset-pills">
 <h2>Binomial Y | Multiple X</h2>
-<div id="graphics-6" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-6" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-6">Numerical</h4>
+<h4 id="graphics-6">Graphics</h4>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomYmult.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y, including coloring and shading"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
@@ -648,10 +691,12 @@ $(document).ready(function () {
 </div>
 <div id="categorical-y-categorical-x" class="section level2 tabset tabset-pills">
 <h2>Categorical Y | Categorical X</h2>
-<div id="graphics-7" class="section level3">
-<h3>Graphics</h3>
+<div id="data-summaries-7" class="section level3">
+<h3>Data Summaries</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
+<h4 id="numerical-7">Numerical</h4>
+<h4 id="graphics-7">Graphics</h4>
 <p><a href="GraphicalSummaries.html#bar-charts"> <img class="myhover" src="Images/barplot.png" alt="Bar Chart" title="Bar Chart"> </a></p>
 <!--- End of Add content area.  ------------------>
 </div>
