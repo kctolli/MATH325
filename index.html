@@ -581,7 +581,9 @@ $(document).ready(function () {
 <h3>Tests</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
-<p>Add your own notes about appropriate inferential procedures for this type of data here.</p>
+<ul>
+<li>Simple Linear Regression <code>lm(Y ~ X, data = YourDataSet)</code></li>
+</ul>
 <!--- End of Add content area.  ------------------>
 </div>
 </div>
@@ -612,7 +614,9 @@ $(document).ready(function () {
 <h3>Tests</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
-<p>Add your own notes about appropriate inferential procedures for this type of data here.</p>
+<ul>
+<li>Multiple Linear Regression <code>lm(Y ~ X1 + X2 + X1:X2 + ..., data = YourDataSet)</code></li>
+</ul>
 <!--- End of Add content area.  ------------------>
 </div>
 </div>
@@ -643,7 +647,9 @@ $(document).ready(function () {
 <h3>Tests</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
-<p>Add your own notes about appropriate inferential procedures for this type of data here.</p>
+<ul>
+<li>Simple Logistic Regression Model <code>glm(Y ~ X, data = YourDataSet, family = binomial)</code></li>
+</ul>
 <!--- End of Add content area.  ------------------>
 </div>
 </div>
@@ -674,7 +680,9 @@ $(document).ready(function () {
 <h3>Tests</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
-<p>Add your own notes about appropriate inferential procedures for this type of data here.</p>
+<ul>
+<li>Mutiple Logistic Regression Model <code>glm(Y ~ X1 * X2 * ... , data = YourDataSet, family = binomial)</code></li>
+</ul>
 <!--- End of Add content area.  ------------------>
 </div>
 </div>
@@ -705,7 +713,14 @@ $(document).ready(function () {
 <h3>Tests</h3>
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
-<p>Add your own notes about appropriate inferential procedures for this type of data here.</p>
+<ul>
+<li>Chi-squared Test of Independence
+<ul>
+<li><code>chisq.test(x)</code></li>
+<li><code>chisq.test(table(Dataset$variable, Dataset$variable))</code></li>
+</ul></li>
+<li>Nonparametric Chi-squared Test <code>chisq.test(x, simulate.p.value=TRUE)</code></li>
+</ul>
 <!--- End of Add content area.  ------------------>
 </div>
 </div>

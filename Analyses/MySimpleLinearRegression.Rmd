@@ -2,19 +2,16 @@
 title: "Simple Linear Regression"
 ---
 
-```{r, message=FALSE, warning=FALSE}
-# Load your libraries
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(mosaic)
 library(car)
+library(DT)
+library(pander)
 library(tidyverse)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-# Load your data after saving a csv file in your Data folder.
-# You can use either 
-#   someName <- read.csv("../Data/YourDataFileName.csv", header=TRUE)
-# or
-#   library(readr)
-#   someName <- read_csv("../Data/YourDataFileName.csv")
-
-# Don't forget to run "Session -> Set Working Directory -> To Source file location"
+mydat <- read_csv("../Data/MyDataSet.csv") %>% 
+  na.omit()
 
 ```
 

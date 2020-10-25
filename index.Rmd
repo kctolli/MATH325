@@ -272,8 +272,7 @@ All p-value computation methods can be classified into two broad categories, par
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
-
+* Simple Linear Regression `lm(Y ~ X, data = YourDataSet)`
 
 
 
@@ -323,8 +322,7 @@ Add your own notes about appropriate inferential procedures for this type of dat
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
-
+* Multiple Linear Regression `lm(Y ~ X1 + X2 + X1:X2 + ..., data = YourDataSet)`
 
 
 
@@ -373,7 +371,7 @@ Add your own notes about appropriate inferential procedures for this type of dat
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
+* Simple Logistic Regression Model `glm(Y ~ X, data = YourDataSet, family = binomial)`
 
 
 
@@ -422,7 +420,7 @@ Add your own notes about appropriate inferential procedures for this type of dat
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
+* Mutiple Logistic Regression Model `glm(Y ~ X1 * X2 * ... , data = YourDataSet, family = binomial)`
 
 
 
@@ -470,10 +468,10 @@ Add your own notes about appropriate inferential procedures for this type of dat
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-Add your own notes about appropriate inferential procedures for this type of data here.
-
-
-
+* Chi-squared Test of Independence 
+  + `chisq.test(x)` 
+  + `chisq.test(table(Dataset$variable, Dataset$variable))`
+* Nonparametric Chi-squared Test `chisq.test(x, simulate.p.value=TRUE)`
 
 
 
