@@ -123,11 +123,11 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 <br/>
 
---- *Use group_by(columnGroupsName)*
+--- *Use `group_by(columnGroupsName)`*
 
   - columnGroupsName = Categorical X
   - Function from tidyverse package
-  - Normal used with the summarise or mutate
+  - Normally used with the summarise or mutate
     + Qualitative in Group By
     + Quantitative in Summarize
     
@@ -564,7 +564,8 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 * [Permutation Tests](./PermutationTests.html)
 
 <!-- End your notes before here. ------------------------------------- -->
-<!-- ## -->
+#
+<div style="clear:both;"></div>
 
 ----
 
