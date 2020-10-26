@@ -2,18 +2,6 @@ name: "statistics-notebook"
 navbar:
   title: "Statistics Notebook"
   left:
-    - text: "R Help"
-      menu:
-        - text: "R Commands"
-          href: ./RCommands.html
-        - text: "R Markdown Hints"
-          href: ./RMarkdownHints.html
-        - text: "Assessment Quizzes"
-          href: ./Assessments.html
-        - text: "Final Study Guide"
-          href: ./FinalExamStudyGuide.html
-        - text: "MATH 221 Book"
-          href: https://byuistats.github.io/BYUI_M221_Book
     - text: "Describing Data"
       menu:
         - text: "Graphical Summaries"
@@ -22,8 +10,8 @@ navbar:
           href: ./NumericalSummaries.html
     - text: "Making Inference"
       menu:
-        - text: "Making Inference"
-          href: ./MakingInference.html
+        #- text: "Making Inference"
+        #  href: ./MakingInference.html
         - text: "t Tests"
           href: ./tTests.html
         - text: "Wilcoxon Tests"
@@ -50,6 +38,18 @@ navbar:
             href: ./Analyses/StudentHousing.html
           - text: "Poor Analysis"
             href: ./Analyses/StudentHousingPOOR.html
+    - text: "Resources"
+      menu:
+        - text: "R Commands"
+          href: ./RCommands.html
+        - text: "R Markdown Hints"
+          href: ./RMarkdownHints.html
+        - text: "Assessment Quizzes"
+          href: ./Assessments.html
+        - text: "Final Study Guide"
+          href: ./FinalExamStudyGuide.html
+        - text: "MATH 221 Book"
+          href: https://byuistats.github.io/BYUI_M221_Book            
 
           
 output_dir: '.'

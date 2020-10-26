@@ -8,6 +8,7 @@ title: "Table of Contents"
 
 This page, and all pages of this notebook, are meant to be customized to become a useful *Guide to Statistical Analysis* in R for your *current* and *future* self.
 
+
 <!-- <div style="font-size:.8em;"><!-- Code to shrink font-size of following paragraph --> 
 
 <!-- To begin customizing, [download](https://github.com/saundersg/Statistics-Notebook) your own copy of the book <span style="font-size:.8em;">(if you haven't already)</span>. Please note the [GNU General Public License](https://choosealicense.com/licenses/gpl-3.0/) when downloading. You are free to delete this commentary in your own copy of the notebook. -->
@@ -25,13 +26,42 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ### Hide 
 
-### Show Notes
+### Show Notes {.tabset .tabset-fade}
 
 <!-- This is a great place to add general notes --------------- -->
 
-[Customization Help](RMarkdownHints.html)
+**This comes from the [*Making Inference*](./MakingInference.html) page of this book**
 
 It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.
+
+#### Hypothesis Testing
+
+One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).
+
+#### Managing Decision Errors
+
+When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.
+
+* Type I Error (Significance Level, Confidence and α)
+  - Defined as rejecting the null hypothesis when it is actually true
+  - A hypothesis test controls the probability of a Type I Error
+  - The typical value of α is 0.05
+  - Defined as 1−α or the opposite of a Type I error
+* Type II Errors (β, and Power)
+  - Defined as failing to reject the null hypothesis when it is actually false
+  - The typical value of β often unknown
+
+##### Sufficient Evidence
+
+Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.
+
+There are many statistical approaches to this problem of measuring the significance of evidence, but in almost all cases, the final measurement of evidence is given by the p-value of the hypothesis test. The p-value of a test is defined as the probability of the evidence being as extreme or more extreme than what was observed assuming the null hypothesis is true. This is an interesting phrase that is at first difficult to understand.
+
+The “as extreme or more extreme” part of the definition of the p-value comes from the idea that the null hypothesis will be rejected when the evidence in the data is extremely inconsistent with the null hypothesis. If the data is not extremely different from what we would expect under the null hypothesis, then we will continue to believe the null hypothesis. Although, it is worth emphasizing that this does not prove the null hypothesis to be true.
+
+##### Evidence not Proof
+
+Hypothesis testing allows us a formal way to decide if we should “conclude the alternative” or “continue to accept the null.” It is important to remember that statistics (and science) cannot prove anything, just show evidence towards. Thus we never really prove a hypothesis is true, we simply show evidence towards or against a hypothesis.
 
 #### Calculating the p-Value
 
@@ -39,14 +69,47 @@ Recall that the p-value measures how extremely the data (the evidence) differs f
 
 A p-value can be calculated whenever we have two things.
 
-A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
-
-The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
+* A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
+* The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
 
 A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.
 
 All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.
 
+#### Parametric Methods
+
+Parametric methods assume that, under the null hypothesis, the test statistic follows a specific theoretical parametric distribution. Parametric methods are typically more statistically powerful than nonparametric methods, but necessarily force more assumptions on the data.
+
+Parametric distributions are theoretical distributions that can be described by a mathematical function. There are many theoretical distributions. 
+
+Four of the most widely used parametric distributions are:
+
+* Normal Distribution 
+  - It is a theoretical distribution that approximates the distributions of many real life data distributions
+* Chi Squared Distribution 
+  - It only allows for values that are greater than or equal to zero
+  - It has a few real life applications, by far its greatest use is theoretical
+* t Distribution
+  - A close friend of the normal distribution
+  - It is used extensively in hypothesis testing
+* F Distribution  
+  - It is the ratio of two chi squared random variables that are each divided by their respective degrees of freedom
+  
+##### Parametric Tests
+
+* [t Tests](./tTests.html)
+* [ANOVA Tests](./ANOVA.html)
+* [Chi-squared Tests](./ChiSquaredTests.html)
+
+#### Nonparametric Methods
+
+Nonparametric methods place minimal assumptions on the distribution of data. They allow the data to “speak for itself.” They are typically less powerful than the parametric alternatives, but are more broadly applicable because fewer assumptions need to be satisfied. 
+
+##### Nonparametric Tests
+
+* [Wilcoxon Tests](./WilcoxonTests.html)
+* [Kruskal-Wallis Tests](./Kruskal.html)
+* [Permutation Tests](./PermutationTests.html)
 
 <!-- End your notes before here. ------------------------------------- -->
 ##
@@ -70,8 +133,20 @@ All p-value computation methods can be classified into two broad categories, par
 
 * Mean (average) - Center of Mass - `mean(object)`
 * Median - Middle Data Point - `median(object)`
-* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` 
 * Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+
+<br/>
+
+--- *Use `summary(object)`*
+
+  - Gives the five number summary 
+    + Min
+    + 1st Quartile
+    + Median 
+    + Mean
+    + 3rd Quartile
+    + Max
 
 #### Graphics
 
@@ -134,8 +209,16 @@ All p-value computation methods can be classified into two broad categories, par
 * Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
 * n - Sample size - `n()`
 
---- Use Group by groups
+<br/>
 
+--- *Use group_by(columnGroupsName)*
+
+  - columnGroupsName = Categorical X
+  - Function from tidyverse package
+  - Normal used with the summarise or mutate
+    + Qualitative in Group By
+    + Quantitative in Summarize
+    
 #### Graphics
 
 
@@ -195,7 +278,7 @@ All p-value computation methods can be classified into two broad categories, par
 
 <br/>
 
---- *Use favstats(x ~ g, data=YourDataSet) *
+--- *Use `favstats(x ~ g, data=YourDataSet)`*
 
   - x is a numeric vector of data values that represents the quantatitive response variable.
   - g is a qualitative grouping variable defining which groups each value in x belongs to. 
@@ -483,5 +566,5 @@ All p-value computation methods can be classified into two broad categories, par
 
 ----
 
-<footer></footer>
+<footer> &nbsp; &nbsp; "Education is not the learning of facts it's rather the training of the mind to think" --- Albert Eistein</footer>
 

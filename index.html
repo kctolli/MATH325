@@ -257,30 +257,6 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    R Help
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="./RCommands.html">R Commands</a>
-    </li>
-    <li>
-      <a href="./RMarkdownHints.html">R Markdown Hints</a>
-    </li>
-    <li>
-      <a href="./Assessments.html">Assessment Quizzes</a>
-    </li>
-    <li>
-      <a href="./FinalExamStudyGuide.html">Final Study Guide</a>
-    </li>
-    <li>
-      <a href="https://byuistats.github.io/BYUI_M221_Book">MATH 221 Book</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Describing Data
      
     <span class="caret"></span>
@@ -301,9 +277,6 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="./MakingInference.html">Making Inference</a>
-    </li>
     <li>
       <a href="./tTests.html">t Tests</a>
     </li>
@@ -353,6 +326,30 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="./RCommands.html">R Commands</a>
+    </li>
+    <li>
+      <a href="./RMarkdownHints.html">R Markdown Hints</a>
+    </li>
+    <li>
+      <a href="./Assessments.html">Assessment Quizzes</a>
+    </li>
+    <li>
+      <a href="./FinalExamStudyGuide.html">Final Study Guide</a>
+    </li>
+    <li>
+      <a href="https://byuistats.github.io/BYUI_M221_Book">MATH 221 Book</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -386,20 +383,100 @@ $(document).ready(function () {
 <div id="hide" class="section level3">
 <h3>Hide</h3>
 </div>
-<div id="show-notes" class="section level3">
+<div id="show-notes" class="section level3 tabset tabset-fade">
 <h3>Show Notes</h3>
 <!-- This is a great place to add general notes --------------- -->
-<p><a href="RMarkdownHints.html">Customization Help</a></p>
+<p><strong>This comes from the <a href="./MakingInference.html"><em>Making Inference</em></a> page of this book</strong></p>
 <p>It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.</p>
+<div id="hypothesis-testing" class="section level4">
+<h4>Hypothesis Testing</h4>
+<p>One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).</p>
+</div>
+<div id="managing-decision-errors" class="section level4">
+<h4>Managing Decision Errors</h4>
+<p>When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.</p>
+<ul>
+<li>Type I Error (Significance Level, Confidence and α)
+<ul>
+<li>Defined as rejecting the null hypothesis when it is actually true</li>
+<li>A hypothesis test controls the probability of a Type I Error</li>
+<li>The typical value of α is 0.05</li>
+<li>Defined as 1−α or the opposite of a Type I error</li>
+</ul></li>
+<li>Type II Errors (β, and Power)
+<ul>
+<li>Defined as failing to reject the null hypothesis when it is actually false</li>
+<li>The typical value of β often unknown</li>
+</ul></li>
+</ul>
+<div id="sufficient-evidence" class="section level5">
+<h5>Sufficient Evidence</h5>
+<p>Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.</p>
+<p>There are many statistical approaches to this problem of measuring the significance of evidence, but in almost all cases, the final measurement of evidence is given by the p-value of the hypothesis test. The p-value of a test is defined as the probability of the evidence being as extreme or more extreme than what was observed assuming the null hypothesis is true. This is an interesting phrase that is at first difficult to understand.</p>
+<p>The “as extreme or more extreme” part of the definition of the p-value comes from the idea that the null hypothesis will be rejected when the evidence in the data is extremely inconsistent with the null hypothesis. If the data is not extremely different from what we would expect under the null hypothesis, then we will continue to believe the null hypothesis. Although, it is worth emphasizing that this does not prove the null hypothesis to be true.</p>
+</div>
+<div id="evidence-not-proof" class="section level5">
+<h5>Evidence not Proof</h5>
+<p>Hypothesis testing allows us a formal way to decide if we should “conclude the alternative” or “continue to accept the null.” It is important to remember that statistics (and science) cannot prove anything, just show evidence towards. Thus we never really prove a hypothesis is true, we simply show evidence towards or against a hypothesis.</p>
+</div>
+</div>
 <div id="calculating-the-p-value" class="section level4">
 <h4>Calculating the p-Value</h4>
 <p>Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true.</p>
 <p>A p-value can be calculated whenever we have two things.</p>
-<p>A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.</p>
-<p>The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true.</p>
+<ul>
+<li>A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.</li>
+<li>The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true.</li>
+</ul>
 <p>A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.</p>
 <p>All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.</p>
+</div>
+<div id="parametric-methods" class="section level4">
+<h4>Parametric Methods</h4>
+<p>Parametric methods assume that, under the null hypothesis, the test statistic follows a specific theoretical parametric distribution. Parametric methods are typically more statistically powerful than nonparametric methods, but necessarily force more assumptions on the data.</p>
+<p>Parametric distributions are theoretical distributions that can be described by a mathematical function. There are many theoretical distributions.</p>
+<p>Four of the most widely used parametric distributions are:</p>
+<ul>
+<li>Normal Distribution
+<ul>
+<li>It is a theoretical distribution that approximates the distributions of many real life data distributions</li>
+</ul></li>
+<li>Chi Squared Distribution
+<ul>
+<li>It only allows for values that are greater than or equal to zero</li>
+<li>It has a few real life applications, by far its greatest use is theoretical</li>
+</ul></li>
+<li>t Distribution
+<ul>
+<li>A close friend of the normal distribution</li>
+<li>It is used extensively in hypothesis testing</li>
+</ul></li>
+<li>F Distribution
+<ul>
+<li>It is the ratio of two chi squared random variables that are each divided by their respective degrees of freedom</li>
+</ul></li>
+</ul>
+<div id="parametric-tests" class="section level5">
+<h5>Parametric Tests</h5>
+<ul>
+<li><a href="./tTests.html">t Tests</a></li>
+<li><a href="./ANOVA.html">ANOVA Tests</a></li>
+<li><a href="./ChiSquaredTests.html">Chi-squared Tests</a></li>
+</ul>
+</div>
+</div>
+<div id="nonparametric-methods" class="section level4">
+<h4>Nonparametric Methods</h4>
+<p>Nonparametric methods place minimal assumptions on the distribution of data. They allow the data to “speak for itself.” They are typically less powerful than the parametric alternatives, but are more broadly applicable because fewer assumptions need to be satisfied.</p>
+<div id="nonparametric-tests" class="section level5">
+<h5>Nonparametric Tests</h5>
+<ul>
+<li><a href="./WilcoxonTests.html">Wilcoxon Tests</a></li>
+<li><a href="./Kruskal.html">Kruskal-Wallis Tests</a></li>
+<li><a href="./PermutationTests.html">Permutation Tests</a></li>
+</ul>
 <!-- End your notes before here. ------------------------------------- -->
+</div>
 </div>
 </div>
 </div>
@@ -421,8 +498,21 @@ $(document).ready(function () {
 <ul>
 <li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
 <li>Median - Middle Data Point - <code>median(object)</code></li>
-<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code></li>
 <li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+</ul>
+<p><br/></p>
+<p>— <em>Use <code>summary(object)</code></em></p>
+<ul>
+<li>Gives the five number summary
+<ul>
+<li>Min</li>
+<li>1st Quartile</li>
+<li>Median</li>
+<li>Mean</li>
+<li>3rd Quartile</li>
+<li>Max</li>
+</ul></li>
 </ul>
 <h4 id="graphics">Graphics</h4>
 <p><a href="GraphicalSummaries.html#histogram"> <img class="myhover" src="Images/histogram.png" alt="Histogram" title="Histogram"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotsingle.png" alt="Dot Plot" title="Dot Plot"> </a> <a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotsingle.png" alt="Boxplot" title="Boxplot"> </a></p>
@@ -472,7 +562,17 @@ $(document).ready(function () {
 <li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
 <li>n - Sample size - <code>n()</code></li>
 </ul>
-<p>— Use Group by groups</p>
+<p><br/></p>
+<p>— <em>Use group_by(columnGroupsName)</em></p>
+<ul>
+<li>columnGroupsName = Categorical X</li>
+<li>Function from tidyverse package</li>
+<li>Normal used with the summarise or mutate
+<ul>
+<li>Qualitative in Group By</li>
+<li>Quantitative in Summarize</li>
+</ul></li>
+</ul>
 <h4 id="graphics-1">Graphics</h4>
 <p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplot.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotdouble.png" alt="Dot Plot" title="Side-by-side Dot Plots"> </a></p>
 <!--- End of Add content area.  ------------------>
@@ -524,7 +624,7 @@ $(document).ready(function () {
 <li>n - Sample size - <code>n()</code></li>
 </ul>
 <p><br/></p>
-<p>— <em>Use favstats(x ~ g, data=YourDataSet) </em></p>
+<p>— <em>Use <code>favstats(x ~ g, data=YourDataSet)</code></em></p>
 <ul>
 <li>x is a numeric vector of data values that represents the quantatitive response variable.</li>
 <li>g is a qualitative grouping variable defining which groups each value in x belongs to.</li>
@@ -733,6 +833,7 @@ $(document).ready(function () {
 </div>
 <hr />
 <footer>
+    “Education is not the learning of facts it’s rather the training of the mind to think” — Albert Eistein
 </footer>
 </div>
 
