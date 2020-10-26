@@ -20,6 +20,7 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -378,22 +379,370 @@ $(document).ready(function () {
 <p><!-- End gray text section --></p>
 <!-- <!-- End of download and copyright instructions. -->
 <!-- This is how to comment text out. You can comment out the above instructions if you wish. Comments allow the text to remain in the Rmd file, but not be displayed in the html file. -->
-<div id="section" class="section level2 tabset tabset-fade">
-<h2></h2>
-<div id="hide" class="section level3">
-<h3>Hide</h3>
+<div id="section" class="section level1 tabset tabset-fade">
+<h1></h1>
+<!-- ### Hide  -->
+<div id="response-variables" class="section level2">
+<h2>Response Variables</h2>
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QuantY.png" width=35px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like “heights” of BYU-Idaho students.</span></p>
 </div>
-<div id="show-notes" class="section level3 tabset tabset-fade">
-<h3>Show Notes</h3>
+<div id="one-quantitative-response-variable-y" class="section level3 tabset tabset-pills">
+<h3>One Quantitative Response Variable Y</h3>
+<div id="data-summaries" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical">Numerical</h5>
+<!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
+<ul>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+</ul>
+<p><br/></p>
+<p>— <em>Use <code>summary(object)</code></em></p>
+<ul>
+<li>Gives the five number summary
+<ul>
+<li>Min</li>
+<li>1st Quartile</li>
+<li>Median</li>
+<li>Mean</li>
+<li>3rd Quartile</li>
+<li>Max</li>
+</ul></li>
+</ul>
+<h5 id="graphics">Graphics</h5>
+<p><a href="GraphicalSummaries.html#histogram"> <img class="myhover" src="Images/histogram.png" alt="Histogram" title="Histogram"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotsingle.png" alt="Dot Plot" title="Dot Plot"> </a> <a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotsingle.png" alt="Boxplot" title="Boxplot"> </a></p>
+<!--- End your notes before here.  ------------------>
+</div>
+</div>
+<div id="tests" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
+<ul>
+<li>T-tests
+<ul>
+<li>One Sample <code>t.test(NameOfYourData$Y, mu = YourNull, alternative = YourAlternative, conf.level = 0.95</code></li>
+<li>Paired Sample <code>t.test(NameOfYourData$Y1, NameOfYourData$Y2, paired = TRUE, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
+</ul></li>
+<li>Wilcoxon Tests
+<ul>
+<li>Signed-Rank <code>wilcox.test(object1, object2, mu = YourNull, alternative = YourAlternative, paired = TRUE, conf.level = 0.95)</code></li>
+</ul></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-1" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<!-- ---- -->
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QuantYQualXg2.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like “heights” of BYU-Idaho students. X is a qualitative (categorical) variable of interest like “gender” that has just two groups “A” and “B”. So this logo represents situtations where we would want to compare heights of male (group A) and female (group B) students.</span></p>
+</div>
+</div>
+<div id="quantitative-y-categorical-x-2-groups" class="section level3 tabset tabset-pills">
+<h3>Quantitative Y | Categorical X (2 Groups)</h3>
+<div id="data-summaries-1" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-1">Numerical</h5>
+<ul>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+<li>n - Sample size - <code>n()</code></li>
+</ul>
+<p><br/></p>
+<p>— <em>Use group_by(columnGroupsName)</em></p>
+<ul>
+<li>columnGroupsName = Categorical X</li>
+<li>Function from tidyverse package</li>
+<li>Normal used with the summarise or mutate
+<ul>
+<li>Qualitative in Group By</li>
+<li>Quantitative in Summarize</li>
+</ul></li>
+</ul>
+<h5 id="graphics-1">Graphics</h5>
+<p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplot.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotdouble.png" alt="Dot Plot" title="Side-by-side Dot Plots"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-1" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
+<ul>
+<li>T-tests
+<ul>
+<li>Independent <code>t.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
+</ul></li>
+<li>Wilcoxon
+<ul>
+<li>Rank Sum (Mann-Whitney) <code>wilcox.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
+</ul></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-2" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QuantYQualXg3plus.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like “heights” of BYU-Idaho students. X is a categorical (qualitative) variable like which Math 221 you took, 221A, 221B, or 221C. In other words, X has three or more groups. So “Classrank” could be X, with groups “Freshman”, “Sophomore”, “Junior”, and “Senior”.</span></p>
+</div>
+</div>
+<div id="quantitative-y-categorical-x-3-groups" class="section level3 tabset tabset-pills">
+<h3>Quantitative Y | Categorical X (3+ Groups)</h3>
+<div id="data-summaries-2" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-2">Numerical</h5>
+<ul>
+<li>Minimum - Smallest occurring data value - <code>min(object)</code></li>
+<li>Maximum - Largest occurring data value - <code>max(object)</code></li>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+<li>Median - Middle Data Point - <code>median(object)</code></li>
+<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
+<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
+<li>n - Sample size - <code>n()</code></li>
+</ul>
+<p><br/></p>
+<p>— <em>Use <code>favstats(x ~ g, data=YourDataSet)</code></em></p>
+<ul>
+<li>x is a numeric vector of data values that represents the quantatitive response variable.</li>
+<li>g is a qualitative grouping variable defining which groups each value in x belongs to.</li>
+<li>YourDataSet is the name of your data set.</li>
+</ul>
+<h5 id="graphics-2">Graphics</h5>
+<p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotthree.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots 3+ Groups"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplottriple.png" alt="Side-by-side Dot Plots" title="Side-by-side Dot Plots 3+ Groups"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-2" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>ANOVA
+<ul>
+<li>One-way <code>aov(y ~ A, data=YourDataSet)</code></li>
+<li>Two-way <code>aov(y ~ A+B+A:B, data=YourDataSet)</code></li>
+<li>Block Design <code>aov(y ~ Block+A+B+A:B, data=YourDataSet)</code></li>
+</ul></li>
+<li>Kruskal-Wallis
+<ul>
+<li>Rank Sum <code>kruskal.test(x ~ g, data=YourDataSet)</code></li>
+</ul></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-3" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QuantYQuantX.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like “height”. X is another single quantitative variable of interest, like “shoe-size”. This would imply we are using “shoe-size” (X) to explain “height” (Y).</span></p>
+</div>
+</div>
+<div id="quantitative-y-quantitative-x" class="section level3 tabset tabset-pills">
+<h3>Quantitative Y | Quantitative X</h3>
+<div id="data-summaries-3" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-3">Numerical</h5>
+<h5 id="graphics-3">Graphics</h5>
+<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplot.png" alt="Scatterplot" title="Scatterplot"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-3" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>Simple Linear Regression <code>lm(Y ~ X, data = YourDataSet)</code></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-4" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QuantYMultX.png" width=100px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like height. While we could use an X1 of “shoe-size” to explain height, we might also want to use a second x-variable, X2, like “gender” to help explain height. Further x-variables could also be used.</span></p>
+</div>
+</div>
+<div id="quantitative-y-multiple-x" class="section level3 tabset tabset-pills">
+<h3>Quantitative Y | Multiple X</h3>
+<div id="data-summaries-4" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-4">Numerical</h5>
+<h5 id="graphics-4">Graphics</h5>
+<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotmany.png" alt="Scatterplot" title="Scatterplot with Color and Sizing"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-4" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>Multiple Linear Regression <code>lm(Y ~ X1 + X2 + X1:X2 + ..., data = YourDataSet)</code></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-5" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/BinomYQuantX.png" width=59px;> <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like “getting an A in Math 325” where 1 means you got an A and 0 means you didn’t. We might use an explanatory variable X of “height” to see if taller students are more likely to get an A in Math 325 than shorter students. (They aren’t, if you were wondering.)</span></p>
+</div>
+</div>
+<div id="binomial-y-quantitative-x" class="section level3 tabset tabset-pills">
+<h3>Binomial Y | Quantitative X</h3>
+<div id="data-summaries-5" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-5">Numerical</h5>
+<h5 id="graphics-5">Graphics</h5>
+<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomY.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-5" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>Simple Logistic Regression Model <code>glm(Y ~ X, data = YourDataSet, family = binomial)</code></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-6" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/BinomYMultX.png" width=100px;> <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like “getting an A in Math 325” where 1 means you got an A and 0 means you didn’t. We might use an explanatory variable X1 of “height” and a second explanatory variable X2 of “gender” to try to predict whether or not a student will get an A in Math 325.</span></p>
+</div>
+</div>
+<div id="binomial-y-multiple-x" class="section level3 tabset tabset-pills">
+<h3>Binomial Y | Multiple X</h3>
+<div id="data-summaries-6" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-6">Numerical</h5>
+<h5 id="graphics-6">Graphics</h5>
+<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomYmult.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y, including coloring and shading"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-6" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>Mutiple Logistic Regression Model <code>glm(Y ~ X1 * X2 * ... , data = YourDataSet, family = binomial)</code></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+</div>
+<div id="section-7" class="section level3">
+<h3></h3>
+<div style="clear:both;">
+
+</div>
+<hr />
+<div class="tooltipimage" style="float:left;width:125px;" align="center">
+<p><img src="Images/QualYQualX.png" width=59px;> <span class="tooltipimagetext">Y is a single categorical variable of interest, like gender. X is another categorical variable of interest, like “hair color”. This type of data would help us understand if men or women are more likely to have certain hair colors than the other gender.</span></p>
+</div>
+</div>
+<div id="categorical-y-categorical-x" class="section level3 tabset tabset-pills">
+<h3>Categorical Y | Categorical X</h3>
+<div id="data-summaries-7" class="section level4">
+<h4>Data Summaries</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<h5 id="numerical-7">Numerical</h5>
+<h5 id="graphics-7">Graphics</h5>
+<p><a href="GraphicalSummaries.html#bar-charts"> <img class="myhover" src="Images/barplot.png" alt="Bar Chart" title="Bar Chart"> </a></p>
+<!--- End of Add content area.  ------------------>
+</div>
+</div>
+<div id="tests-7" class="section level4">
+<h4>Tests</h4>
+<div style="padding-left:125px;color:gray;">
+<!-- Add your customizations in the area below: -->
+<ul>
+<li>Chi-squared Test of Independence
+<ul>
+<li><code>chisq.test(x)</code></li>
+<li><code>chisq.test(table(Dataset$variable, Dataset$variable))</code></li>
+</ul></li>
+<li>Nonparametric Chi-squared Test <code>chisq.test(x, simulate.p.value=TRUE)</code></li>
+</ul>
+<!--- End of Add content area.  ------------------>
+</div>
+<!-- # -->
+<div style="clear:both;">
+
+</div>
+<!-- ---- -->
+</div>
+</div>
+</div>
+<div id="making-inferences" class="section level2 tabset tabset-pills">
+<h2>Making Inferences</h2>
 <!-- This is a great place to add general notes --------------- -->
 <p><strong>This comes from the <a href="./MakingInference.html"><em>Making Inference</em></a> page of this book</strong></p>
 <p>It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.</p>
-<div id="hypothesis-testing" class="section level4">
-<h4>Hypothesis Testing</h4>
+<div id="hypothesis-testing" class="section level3">
+<h3>Hypothesis Testing</h3>
 <p>One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).</p>
 </div>
-<div id="managing-decision-errors" class="section level4">
-<h4>Managing Decision Errors</h4>
+<div id="managing-decision-errors" class="section level3">
+<h3>Managing Decision Errors</h3>
 <p>When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.</p>
 <ul>
 <li>Type I Error (Significance Level, Confidence and α)
@@ -409,19 +758,19 @@ $(document).ready(function () {
 <li>The typical value of β often unknown</li>
 </ul></li>
 </ul>
-<div id="sufficient-evidence" class="section level5">
-<h5>Sufficient Evidence</h5>
+<div id="sufficient-evidence" class="section level4">
+<h4>Sufficient Evidence</h4>
 <p>Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.</p>
 <p>There are many statistical approaches to this problem of measuring the significance of evidence, but in almost all cases, the final measurement of evidence is given by the p-value of the hypothesis test. The p-value of a test is defined as the probability of the evidence being as extreme or more extreme than what was observed assuming the null hypothesis is true. This is an interesting phrase that is at first difficult to understand.</p>
 <p>The “as extreme or more extreme” part of the definition of the p-value comes from the idea that the null hypothesis will be rejected when the evidence in the data is extremely inconsistent with the null hypothesis. If the data is not extremely different from what we would expect under the null hypothesis, then we will continue to believe the null hypothesis. Although, it is worth emphasizing that this does not prove the null hypothesis to be true.</p>
 </div>
-<div id="evidence-not-proof" class="section level5">
-<h5>Evidence not Proof</h5>
+<div id="evidence-not-proof" class="section level4">
+<h4>Evidence not Proof</h4>
 <p>Hypothesis testing allows us a formal way to decide if we should “conclude the alternative” or “continue to accept the null.” It is important to remember that statistics (and science) cannot prove anything, just show evidence towards. Thus we never really prove a hypothesis is true, we simply show evidence towards or against a hypothesis.</p>
 </div>
 </div>
-<div id="calculating-the-p-value" class="section level4">
-<h4>Calculating the p-Value</h4>
+<div id="calculating-the-p-value" class="section level3">
+<h3>Calculating the p-Value</h3>
 <p>Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true.</p>
 <p>A p-value can be calculated whenever we have two things.</p>
 <ul>
@@ -431,8 +780,8 @@ $(document).ready(function () {
 <p>A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.</p>
 <p>All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.</p>
 </div>
-<div id="parametric-methods" class="section level4">
-<h4>Parametric Methods</h4>
+<div id="parametric-methods" class="section level3">
+<h3>Parametric Methods</h3>
 <p>Parametric methods assume that, under the null hypothesis, the test statistic follows a specific theoretical parametric distribution. Parametric methods are typically more statistically powerful than nonparametric methods, but necessarily force more assumptions on the data.</p>
 <p>Parametric distributions are theoretical distributions that can be described by a mathematical function. There are many theoretical distributions.</p>
 <p>Four of the most widely used parametric distributions are:</p>
@@ -456,8 +805,8 @@ $(document).ready(function () {
 <li>It is the ratio of two chi squared random variables that are each divided by their respective degrees of freedom</li>
 </ul></li>
 </ul>
-<div id="parametric-tests" class="section level5">
-<h5>Parametric Tests</h5>
+<div id="parametric-tests" class="section level4">
+<h4>Parametric Tests</h4>
 <ul>
 <li><a href="./tTests.html">t Tests</a></li>
 <li><a href="./ANOVA.html">ANOVA Tests</a></li>
@@ -465,376 +814,25 @@ $(document).ready(function () {
 </ul>
 </div>
 </div>
-<div id="nonparametric-methods" class="section level4">
-<h4>Nonparametric Methods</h4>
+<div id="nonparametric-methods" class="section level3">
+<h3>Nonparametric Methods</h3>
 <p>Nonparametric methods place minimal assumptions on the distribution of data. They allow the data to “speak for itself.” They are typically less powerful than the parametric alternatives, but are more broadly applicable because fewer assumptions need to be satisfied.</p>
-<div id="nonparametric-tests" class="section level5">
-<h5>Nonparametric Tests</h5>
+<div id="nonparametric-tests" class="section level4">
+<h4>Nonparametric Tests</h4>
 <ul>
 <li><a href="./WilcoxonTests.html">Wilcoxon Tests</a></li>
 <li><a href="./Kruskal.html">Kruskal-Wallis Tests</a></li>
 <li><a href="./PermutationTests.html">Permutation Tests</a></li>
 </ul>
 <!-- End your notes before here. ------------------------------------- -->
-</div>
-</div>
-</div>
-</div>
-<div id="section-1" class="section level2">
-<h2></h2>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QuantY.png" width=35px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like “heights” of BYU-Idaho students.</span></p>
-</div>
-</div>
-<div id="one-quantitative-response-variable-y" class="section level2 tabset tabset-pills">
-<h2>One Quantitative Response Variable Y</h2>
-<div id="data-summaries" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical">Numerical</h4>
-<!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
-<ul>
-<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
-<li>Median - Middle Data Point - <code>median(object)</code></li>
-<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code></li>
-<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
-</ul>
-<p><br/></p>
-<p>— <em>Use <code>summary(object)</code></em></p>
-<ul>
-<li>Gives the five number summary
-<ul>
-<li>Min</li>
-<li>1st Quartile</li>
-<li>Median</li>
-<li>Mean</li>
-<li>3rd Quartile</li>
-<li>Max</li>
-</ul></li>
-</ul>
-<h4 id="graphics">Graphics</h4>
-<p><a href="GraphicalSummaries.html#histogram"> <img class="myhover" src="Images/histogram.png" alt="Histogram" title="Histogram"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotsingle.png" alt="Dot Plot" title="Dot Plot"> </a> <a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotsingle.png" alt="Boxplot" title="Boxplot"> </a></p>
-<!--- End your notes before here.  ------------------>
-</div>
-</div>
-<div id="tests" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
-<ul>
-<li>T-tests
-<ul>
-<li>One Sample <code>t.test(NameOfYourData$Y, mu = YourNull, alternative = YourAlternative, conf.level = 0.95</code></li>
-<li>Paired Sample <code>t.test(NameOfYourData$Y1, NameOfYourData$Y2, paired = TRUE, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
-</ul></li>
-<li>Wilcoxon Tests
-<ul>
-<li>Signed-Rank <code>wilcox.test(object1, object2, mu = YourNull, alternative = YourAlternative, paired = TRUE, conf.level = 0.95)</code></li>
-</ul></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-<div id="section-2" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QuantYQualXg2.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like “heights” of BYU-Idaho students. X is a qualitative (categorical) variable of interest like “gender” that has just two groups “A” and “B”. So this logo represents situtations where we would want to compare heights of male (group A) and female (group B) students.</span></p>
-</div>
-<div id="quantitative-y-categorical-x-2-groups" class="section level2 tabset tabset-pills">
-<h2>Quantitative Y | Categorical X (2 Groups)</h2>
-<div id="data-summaries-1" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-1">Numerical</h4>
-<ul>
-<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
-<li>Median - Middle Data Point - <code>median(object)</code></li>
-<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
-<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
-<li>n - Sample size - <code>n()</code></li>
-</ul>
-<p><br/></p>
-<p>— <em>Use group_by(columnGroupsName)</em></p>
-<ul>
-<li>columnGroupsName = Categorical X</li>
-<li>Function from tidyverse package</li>
-<li>Normal used with the summarise or mutate
-<ul>
-<li>Qualitative in Group By</li>
-<li>Quantitative in Summarize</li>
-</ul></li>
-</ul>
-<h4 id="graphics-1">Graphics</h4>
-<p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplot.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplotdouble.png" alt="Dot Plot" title="Side-by-side Dot Plots"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-1" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
-<ul>
-<li>T-tests
-<ul>
-<li>Independent <code>t.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
-</ul></li>
-<li>Wilcoxon
-<ul>
-<li>Rank Sum (Mann-Whitney) <code>wilcox.test(Y ~ X, data = YourData, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)</code></li>
-</ul></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-<div id="section-3" class="section level2">
-<h2></h2>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QuantYQualXg3plus.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like “heights” of BYU-Idaho students. X is a categorical (qualitative) variable like which Math 221 you took, 221A, 221B, or 221C. In other words, X has three or more groups. So “Classrank” could be X, with groups “Freshman”, “Sophomore”, “Junior”, and “Senior”.</span></p>
-</div>
-</div>
-<div id="quantitative-y-categorical-x-3-groups" class="section level2 tabset tabset-pills">
-<h2>Quantitative Y | Categorical X (3+ Groups)</h2>
-<div id="data-summaries-2" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-2">Numerical</h4>
-<ul>
-<li>Minimum - Smallest occurring data value - <code>min(object)</code></li>
-<li>Maximum - Largest occurring data value - <code>max(object)</code></li>
-<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
-<li>Median - Middle Data Point - <code>median(object)</code></li>
-<li>Quartiles (five-number summary) - Spread of Data - <code>quantile(object, percentile)</code> or <code>summary(object)</code></li>
-<li>Standard Deviation - Measures how spread out the data are from the mean - <code>sd(object)</code></li>
-<li>n - Sample size - <code>n()</code></li>
-</ul>
-<p><br/></p>
-<p>— <em>Use <code>favstats(x ~ g, data=YourDataSet)</code></em></p>
-<ul>
-<li>x is a numeric vector of data values that represents the quantatitive response variable.</li>
-<li>g is a qualitative grouping variable defining which groups each value in x belongs to.</li>
-<li>YourDataSet is the name of your data set.</li>
-</ul>
-<h4 id="graphics-2">Graphics</h4>
-<p><a href="GraphicalSummaries.html#boxplots"> <img class="myhover" src="Images/boxplotthree.png" alt="Side-by-side Boxplots" title="Side-by-side Boxplots 3+ Groups"> </a> <a href="GraphicalSummaries.html#dot-plots"> <img class="myhover" src="Images/dotplottriple.png" alt="Side-by-side Dot Plots" title="Side-by-side Dot Plots 3+ Groups"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-2" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>ANOVA
-<ul>
-<li>One-way <code>aov(y ~ A, data=YourDataSet)</code></li>
-<li>Two-way <code>aov(y ~ A+B+A:B, data=YourDataSet)</code></li>
-<li>Block Design <code>aov(y ~ Block+A+B+A:B, data=YourDataSet)</code></li>
-</ul></li>
-<li>Kruskal-Wallis
-<ul>
-<li>Rank Sum <code>kruskal.test(x ~ g, data=YourDataSet)</code></li>
-</ul></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-4" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QuantYQuantX.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like “height”. X is another single quantitative variable of interest, like “shoe-size”. This would imply we are using “shoe-size” (X) to explain “height” (Y).</span></p>
-</div>
-<div id="quantitative-y-quantitative-x" class="section level2 tabset tabset-pills">
-<h2>Quantitative Y | Quantitative X</h2>
-<div id="data-summaries-3" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-3">Numerical</h4>
-<h4 id="graphics-3">Graphics</h4>
-<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplot.png" alt="Scatterplot" title="Scatterplot"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-3" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>Simple Linear Regression <code>lm(Y ~ X, data = YourDataSet)</code></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-5" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QuantYMultX.png" width=100px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest, like height. While we could use an X1 of “shoe-size” to explain height, we might also want to use a second x-variable, X2, like “gender” to help explain height. Further x-variables could also be used.</span></p>
-</div>
-<div id="quantitative-y-multiple-x" class="section level2 tabset tabset-pills">
-<h2>Quantitative Y | Multiple X</h2>
-<div id="data-summaries-4" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-4">Numerical</h4>
-<h4 id="graphics-4">Graphics</h4>
-<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotmany.png" alt="Scatterplot" title="Scatterplot with Color and Sizing"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-4" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>Multiple Linear Regression <code>lm(Y ~ X1 + X2 + X1:X2 + ..., data = YourDataSet)</code></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-6" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/BinomYQuantX.png" width=59px;> <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like “getting an A in Math 325” where 1 means you got an A and 0 means you didn’t. We might use an explanatory variable X of “height” to see if taller students are more likely to get an A in Math 325 than shorter students. (They aren’t, if you were wondering.)</span></p>
-</div>
-<div id="binomial-y-quantitative-x" class="section level2 tabset tabset-pills">
-<h2>Binomial Y | Quantitative X</h2>
-<div id="data-summaries-5" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-5">Numerical</h4>
-<h4 id="graphics-5">Graphics</h4>
-<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomY.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-5" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>Simple Logistic Regression Model <code>glm(Y ~ X, data = YourDataSet, family = binomial)</code></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-7" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/BinomYMultX.png" width=100px;> <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like “getting an A in Math 325” where 1 means you got an A and 0 means you didn’t. We might use an explanatory variable X1 of “height” and a second explanatory variable X2 of “gender” to try to predict whether or not a student will get an A in Math 325.</span></p>
-</div>
-<div id="binomial-y-multiple-x" class="section level2 tabset tabset-pills">
-<h2>Binomial Y | Multiple X</h2>
-<div id="data-summaries-6" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-6">Numerical</h4>
-<h4 id="graphics-6">Graphics</h4>
-<p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomYmult.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y, including coloring and shading"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-6" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>Mutiple Logistic Regression Model <code>glm(Y ~ X1 * X2 * ... , data = YourDataSet, family = binomial)</code></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-8" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
-<hr />
-<div class="tooltipimage" style="float:left;width:125px;" align="center">
-<p><img src="Images/QualYQualX.png" width=59px;> <span class="tooltipimagetext">Y is a single categorical variable of interest, like gender. X is another categorical variable of interest, like “hair color”. This type of data would help us understand if men or women are more likely to have certain hair colors than the other gender.</span></p>
-</div>
-<div id="categorical-y-categorical-x" class="section level2 tabset tabset-pills">
-<h2>Categorical Y | Categorical X</h2>
-<div id="data-summaries-7" class="section level3">
-<h3>Data Summaries</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<h4 id="numerical-7">Numerical</h4>
-<h4 id="graphics-7">Graphics</h4>
-<p><a href="GraphicalSummaries.html#bar-charts"> <img class="myhover" src="Images/barplot.png" alt="Bar Chart" title="Bar Chart"> </a></p>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-<div id="tests-7" class="section level3">
-<h3>Tests</h3>
-<div style="padding-left:125px;color:gray;">
-<!-- Add your customizations in the area below: -->
-<ul>
-<li>Chi-squared Test of Independence
-<ul>
-<li><code>chisq.test(x)</code></li>
-<li><code>chisq.test(table(Dataset$variable, Dataset$variable))</code></li>
-</ul></li>
-<li>Nonparametric Chi-squared Test <code>chisq.test(x, simulate.p.value=TRUE)</code></li>
-</ul>
-<!--- End of Add content area.  ------------------>
-</div>
-</div>
-</div>
-</div>
-<div id="section-9" class="section level1">
-<h1></h1>
-<div style="clear:both;">
-
-</div>
+<!-- ## -->
 <hr />
 <footer>
     “Education is not the learning of facts it’s rather the training of the mind to think” — Albert Eistein
 </footer>
+</div>
+</div>
+</div>
 </div>
 
 

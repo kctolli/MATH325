@@ -22,112 +22,24 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 <!-- This is how to comment text out. You can comment out the above instructions if you wish. Comments allow the text to remain in the Rmd file, but not be displayed in the html file. -->
 
-## {.tabset .tabset-fade}
+# {.tabset .tabset-fade}
 
-### Hide 
+<!-- ### Hide  -->
 
-### Show Notes {.tabset .tabset-fade}
-
-<!-- This is a great place to add general notes --------------- -->
-
-**This comes from the [*Making Inference*](./MakingInference.html) page of this book**
-
-It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.
-
-#### Hypothesis Testing
-
-One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).
-
-#### Managing Decision Errors
-
-When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.
-
-* Type I Error (Significance Level, Confidence and α)
-  - Defined as rejecting the null hypothesis when it is actually true
-  - A hypothesis test controls the probability of a Type I Error
-  - The typical value of α is 0.05
-  - Defined as 1−α or the opposite of a Type I error
-* Type II Errors (β, and Power)
-  - Defined as failing to reject the null hypothesis when it is actually false
-  - The typical value of β often unknown
-
-##### Sufficient Evidence
-
-Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.
-
-There are many statistical approaches to this problem of measuring the significance of evidence, but in almost all cases, the final measurement of evidence is given by the p-value of the hypothesis test. The p-value of a test is defined as the probability of the evidence being as extreme or more extreme than what was observed assuming the null hypothesis is true. This is an interesting phrase that is at first difficult to understand.
-
-The “as extreme or more extreme” part of the definition of the p-value comes from the idea that the null hypothesis will be rejected when the evidence in the data is extremely inconsistent with the null hypothesis. If the data is not extremely different from what we would expect under the null hypothesis, then we will continue to believe the null hypothesis. Although, it is worth emphasizing that this does not prove the null hypothesis to be true.
-
-##### Evidence not Proof
-
-Hypothesis testing allows us a formal way to decide if we should “conclude the alternative” or “continue to accept the null.” It is important to remember that statistics (and science) cannot prove anything, just show evidence towards. Thus we never really prove a hypothesis is true, we simply show evidence towards or against a hypothesis.
-
-#### Calculating the p-Value
-
-Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true. 
-
-A p-value can be calculated whenever we have two things.
-
-* A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
-* The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
-
-A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.
-
-All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.
-
-#### Parametric Methods
-
-Parametric methods assume that, under the null hypothesis, the test statistic follows a specific theoretical parametric distribution. Parametric methods are typically more statistically powerful than nonparametric methods, but necessarily force more assumptions on the data.
-
-Parametric distributions are theoretical distributions that can be described by a mathematical function. There are many theoretical distributions. 
-
-Four of the most widely used parametric distributions are:
-
-* Normal Distribution 
-  - It is a theoretical distribution that approximates the distributions of many real life data distributions
-* Chi Squared Distribution 
-  - It only allows for values that are greater than or equal to zero
-  - It has a few real life applications, by far its greatest use is theoretical
-* t Distribution
-  - A close friend of the normal distribution
-  - It is used extensively in hypothesis testing
-* F Distribution  
-  - It is the ratio of two chi squared random variables that are each divided by their respective degrees of freedom
-  
-##### Parametric Tests
-
-* [t Tests](./tTests.html)
-* [ANOVA Tests](./ANOVA.html)
-* [Chi-squared Tests](./ChiSquaredTests.html)
-
-#### Nonparametric Methods
-
-Nonparametric methods place minimal assumptions on the distribution of data. They allow the data to “speak for itself.” They are typically less powerful than the parametric alternatives, but are more broadly applicable because fewer assumptions need to be satisfied. 
-
-##### Nonparametric Tests
-
-* [Wilcoxon Tests](./WilcoxonTests.html)
-* [Kruskal-Wallis Tests](./Kruskal.html)
-* [Permutation Tests](./PermutationTests.html)
-
-<!-- End your notes before here. ------------------------------------- -->
-##
-
-----
+## Response Variables
 
 <div style="float:left;width:125px;" align=center class="tooltipimage">
 <img src="./Images/QuantY.png" width=35px;>
   <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like "heights" of BYU-Idaho students.</span>
 </div>
 
-## One Quantitative Response Variable Y {.tabset .tabset-pills}
+### One Quantitative Response Variable Y {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-#### Numerical 
+##### Numerical 
 
 <!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
 
@@ -148,7 +60,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
     + 3rd Quartile
     + Max
 
-#### Graphics
+##### Graphics
 
 <a href="GraphicalSummaries.html#histogram">
   <img class="myhover" src="./Images/histogram.png" alt="Histogram" title="Histogram">
@@ -165,7 +77,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End your notes before here.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -184,24 +96,24 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
-----
+<!-- ---- -->
 
 <div style="float:left;width:125px;" align=center class="tooltipimage">
 <img src="./Images/QuantYQualXg2.png" width=59px;>
   <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like "heights" of BYU-Idaho students. X is a qualitative (categorical) variable of interest like "gender" that has just two groups "A" and "B". So this logo represents situtations where we would want to compare heights of male (group A) and female (group B) students.</span>
 </div>
 
-## Quantitative Y | Categorical X (2 Groups) {.tabset .tabset-pills}
+### Quantitative Y | Categorical X (2 Groups) {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 
-#### Numerical 
+##### Numerical 
 
 * Mean (average) - Center of Mass - `mean(object)`
 * Median - Middle Data Point - `median(object)`
@@ -219,7 +131,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
     + Qualitative in Group By
     + Quantitative in Summarize
     
-#### Graphics
+##### Graphics
 
 
 <a href="GraphicalSummaries.html#boxplots">
@@ -234,7 +146,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -250,7 +162,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-##
+###
 <div style="clear:both;"></div>
 
 ----
@@ -260,13 +172,13 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single quantitative variable of interest, like "heights" of BYU-Idaho students. X is a categorical (qualitative) variable like which Math 221 you took, 221A, 221B, or 221C. In other words, X has three or more groups. So "Classrank" could be X, with groups "Freshman", "Sophomore", "Junior", and "Senior".</span>
 </div>
 
-## Quantitative Y | Categorical X (3+ Groups) {.tabset .tabset-pills}
+### Quantitative Y | Categorical X (3+ Groups) {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
-#### Numerical 
+##### Numerical 
 
 * Minimum - Smallest occurring data value - `min(object)`
 * Maximum - Largest occurring data value - `max(object)`
@@ -284,7 +196,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   - g is a qualitative grouping variable defining which groups each value in x belongs to. 
   - YourDataSet is the name of your data set.
 
-#### Graphics
+##### Graphics
 
 
 
@@ -298,7 +210,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -315,7 +227,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
 ----
@@ -325,19 +237,19 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single quantitative variable of interest, like "height". X is another single quantitative variable of interest, like "shoe-size". This would imply we are using "shoe-size" (X) to explain "height" (Y).</span>
 </div>
 
-## Quantitative Y | Quantitative X {.tabset .tabset-pills}
+### Quantitative Y | Quantitative X {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
 
 
-#### Numerical 
+##### Numerical 
 
 
 
-#### Graphics
+##### Graphics
 
 
 
@@ -351,7 +263,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -364,7 +276,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
 ----
@@ -374,9 +286,9 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single quantitative variable of interest, like height. While we could use an X1 of "shoe-size" to explain height, we might also want to use a second x-variable, X2, like "gender" to help explain height. Further x-variables could also be used.</span>
 </div>
 
-## Quantitative Y | Multiple X {.tabset .tabset-pills}
+### Quantitative Y | Multiple X {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -384,11 +296,11 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 
 
 
-#### Numerical 
+##### Numerical 
 
 
 
-#### Graphics
+##### Graphics
 
 
 
@@ -401,7 +313,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -414,7 +326,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
 ----
@@ -424,20 +336,20 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like "getting an A in Math 325" where 1 means you got an A and 0 means you didn't. We might use an explanatory variable X of "height" to see if taller students are more likely to get an A in Math 325 than shorter students. (They aren't, if you were wondering.)</span>
 </div>
 
-## Binomial Y | Quantitative X {.tabset .tabset-pills}
+### Binomial Y | Quantitative X {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
-#### Numerical 
+##### Numerical 
 
 
 
 
-#### Graphics
+##### Graphics
 
 
 
@@ -450,7 +362,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -464,7 +376,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
 ----
@@ -474,19 +386,19 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single categorical (qualitative) variable of interest where 1 (success) or 0 (failure) are the only possible values for Y. This would be like "getting an A in Math 325" where 1 means you got an A and 0 means you didn't. We might use an explanatory variable X1 of "height" and a second explanatory variable X2 of "gender" to try to predict whether or not a student will get an A in Math 325.</span>
 </div>
 
-## Binomial Y | Multiple X {.tabset .tabset-pills}
+### Binomial Y | Multiple X {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
-#### Numerical 
+##### Numerical 
 
 
 
-#### Graphics
+##### Graphics
 
 
 
@@ -499,7 +411,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -513,7 +425,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+###
 <div style="clear:both;"></div>
 
 ----
@@ -523,19 +435,19 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipimagetext">Y is a single categorical variable of interest, like gender. X is another categorical variable of interest, like "hair color". This type of data would help us understand if men or women are more likely to have certain hair colors than the other gender.</span>
 </div>
 
-## Categorical Y | Categorical X {.tabset .tabset-pills}
+### Categorical Y | Categorical X {.tabset .tabset-pills}
 
-### Data Summaries
+#### Data Summaries
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
  
 
-#### Numerical 
+##### Numerical 
 
 
 
-#### Graphics
+##### Graphics
 
 
 
@@ -547,7 +459,7 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-### Tests
+#### Tests
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 
@@ -561,8 +473,98 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
 <!--- End of Add content area.  ------------------>
 </div>
 
-#
+<!-- # -->
 <div style="clear:both;"></div>
+
+<!-- ---- -->
+
+## Making Inferences {.tabset .tabset-pills}
+
+<!-- This is a great place to add general notes --------------- -->
+
+**This comes from the [*Making Inference*](./MakingInference.html) page of this book**
+
+It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.
+
+### Hypothesis Testing
+
+One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).
+
+### Managing Decision Errors
+
+When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.
+
+* Type I Error (Significance Level, Confidence and α)
+  - Defined as rejecting the null hypothesis when it is actually true
+  - A hypothesis test controls the probability of a Type I Error
+  - The typical value of α is 0.05
+  - Defined as 1−α or the opposite of a Type I error
+* Type II Errors (β, and Power)
+  - Defined as failing to reject the null hypothesis when it is actually false
+  - The typical value of β often unknown
+
+#### Sufficient Evidence
+
+Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.
+
+There are many statistical approaches to this problem of measuring the significance of evidence, but in almost all cases, the final measurement of evidence is given by the p-value of the hypothesis test. The p-value of a test is defined as the probability of the evidence being as extreme or more extreme than what was observed assuming the null hypothesis is true. This is an interesting phrase that is at first difficult to understand.
+
+The “as extreme or more extreme” part of the definition of the p-value comes from the idea that the null hypothesis will be rejected when the evidence in the data is extremely inconsistent with the null hypothesis. If the data is not extremely different from what we would expect under the null hypothesis, then we will continue to believe the null hypothesis. Although, it is worth emphasizing that this does not prove the null hypothesis to be true.
+
+#### Evidence not Proof
+
+Hypothesis testing allows us a formal way to decide if we should “conclude the alternative” or “continue to accept the null.” It is important to remember that statistics (and science) cannot prove anything, just show evidence towards. Thus we never really prove a hypothesis is true, we simply show evidence towards or against a hypothesis.
+
+### Calculating the p-Value
+
+Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true. 
+
+A p-value can be calculated whenever we have two things.
+
+* A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
+* The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
+
+A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.
+
+All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.
+
+### Parametric Methods
+
+Parametric methods assume that, under the null hypothesis, the test statistic follows a specific theoretical parametric distribution. Parametric methods are typically more statistically powerful than nonparametric methods, but necessarily force more assumptions on the data.
+
+Parametric distributions are theoretical distributions that can be described by a mathematical function. There are many theoretical distributions. 
+
+Four of the most widely used parametric distributions are:
+
+* Normal Distribution 
+  - It is a theoretical distribution that approximates the distributions of many real life data distributions
+* Chi Squared Distribution 
+  - It only allows for values that are greater than or equal to zero
+  - It has a few real life applications, by far its greatest use is theoretical
+* t Distribution
+  - A close friend of the normal distribution
+  - It is used extensively in hypothesis testing
+* F Distribution  
+  - It is the ratio of two chi squared random variables that are each divided by their respective degrees of freedom
+  
+#### Parametric Tests
+
+* [t Tests](./tTests.html)
+* [ANOVA Tests](./ANOVA.html)
+* [Chi-squared Tests](./ChiSquaredTests.html)
+
+### Nonparametric Methods
+
+Nonparametric methods place minimal assumptions on the distribution of data. They allow the data to “speak for itself.” They are typically less powerful than the parametric alternatives, but are more broadly applicable because fewer assumptions need to be satisfied. 
+
+#### Nonparametric Tests
+
+* [Wilcoxon Tests](./WilcoxonTests.html)
+* [Kruskal-Wallis Tests](./Kruskal.html)
+* [Permutation Tests](./PermutationTests.html)
+
+<!-- End your notes before here. ------------------------------------- -->
+<!-- ## -->
 
 ----
 
