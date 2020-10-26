@@ -99,7 +99,7 @@ This page, and all pages of this notebook, are meant to be customized to become 
 ###
 <div style="clear:both;"></div>
 
-<!-- ---- -->
+----
 
 <div style="float:left;width:125px;" align=center class="tooltipimage">
 <img src="./Images/QuantYQualXg2.png" width=59px;>
@@ -488,18 +488,31 @@ It is common to only have a sample of data from some population of interest. Usi
 
 ### Hypothesis Testing
 
-One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).
+One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or *null hypothesis* ($H_0$). Data is then collected and the evidence against the null hypothesis is measured, typically with the $p$-value. The $p$-value becomes small (gets close to zero) when the evidence is *extremely* different from what would be expected if the null hypothesis were true. When the $p$-value is below the *significance level* $\alpha$ (typically $\alpha=0.05$) the null hypothesis is abandoned (rejected) in favor of a competing *alternative hypothesis* ($H_a$). 
 
 ### Managing Decision Errors
 
 When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.
 
-* Type I Error (Significance Level, Confidence and α)
+<div style="padding-left:30px; padding-right:10%;">
+
+| &nbsp; | $H_0$ True | $H_0$ False |
+|--------|------------|-------------|
+| **Reject** $H_0$ | Type I Error | Correct Decision |
+| **Accept** $H_0$ | Correct Decision | Type II Error |
+
+</div>
+
+
+#### Type I Error (Significance Level, Confidence and α)
+
   - Defined as rejecting the null hypothesis when it is actually true
   - A hypothesis test controls the probability of a Type I Error
   - The typical value of α is 0.05
   - Defined as 1−α or the opposite of a Type I error
-* Type II Errors (β, and Power)
+
+#### Type II Errors (β, and Power)
+
   - Defined as failing to reject the null hypothesis when it is actually false
   - The typical value of β often unknown
 
@@ -519,10 +532,10 @@ Hypothesis testing allows us a formal way to decide if we should “conclude the
 
 Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true. 
 
-A p-value can be calculated whenever we have two things.
+**A p-value can be calculated whenever we have two things.**
 
-* A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.
-* The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true. 
+* **A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.**
+* **The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true.**
 
 A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.
 

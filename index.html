@@ -444,7 +444,7 @@ $(document).ready(function () {
 <div style="clear:both;">
 
 </div>
-<!-- ---- -->
+<hr />
 <div class="tooltipimage" style="float:left;width:125px;" align="center">
 <p><img src="Images/QuantYQualXg2.png" width=59px;> <span class="tooltipimagetext">Y is a single quantitative variable of interest. This would be like “heights” of BYU-Idaho students. X is a qualitative (categorical) variable of interest like “gender” that has just two groups “A” and “B”. So this logo represents situtations where we would want to compare heights of male (group A) and female (group B) students.</span></p>
 </div>
@@ -739,25 +739,50 @@ $(document).ready(function () {
 <p>It is common to only have a sample of data from some population of interest. Using the information from the sample to reach conclusions about the population is called making inference. When statistical inference is performed properly, the conclusions about the population are almost always correct.</p>
 <div id="hypothesis-testing" class="section level3">
 <h3>Hypothesis Testing</h3>
-<p>One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or null hypothesis (H0). Data is then collected and the evidence against the null hypothesis is measured, typically with the p-value. The p-value becomes small (gets close to zero) when the evidence is extremely different from what would be expected if the null hypothesis were true. When the p-value is below the significance level α (typically α=0.05) the null hypothesis is abandoned (rejected) in favor of a competing alternative hypothesis (Ha).</p>
+<p>One of the great focal points of statistics concerns hypothesis testing. Science generally agrees upon the principle that truth must be uncovered by the process of elimination. The process begins by establishing a starting assumption, or <em>null hypothesis</em> (<span class="math inline">\(H_0\)</span>). Data is then collected and the evidence against the null hypothesis is measured, typically with the <span class="math inline">\(p\)</span>-value. The <span class="math inline">\(p\)</span>-value becomes small (gets close to zero) when the evidence is <em>extremely</em> different from what would be expected if the null hypothesis were true. When the <span class="math inline">\(p\)</span>-value is below the <em>significance level</em> <span class="math inline">\(\alpha\)</span> (typically <span class="math inline">\(\alpha=0.05\)</span>) the null hypothesis is abandoned (rejected) in favor of a competing <em>alternative hypothesis</em> (<span class="math inline">\(H_a\)</span>).</p>
 </div>
 <div id="managing-decision-errors" class="section level3">
 <h3>Managing Decision Errors</h3>
 <p>When the p-value approaches zero, one of two things must be occurring. Either an extremely rare event has happened or the null hypothesis is incorrect. Since the second option, that the null hypothesis is incorrect, is the more plausible option, we reject the null hypothesis in favor of the alternative whenever the p-value is close to zero. It is important to remember that rejecting the null hypothesis could however be a mistake.</p>
-<ul>
-<li>Type I Error (Significance Level, Confidence and α)
+<div style="padding-left:30px; padding-right:10%;">
+<table>
+<thead>
+<tr class="header">
+<th> </th>
+<th><span class="math inline">\(H_0\)</span> True</th>
+<th><span class="math inline">\(H_0\)</span> False</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Reject</strong> <span class="math inline">\(H_0\)</span></td>
+<td>Type I Error</td>
+<td>Correct Decision</td>
+</tr>
+<tr class="even">
+<td><strong>Accept</strong> <span class="math inline">\(H_0\)</span></td>
+<td>Correct Decision</td>
+<td>Type II Error</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="type-i-error-significance-level-confidence-and-α" class="section level4">
+<h4>Type I Error (Significance Level, Confidence and α)</h4>
 <ul>
 <li>Defined as rejecting the null hypothesis when it is actually true</li>
 <li>A hypothesis test controls the probability of a Type I Error</li>
 <li>The typical value of α is 0.05</li>
 <li>Defined as 1−α or the opposite of a Type I error</li>
-</ul></li>
-<li>Type II Errors (β, and Power)
+</ul>
+</div>
+<div id="type-ii-errors-β-and-power" class="section level4">
+<h4>Type II Errors (β, and Power)</h4>
 <ul>
 <li>Defined as failing to reject the null hypothesis when it is actually false</li>
 <li>The typical value of β often unknown</li>
-</ul></li>
 </ul>
+</div>
 <div id="sufficient-evidence" class="section level4">
 <h4>Sufficient Evidence</h4>
 <p>Statistics comes in to play with hypothesis testing by defining the phrase “sufficient evidence.” When there is “sufficient evidence” in the data, the null hypothesis is rejected and the alternative hypothesis becomes the working hypothesis.</p>
@@ -772,10 +797,10 @@ $(document).ready(function () {
 <div id="calculating-the-p-value" class="section level3">
 <h3>Calculating the p-Value</h3>
 <p>Recall that the p-value measures how extremely the data (the evidence) differs from what is expected under the null hypothesis. Small p-values lead us to discard (reject) the null hypothesis.The P-value is the probability of obtaining a result (called a test statistic) at least as extreme as the one you calculated, assuming the null hypothesis is true.</p>
-<p>A p-value can be calculated whenever we have two things.</p>
+<p><strong>A p-value can be calculated whenever we have two things.</strong></p>
 <ul>
-<li>A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.</li>
-<li>The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true.</li>
+<li><strong>A test statistic, which is a way of measuring how “far” the observed data is from what is expected under the null hypothesis.</strong></li>
+<li><strong>The sampling distribution of the test statistic, which is the theoretical distribution of the test statistic over all possible samples, assuming the null hypothesis was true.</strong></li>
 </ul>
 <p>A distribution describes how data is spread out. When we know the shape of a distribution, we know which values are possible, but more importantly which values are most plausible (likely) and which are the least plausible (unlikely). The p-value uses the sampling distribution of the test statistic to measure the probability of the observed test statistic being as extreme or more extreme than the one observed.</p>
 <p>All p-value computation methods can be classified into two broad categories, parametric methods and nonparametric methods.</p>
