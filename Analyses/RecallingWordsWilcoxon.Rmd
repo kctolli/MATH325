@@ -132,10 +132,8 @@ The graph shows us that the recall rate is higher with before method then meshed
 ```{r tests, message=FALSE, warning=FALSE}
 wilcox.test(correct ~ condition, data = friendly, mu = 0, alternative = "greater", paired = TRUE, conf.level = 0.95) %>% 
     pander()
-t.test(correct ~ condition, data = friendly, mu = 0, alternative = "greater", paired = TRUE, conf.level = 0.95) %>% 
-    pander()
 ```
 
-According to the Wilcoxon test my hypothesis was correct that using the meshed method is better compared to the before method. The t-test also proves the hypothesis, the t-test gives about the same result values as the Wilcoxon test.
+According to the Wilcoxon test my hypothesis was correct that using the meshed method is better compared to the before method. My P-value is 0.528 which is greater than the confidence interval which is .05. So We will fail to reject the null hypothesis.  
 
 We can conclude that meshed learning can be proven more useful compared to before learning. The Numerical and Graphical Summaries conclude that the methods are closely related that statistical tests have to determine the better learning method. 

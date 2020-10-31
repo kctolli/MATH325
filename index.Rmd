@@ -82,7 +82,7 @@ This page, and all pages of this notebook, are meant to be customized to become 
 <!-- Add your own notes about appropriate inferential procedures for this type of data here. -->
 
 * T-tests 
-  + One Sample `t.test(NameOfYourData$Y, mu = YourNull, alternative = YourAlternative, conf.level = 0.95`
+  + One Sample `t.test(NameOfYourData$Y, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
   + Paired Sample `t.test(NameOfYourData$Y1, NameOfYourData$Y2, paired = TRUE, mu = YourNull, alternative = YourAlternative, conf.level = 0.95)`
 * Wilcoxon Tests 
   + Signed-Rank `wilcox.test(object1, object2, mu = YourNull, alternative = YourAlternative, paired = TRUE, conf.level = 0.95)`

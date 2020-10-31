@@ -1620,23 +1620,19 @@ Note this dataset and description come from: © 2018 Kaggle Inc for further deta
 
 [Kaggle.com](https://www.kaggle.com/rtatman/chocolate-bar-ratings/data)
 
-
-If you want to give your critiquers some ideas about what you have questions on and would like help with, place those details here.-->
-<!-- **Comments to Critiquers:**  -->
-<!--End your comments to your critiquers before this line.-->
-<!-- ---- -->
-<!--Begin writing your Analysis after this point.-->
+-->
 <div id="background" class="section level2">
 <h2>Background</h2>
 <p>There are many different Chocolate bars in the dataset. I will be comparing how percent cocoa and rating is compared.</p>
 <p>In this data the each experimental unit is assigned to exactly one factor-level combination. Another way to say this is “one measurement per individual” (no repeated measures) and “equal numbers of individuals per group”.</p>
 <p>This test is done using Kruskal-Wallis and One-Way ANOVA. What percent Cocoa has the greatest rating?</p>
 <p><span class="math display">\[
-  H_0: \mu_\text{Rating} = \mu_\text{Cocao} = \mu
+  H_0: \mu_\text{Medium-Chocolate} = \mu_\text{Dark} = \mu_\text{Double-Dark} = \mu_\text{Extra-Dark} = \mu_\text{Super-Dark} = \mu 
 \]</span></p>
 <p><span class="math display">\[
-  H_a: \mu_\text{Rating} \neq \mu_\text{Cocao}
+  H_a: \mu_\text{i} \neq \mu_\text{for at least one group}
 \]</span></p>
+<p>A significance level of <span class="math inline">\(\alpha = 0.05\)</span> will be used for this study.</p>
 </div>
 <div id="data-analysis" class="section level2 tabset tabset-fade">
 <h2>Data Analysis</h2>
@@ -21578,10 +21574,7 @@ plot(myaov, which=1:2)</code></pre>
 <li>Extra-Dark</li>
 <li>Super-Dark</li>
 </ul>
-<p>Over all the Double Dark is the highest rating. We learn from the Kruskal-Wallis that the P-value is 1.462e-18 with 4 degrees of freedom. The P-value represents the probability of H, assuming the null hypothesis is true. The P-value is super small so we have insuffent evidence to conclude the distribution groups.</p>
-<!-- ```{r} -->
-<!-- hist(choc$Rating, breaks=15, col='sandybrown', xlab="Rating of Chocolate", main="Chocolate Rating") -->
-<!-- ``` -->
+<p>Over all the Double Dark is the highest rating. We learn from the Kruskal-Wallis that the P-value is 1.462e-18 with 4 degrees of freedom. The P-value is less than the confidence interval so we will reject the null hypothesis.</p>
 </div>
 
 

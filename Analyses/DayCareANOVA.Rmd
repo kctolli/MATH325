@@ -156,15 +156,6 @@ pander(Late)
 
 ```{r message=FALSE, warning=FALSE}
 StatsLate <- favstats(NumberofLateChildren ~ Week, data = Late)
-    # group_by(Week) %>% 
-    # summarise(min = min(NumberofLateChildren),
-    #           avg = mean(NumberofLateChildren),
-    #           med = median(NumberofLateChildren),
-    #           max = max(NumberofLateChildren),
-    #           sd = sd(NumberofLateChildren), 
-    #           var = var(NumberofLateChildren)) 
-
-
 
 pander(StatsLate[,-10])
 ```

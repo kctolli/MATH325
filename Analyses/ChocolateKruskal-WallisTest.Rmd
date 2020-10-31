@@ -58,17 +58,7 @@ Note this dataset and description come from: © 2018 Kaggle Inc for further deta
 
 [Kaggle.com](https://www.kaggle.com/rtatman/chocolate-bar-ratings/data)
 
-
-If you want to give your critiquers some ideas about what you have questions on and would like help with, place those details here.-->
-<!-- **Comments to Critiquers:**  -->
-
-
-
-<!--End your comments to your critiquers before this line.-->
-
-<!-- ---- -->
-
-<!--Begin writing your Analysis after this point.-->
+-->
 
 ## Background 
 
@@ -78,15 +68,15 @@ In this data the each experimental unit is assigned to exactly one factor-level 
 
 This test is done using Kruskal-Wallis and One-Way ANOVA. What percent Cocoa has the greatest rating? 
 
-
 $$
-  H_0: \mu_\text{Rating} = \mu_\text{Cocao} = \mu
-$$
-
-$$
-  H_a: \mu_\text{Rating} \neq \mu_\text{Cocao}
+  H_0: \mu_\text{Medium-Chocolate} = \mu_\text{Dark} = \mu_\text{Double-Dark} = \mu_\text{Extra-Dark} = \mu_\text{Super-Dark} = \mu 
 $$
 
+$$
+  H_a: \mu_\text{i} \neq \mu_\text{for at least one group}
+$$
+
+A significance level of $\alpha = 0.05$ will be used for this study.
 
 ## Data Analysis {.tabset .tabset-fade}
 
@@ -145,10 +135,4 @@ Percent Cocoa is broken into
 * Extra-Dark
 * Super-Dark
 
-Over all the Double Dark is the highest rating. We learn from the Kruskal-Wallis that the P-value is 1.462e-18 with 4 degrees of freedom. The P-value represents the probability of H, assuming the null hypothesis is true. The P-value is super small so we have insuffent evidence to conclude the distribution groups. 
-
-
-
-<!-- ```{r} -->
-<!-- hist(choc$Rating, breaks=15, col='sandybrown', xlab="Rating of Chocolate", main="Chocolate Rating") -->
-<!-- ``` -->
+Over all the Double Dark is the highest rating. We learn from the Kruskal-Wallis that the P-value is 1.462e-18 with 4 degrees of freedom. The P-value is less than the confidence interval so we will reject the null hypothesis.  
