@@ -20,7 +20,6 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -573,6 +572,10 @@ $(document).ready(function () {
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 <h5 id="numerical-3">Numerical</h5>
+<ul>
+<li>Correlation - the strength and direction of the association - <code>cor(object1,object2)</code></li>
+<li>Mean (average) - Center of Mass - <code>mean(object)</code></li>
+</ul>
 <h5 id="graphics-3">Graphics</h5>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplot.png" alt="Scatterplot" title="Scatterplot"> </a></p>
 <!--- End of Add content area.  ------------------>
@@ -833,8 +836,19 @@ $(document).ready(function () {
 <div id="parametric-tests" class="section level4">
 <h4>Parametric Tests</h4>
 <ul>
-<li><a href="./tTests.html">t Tests</a></li>
-<li><a href="./ANOVA.html">ANOVA Tests</a></li>
+<li><a href="./tTests.html">t Tests</a>
+<ul>
+<li><a href="./Analyses/HighSchoolSeniorstTest.html">High School Seniors</a></li>
+</ul></li>
+<li><a href="./ANOVA.html">ANOVA Tests</a>
+<ul>
+<li><a href="./Analyses/DayCareANOVA.html">Day Care</a></li>
+</ul></li>
+<li><a href="./LinearRegression.html">Linear Regression</a>
+<ul>
+<li><a href="./Analyses/MySimpleLinearRegression.html">Simple Linear Regression</a></li>
+<li><a href="./Analyses/CarPricesLR.html">Car Prices</a></li>
+</ul></li>
 <li><a href="./ChiSquaredTests.html">Chi-squared Tests</a></li>
 </ul>
 </div>
@@ -845,8 +859,14 @@ $(document).ready(function () {
 <div id="nonparametric-tests" class="section level4">
 <h4>Nonparametric Tests</h4>
 <ul>
-<li><a href="./WilcoxonTests.html">Wilcoxon Tests</a></li>
-<li><a href="./Kruskal.html">Kruskal-Wallis Tests</a></li>
+<li><a href="./WilcoxonTests.html">Wilcoxon Tests</a>
+<ul>
+<li><a href="./Analyses/RecallingWordsWilcoxon.html">Recalling Words</a></li>
+</ul></li>
+<li><a href="./Kruskal.html">Kruskal-Wallis Tests</a>
+<ul>
+<li><a href="./Analyses/ChocolateKruskal-WallisTest.html">Chocolate</a></li>
+</ul></li>
 <li><a href="./PermutationTests.html">Permutation Tests</a></li>
 </ul>
 <!-- End your notes before here. ------------------------------------- -->

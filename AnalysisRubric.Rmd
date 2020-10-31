@@ -102,19 +102,10 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 
 <br/> <br /> <hr />
 
-## Data 
+## Data {.tabset .tabset-fade}
 
-<div style="padding-left:15px;">
 
-<span class="tooltipr">
-<a href="javascript:showhide('hovertobegin')">Click Here</a>
-  <span class="tooltipRtext">To see Data Sets and Sources </span>
-</span>
-<div id="hovertobegin" style="display:none;padding-left:20px;">
-
-<br/>
-
-#### Sources
+### Sources
 
 * [Kaggle](http://www.kaggle.com)
 * [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.php)
@@ -123,7 +114,9 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 * [Google Public Data Explorer](https://www.google.com/publicdata/directory)
 * [U.S. Health Data](https://healthdata.gov/search/type/dataset)
 
-#### Sets 
+<br /> <br /> <hr />
+
+### Sets 
 
 * [Cadillac](./Data/Cadillac.txt)
 * [Car Prices](./Data/CarPrices.csv)
@@ -138,10 +131,7 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 * [Olympics](./Data/Olympics.csv)
 * [Rent](./Data/Rent.csv)
 
-</div> </div>
-
 <br /> <br /> <hr />
-
 
 ## Assignments
 
@@ -151,6 +141,8 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 4. [Recalling Words](./Analyses/RecallingWordsWilcoxon.html)
 5. [Day Care](./Analyses/DayCareANOVA.html)
 6. [Chocolate](./Analyses/ChocolateKruskal-WallisTest.html)
-7. []()
-8. []()
+7. [Simple Linear Regression](./Analyses/MySimpleLinearRegression.html)
+8. [Car Prices](./Analyses/CarPricesLR.html)
 9. []()
+
+</div> </div>

@@ -1,5 +1,6 @@
 ---
-title: "Simple Linear Regression"
+title: ""
+subtitle: "Simple Linear Regression"
 ---
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
@@ -8,10 +9,10 @@ library(car)
 library(DT)
 library(pander)
 library(tidyverse)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-mydat <- read_csv("../Data/MyDataSet.csv") %>% 
-  na.omit()
+# mydat <- read_csv("../Data/MyDataSet.csv") %>% 
+#   na.omit()
 
 ```
 
