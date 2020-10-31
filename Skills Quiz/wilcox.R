@@ -1,4 +1,5 @@
 library(car)
+<<<<<<< Updated upstream
 library(mosaic)
 library(tidyverse)
 
@@ -15,3 +16,19 @@ davis <- Davis %>%
 davis$diff <- davis$weight - davis$repwt
 
 wilcox.test(davis$diff)
+=======
+library(pander)
+library(mosaic)
+
+duncan <- Duncan %>% filter(type != "bc")
+
+pander(wilcox.test(prestige ~ type, data = duncan))
+
+View(Salaries)
+
+salaries <- Salaries %>% filter(rank == "Prof")
+
+pander(favstats(salary ~ sex, data = salaries))
+
+pander(wilcox.test(salary ~ sex, data = salaries))
+>>>>>>> Stashed changes

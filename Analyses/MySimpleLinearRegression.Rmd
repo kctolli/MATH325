@@ -11,9 +11,19 @@ library(pander)
 library(tidyverse)
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
+<<<<<<< Updated upstream
 # mydat <- read_csv("../Data/MyDataSet.csv") %>% 
 #   na.omit()
+=======
+phone <- read_csv("../Data/PhonePrices.csv") %>% 
+  na.omit()
+>>>>>>> Stashed changes
 
+phone$Screen <- round(phone$Screen, digits = 1)
+```
+
+```{r eval=FALSE}
+View(phone)
 ```
 
 
@@ -37,4 +47,83 @@ Come up with a simple linear regression of your own creation.
 
 ## Background
 
+What is the relation between Phone screen and Phone price?
 
+In this analysis I will be comparing the relationship between the two. The test used in this analysis is linear regression. I would be interpreted with slope and y intercept.  The slope is interpreted as, “the change in the average y-value for a one unit change in the x-value.” 
+
+There are two equations used in linear regression
+
+$$
+  {Y_i} = \overbrace{\beta_0}^\text{y-int} + \overbrace{\beta_1}^\text{slope} * {X_i} + \epsilon_i \quad \text{where} \ \epsilon_i \sim N(0, \sigma^2)
+$$
+
+$$
+  {\hat{Y}_i} = \overbrace{b_0}^\text{est. y-int} + \overbrace{b_1}^\text{est. slope} * {X_i}
+$$
+
+### Hypothesis
+
+$$
+\left.\begin{array}{ll}
+H_0: \beta_1 = 0 \\  
+H_a: \beta_1 \neq 0
+\end{array}
+\right\} \ \text{Slope Hypotheses}
+$$
+
+$$
+\left.\begin{array}{ll}
+H_0: \beta_0 = 0 \\  
+H_a: \beta_0 \neq 0
+\end{array}
+\right\} \ \text{Intercept Hypotheses}
+$$
+
+## Data Analysis {.tabset .tabset-fade}
+
+### Basic Statistics
+
+```{r message=FALSE, warning=FALSE}
+pander(phone %>% 
+  summarise(Correlation = cor(Screen, Price, use="complete.obs")))
+```
+
+
+```{r message=FALSE, warning=FALSE}
+pander(phone %>% 
+  group_by(Screen) %>% 
+  summarise(avgprice = mean(Price)))
+```
+
+### Linear Regression
+
+```{r}
+mylm <- lm(Price ~ Screen, data = phone)
+pander(summary(mylm))
+```
+
+```{r}
+par(mfrow = c(1,3))
+plot(mylm, which = 1:2)
+plot(mylm$residuals)
+```
+
+```{r message=FALSE, warning=FALSE}
+ggplot(phone, aes(x = Screen, y = Price)) +
+  geom_point() +
+  geom_smooth(method = "lm", se=FALSE)
+```
+
+### The Data
+
+```{r, out.width=300}
+pander(phone, split.tables = Inf)
+```
+
+## Interpretation
+
+$$
+  \underbrace{\hat{Y}_i}_\text{Price} = \overbrace{0.2202}^\text{est. y-int} + \overbrace{0.06784}^\text{est. slope} \underbrace{X_i}_\text{Screen}
+$$
+
+The equation above is derived from the linear regression model. From this equation we can find the price of a phone based on screen size. But from the data you can learn that price is not just based on screen size. So this isn't a great model to come to a conclusion for phone price. 
