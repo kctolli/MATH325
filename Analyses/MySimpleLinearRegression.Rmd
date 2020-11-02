@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Phone Prices"
 subtitle: "Simple Linear Regression"
 ---
 
@@ -11,13 +11,8 @@ library(pander)
 library(tidyverse)
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-<<<<<<< Updated upstream
-# mydat <- read_csv("../Data/MyDataSet.csv") %>% 
-#   na.omit()
-=======
 phone <- read_csv("../Data/PhonePrices.csv") %>% 
   na.omit()
->>>>>>> Stashed changes
 
 phone$Screen <- round(phone$Screen, digits = 1)
 ```
