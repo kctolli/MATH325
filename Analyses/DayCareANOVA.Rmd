@@ -17,8 +17,6 @@ library(pander)
 library(car)
 library(tidyverse)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
 # To get the "late" dataset into your R Console, 
 # you need to go to your file menu of R-Studio and select
 # "Session, Set working directory, To source file location"
@@ -26,7 +24,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # the top right corner of this gray R-Chunk. 
 
 ## Wide data from original article:
-late <- read.csv("../Data/late.csv", header=TRUE) %>% 
+late <- read.csv("https://github.com/kctolli/MATH325/raw/master/Data/late.csv", header=TRUE) %>% 
   na.omit()
 
 ## Change to "long" data for use in R:

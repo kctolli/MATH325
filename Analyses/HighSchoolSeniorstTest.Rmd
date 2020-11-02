@@ -11,9 +11,7 @@ library(pander)
 library(mosaic)
 library(car)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
-dat <- read_csv("../Data/HighSchoolSeniors.csv") %>% na.omit()
+dat <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/HighSchoolSeniors.csv") %>% na.omit()
 #Remember: select "Session, Set Working Directory, To Source File Location", and then play this R-chunk into your console to read the HSS data into R. 
 
 df <- dat %>% select(Gender, Video_Games_Hours, Social_Websites_Hours, Texting_Messaging_Hours, Computer_Use_Hours, Watching_TV_Hours)

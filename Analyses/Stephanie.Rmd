@@ -11,8 +11,7 @@ library(tidyverse)
 library(pander)
 library(DT) 
 library(leaflet)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-Rent <- read_csv("../Data/Rent.csv") %>% na.omit() %>% 
+Rent <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/Rent.csv") %>% na.omit() %>% 
   mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
   mutate(Price = as.numeric(round(Price, digits = 0))) %>%  
   mutate(MonthlyCost = as.numeric(round(Price/3.5, digits = 1)))

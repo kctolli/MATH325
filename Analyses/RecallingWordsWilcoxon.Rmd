@@ -16,7 +16,6 @@ library(car)
 library(pander)
 library(tidyverse)
 library(DT) #You may need to run: install.packages("DT") 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
 ```{r, eval=FALSE, include=FALSE}

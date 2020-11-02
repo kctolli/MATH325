@@ -3585,15 +3585,6 @@ pander(late, split.tables = Inf)</code></pre>
 <div id="basic-statistics" class="section level3">
 <h3>Basic Statistics</h3>
 <pre class="r"><code>StatsLate &lt;- favstats(NumberofLateChildren ~ Week, data = Late)
-    # group_by(Week) %&gt;% 
-    # summarise(min = min(NumberofLateChildren),
-    #           avg = mean(NumberofLateChildren),
-    #           med = median(NumberofLateChildren),
-    #           max = max(NumberofLateChildren),
-    #           sd = sd(NumberofLateChildren), 
-    #           var = var(NumberofLateChildren)) 
-
-
 
 pander(StatsLate[,-10])</code></pre>
 <table style="width:89%;">

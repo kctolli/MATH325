@@ -9,9 +9,8 @@ library(car)
 library(DT)
 library(pander)
 library(tidyverse)
-# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-phone <- read_csv("../Data/PhonePrices.csv") %>% 
+phone <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/PhonePrices.csv") %>% 
   na.omit()
 
 phone$Screen <- round(phone$Screen, digits = 1)

@@ -13,7 +13,7 @@ library(DT)
 library(pander)
 library(tidyverse)
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-choc <- read_csv("../Data/Chocolate.csv") %>% 
+choc <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/Chocolate.csv") %>% 
   na.omit() %>% mutate(Cocao = parse_number(as.character(Cocao)))
 
 
