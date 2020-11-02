@@ -1,6 +1,7 @@
 ---
 title: "Phone Prices"
 subtitle: "Simple Linear Regression"
+date: "Week 7"
 ---
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}

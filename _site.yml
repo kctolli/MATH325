@@ -10,8 +10,6 @@ navbar:
           href: ./NumericalSummaries.html
     - text: "Making Inference"
       menu:
-        #- text: "Making Inference"
-        #  href: ./MakingInference.html
         - text: "t Tests"
           href: ./tTests.html
         - text: "Wilcoxon Tests"
@@ -28,16 +26,6 @@ navbar:
           href: ./ChiSquaredTests.html
         - text: "Randomization Testing"
           href: ./PermutationTests.html
-    - text: "Analyses"
-      menu:
-        - text: "Analysis Rubric"
-          href: ./AnalysisRubric.html
-        - text: "Examples"
-          menu:  
-          - text: "Good Analysis"
-            href: ./Analyses/StudentHousing.html
-          - text: "Poor Analysis"
-            href: ./Analyses/StudentHousingPOOR.html
     - text: "Resources"
       menu:
         - text: "R Commands"

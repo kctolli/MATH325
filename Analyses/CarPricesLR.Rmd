@@ -1,6 +1,7 @@
 ---
 title: "Car Prices"
 subtitle: "Linear Regression"
+date: "Week 8"
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: "High School Seniors"
 subtitle: "t Test"
+date: "Week 3"
 ---
 
 
