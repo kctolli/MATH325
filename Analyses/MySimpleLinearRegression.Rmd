@@ -106,7 +106,12 @@ plot(mylm$residuals)
 ```{r message=FALSE, warning=FALSE}
 ggplot(phone, aes(x = Screen, y = Price)) +
   geom_point() +
-  geom_smooth(method = "lm", se=FALSE)
+  geom_smooth(method = "lm", se=FALSE) +
+  theme_bw()
+```
+
+```{r}
+pander(confint(mylm, level = 0.90))
 ```
 
 ### The Data
@@ -118,7 +123,7 @@ pander(phone, split.tables = Inf)
 ## Interpretation
 
 $$
-  \underbrace{\hat{Y}_i}_\text{Price} = \overbrace{0.2202}^\text{est. y-int} + \overbrace{0.06784}^\text{est. slope} \underbrace{X_i}_\text{Screen}
+  \underbrace{\hat{Y}_i}_\text{Price} = \overbrace{-1601}^\text{est. y-int} + \overbrace{390.6}^\text{est. slope} \underbrace{X_i}_\text{Screen}
 $$
 
 The equation above is derived from the linear regression model. From this equation we can find the price of a phone based on screen size. But from the data you can learn that price is not just based on screen size. So this isn't a great model to come to a conclusion for phone price. 
