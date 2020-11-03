@@ -14,6 +14,8 @@ library(car)
 library(tidyverse)
 ```
 
+<br /> <br /> 
+
 ## Describing Data with R
 
 ### Question 1
@@ -64,6 +66,8 @@ The addition of the horizontal line at a y-value of 100 using "abline(...)" is a
 
 From the ages given in the possible answers, 484 days is the one that is least likely to have a circumference of 100mm because the dots for that age (the ones on the far left of the graph) are incredibly far away from 100mm.
 
+<br /> <br /> <hr />
+
 ## Intro to Data Wrangling & Visualization
 
 ### Question 1
@@ -110,6 +114,8 @@ The graph produced by the code given shows gas mileage on the y-axis and quarter
 
 Since both transmission types show positive moderate correlations, we can conclude that higher quarter mile times (which means slower vehicles) correlate with higher gas mileages.
 
+<br /> <br /> <hr />
+
 ## T-Test
 
 ### Question 1
@@ -154,6 +160,8 @@ t.test(births ~ wday, data=BirthsWedThu, mu=0, alternative="two.sided", conf.lev
 What two things are required to compute a p-value?
 
 A test statistic and a sampling distribution of the test statistic. 
+
+<br /> <br /> <hr />
 
 ## Wilcoxon Test
 
@@ -209,6 +217,8 @@ Select the response below showing the correct test statistic, p-value, and concl
 wilcox.test(salary ~ discipline, data=Salaries) %>% pander()
 ```
 
+<br /> <br /> <hr />
+
 ## ANOVA Test
 
 ### Question 1 
@@ -228,6 +238,8 @@ Among fourth graders, right handed boys have longer feet on average than left ha
 ### Question 3 
 
 n the KidsFeet dataset, what is the average length of feet for fourth grade boys that are left handed? --- 24.1 cm 
+
+<br /> <br /> <hr />
 
 ## Kruskal-Wallis Test
 
@@ -283,5 +295,47 @@ The One Sample t Test measures how far the sample mean is from mu for its test s
 
 The Wilcoxon Rank Sum test sums the ranks from one of the groups for its test statistic.
 
-## 
+<br /> <br /> <hr />
 
+## Simple Linear Regression
+
+### Question 1
+
+Use the KidsFeet dataset from library(mosaic) to perform a regression of the length of a child's foot (Y) on the width of a child's foot (X).
+
+What is the estimated slope and intercept of the least squares regression line for this data?
+
+```{r}
+kids.lm <- lm(length ~ width, data=KidsFeet)
+summary(kids.lm)
+```
+
+### Question 2
+
+Continue using the KidsFeet regression that you performed in the last problem. In other words, the regression of the length of a child's foot (Y) on the width of the child's foot (X).
+
+Plot the regression in R. Then select the plot below that correctly depicts the scatterplot and regression line of this regression.
+
+Run this code to get the answer:
+
+```{r}
+kids.lm <- lm(length ~ width, data=KidsFeet)
+plot(length ~ width, data=KidsFeet)
+abline(kids.lm)
+```
+
+### Question 3
+
+The residual plot from the regression of the length of a child's foot on the width of the child's foot (using the KidsFeet dataset from library(mosaic)) shows the following residual plots.
+
+Select the statement that most correctly interprets these plots.
+
+The "Residuals vs Fitted" plot shows the data to be linear and to have constant variance. However, the "Normal Q-Q" plot shows some evidence of non-normality of the residuals.
+
+See the "Explanation" tab for Linear Regression under the section "Checking the Assumptions".
+
+Click on the links for "Explanation" of both the "Residuals versus Fitted-values Plot" and the "Q-Q Plot of the Residuals".
+
+<br /> <br /> <hr />
+
+## Multiple Linear Regression
