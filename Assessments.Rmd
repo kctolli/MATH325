@@ -282,3 +282,6 @@ ANOVA uses the F = (Between groups variance)/(Within groups variance) test stati
 The One Sample t Test measures how far the sample mean is from mu for its test statistic.
 
 The Wilcoxon Rank Sum test sums the ranks from one of the groups for its test statistic.
+
+## 
+

@@ -655,6 +655,12 @@ Continued resubmissions are expected until you achieve a {**3**} in each Categor
 8. [Car Prices](./Analyses/CarPricesLR.html)
 9. []()
 
+
+<br /> <br /> 
+
+#
+<div style="clear:both;"></div>
+
 ----
 
 <footer> &nbsp; &nbsp; "Education is not the learning of facts it's rather the training of the mind to think" --- Albert Eistein</footer>
