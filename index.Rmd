@@ -500,7 +500,7 @@ Four of the most widely used parametric distributions are:
 * [ANOVA Tests](./ANOVA.html)
   - [Day Care](./Analyses/DayCareANOVA.html)
 * [Linear Regression](./LinearRegression.html)  
-  - [Simple Linear Regression](./Analyses/MySimpleLinearRegression.html)
+  - [Phone Prices](./Analyses/MySimpleLinearRegression.html)
   - [Car Prices](./Analyses/CarPricesLR.html)
 * [Chi-squared Tests](./ChiSquaredTests.html)
 

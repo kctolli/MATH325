@@ -32,8 +32,6 @@ navbar:
           href: ./RCommands.html
         - text: "R Markdown Hints"
           href: ./RMarkdownHints.html
-        - text: "Assessment Quizzes"
-          href: ./Assessments.html
         - text: "Final Study Guide"
           href: ./FinalExamStudyGuide.html
         - text: "MATH 221 Book"
