@@ -6220,6 +6220,74 @@ However, any subset of coefficients could be tested in a similar way using a cus
 
 </div>
 
+### Class Examples
+
+Now let's apply your knowledge to three different pictures from three different, but similar models.
+
+Use the starter code in each example. 
+
+```{r}
+palette(c("skyblue","firebrick"))
+
+plot(mpg ~ qsec, data=mtcars, col=as.factor(am), xlim=c(0,30), ylim=c(-30,40), main="1974 Motor Trend Cars", pch=16)
+```
+
+
+#### Problem 1: Equal Slopes Model
+
+*(different intercepts)*
+
+```{r}
+someNameForYourLM <- lm(mpg ~ qsec + am, data = mtcars)
+
+summary(someNameForYourLM)
+
+plot(mpg ~ qsec, data=mtcars, col=as.factor(am), xlim=c(0,30), ylim=c(-30,40), main="1974 Motor Trend Cars", pch=16)
+
+abline(-18.8893, 1.9819, col=palette()[1])
+
+abline(-18.8893+8.8763, 1.9819, col=palette()[2])
+
+legend("topleft", legend=c("automatic","manual"), pch=1, col=palette(), title="Transmission (am)", bty="n")
+```
+
+#### Problem 2: Equal Intercepts Model
+
+*(different slopes)*
+
+```{r}
+someNameForYourLM <- lm(mpg ~ qsec + qsec:am, data = mtcars)
+
+summary(someNameForYourLM)
+
+plot(mpg ~ qsec, data=mtcars, col=as.factor(am), xlim=c(0,30), ylim=c(-30,40), main="1974 Motor Trend Cars", pch=16)
+
+abline(-15.30050, 1.78149, col=palette()[1])
+
+abline(-15.30050, 1.78149+0.50958, col=palette()[2])
+
+legend("topleft", legend=c("automatic","manual"), pch=1, col=palette(), title="Transmission (am)", bty="n")
+```
+
+
+#### Problem 3: Full Model 
+
+*(different slopes & different intercepts)*
+
+```{r}
+someNameForYourLM <- lm(mpg ~ qsec + am + qsec:am, data = mtcars)
+
+summary(someNameForYourLM)
+
+plot(mpg ~ qsec, data=mtcars, col=as.factor(am), xlim=c(0,30), ylim=c(-30,40), main="1974 Motor Trend Cars", pch=16)
+
+abline(-9.0099,  1.4385, col=palette()[1])
+
+abline(-9.0099 -14.5107,  1.4385 + 1.3214, col=palette()[2])
+
+legend("topleft", legend=c("automatic","manual"), pch=1, col=palette(), title="Transmission (am)", bty="n")
+```
+
 
 ##
 

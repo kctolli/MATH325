@@ -6,11 +6,13 @@ editor_options:
 ---
 
 ```{r load, include=FALSE}
-library(mosaic)
-library(tidyverse)
-library(pander)
-library(DT) 
-library(leaflet)
+library(pacman)
+p_load(mosaic)
+p_load(tidyverse)
+p_load(pander)
+p_load(DT) 
+p_load(leaflet)
+p_load(ggrepel)
 Rent <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/Rent.csv") %>% na.omit() %>% 
   mutate(MilesToCampus = as.numeric(round(MilesToCampus, digits = 3))) %>% 
   mutate(Price = as.numeric(round(Price, digits = 0))) %>%  
@@ -37,7 +39,7 @@ Write your response to Stephanie below. Use the "Rent" dataset, good statistical
 
 Dear Stephanie,
 
-Here is a list of every apartment option in Rexburg. You would want to just focus on the second table that is just female housing. 
+Here is a list of every apartment option in Rexburg. You would want to just focus on the second table that has been wrangled to fit what you are looking for in an apartment. 
 
 ```{r base, warning=FALSE}
 # Code to get you started, be sure to use a subset of Rent instead of Rent in this code though.
@@ -62,13 +64,14 @@ Below is a picture of Birch Plaza. You can literally see the BYUI Stadium from t
 
 ![](https://www.liveherehousing.com/photos/n1077.jpg)
 
-This visualization show Birch Plaza as a circle and other apartments as triangles. This graph helps show apartments with respect to distance and cost. We can see that visually Birch Plaza is the best compared to other apartments. 
+This visualization show Birch Plaza as a circle and other apartments as triangles. This graph helps show apartments with respect to distance and cost. We can see that visually Birch Plaza is the best compared to other apartments. In the graph you can see the point for birch plaza on buttom left of the plot. That point shows its the cheapest based on similar distance from campus. 
 
 ```{r viz, message=FALSE, warning=FALSE, paged.print=FALSE}
 Stephanie %>% 
   mutate(apartmentforyou = ifelse(Apartment == "BIRCH PLAZA", "Birch Plaza", "Other")) %>% 
-  ggplot() + 
-  geom_point(aes(x = MonthlyCost, y = MilesToCampus, color = Capacity, shape = apartmentforyou, size = Capacity)) + 
+  ggplot(aes(x = MonthlyCost, y = MilesToCampus, color = Capacity, shape = apartmentforyou, label = Apartment)) + 
+  geom_point(aes(size = Capacity)) + 
+  geom_label_repel(force = 3, size = 3, nudge_x = 20, nudge_y = .01, min.segment.length = 0) +
   #scale_size_manual(values = c(6, 3)) + 
   theme_bw() +
   labs(title="Apartments of What You are Looking For")
@@ -77,12 +80,6 @@ Stephanie %>%
 I hope this helps. 
 
 Kyle Tolliver
-
-
-<!-- Hint, you should probably subset the Rent dataset to only show the "Approved Women's Housing" since Stephanie won't be interested in Male Housing options. Notice how this text in green doesn't show up in the HTML output because we used the HTML comment tags around this text. --> 
-
-
-
 
 
 
