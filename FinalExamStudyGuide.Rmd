@@ -404,6 +404,56 @@ Click on the links for "Explanation" of both the "Residuals versus Fitted-values
 
 ### Multiple Linear Regression
 
+#### Question 1 
+
+Use the Orange dataset in R to perform a linear regression of the circumference (y) of an orange tree according to the age of the tree (x).
+
+Which regression assumption is not satisfied for this regression?
+
+Run the following code to get the answer:
+
+```{r}
+plot(circumference ~ age, data=Orange) #notice the fanning out of the points on the right
+
+orange.lm <- lm(circumference ~ age, data=Orange)
+
+plot(orange.lm, which=1) #looks very linear, but variance is increasing (so not constant)
+
+plot(orange.lm, which=2) #looks very normal.
+```
+
+#### Question 2 
+
+The following regression was performed in R. The lm( ) output from the regression is shown below.
+
+What is the y-intercept and slope of the line for Tree #2 shown in the plot below?
+
+![](./FinalExamStudyGuide_files/figure-html/MLR2.png)
+
+Y-intercept = 19.9609       Slope = 0.1250618 
+
+#### Question 3
+
+Suppose the regression model
+
+$$
+ Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i 
+$$
+is used to model the KidsFeet dataset in R using this code, which you should run in R:
+
+```{r}
+kids.lm <- lm(length ~ width + as.factor(birthyear), data=KidsFeet)
+pander(summary(kids.lm))
+```
+
+Note that a plot of this regression is shown for your reference.
+
+![](./FinalExamStudyGuide_files/figure-html/MLR3.png)
+
+Which of the following correctly interprets the results of this regression?
+
+Because the p-value for the β2 term is not significant, the two lines should really just be one line.
+
 ## Week 9: Project 1 & Practice Final
 
 ## Weeks 10 & 11: Logistic Regression {.tabset .tabset-fade}

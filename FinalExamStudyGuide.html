@@ -1059,6 +1059,106 @@ div.tocify {
 </div>
 <div id="multiple-linear-regression" class="section level3">
 <h3>Multiple Linear Regression</h3>
+<div id="question-1-7" class="section level4">
+<h4>Question 1</h4>
+<p>Use the Orange dataset in R to perform a linear regression of the circumference (y) of an orange tree according to the age of the tree (x).</p>
+<p>Which regression assumption is not satisfied for this regression?</p>
+<p>Run the following code to get the answer:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">plot</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange) <span class="co">#notice the fanning out of the points on the right</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">orange.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange)</a>
+<a class="sourceLine" id="cb29-2" title="2"></a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">1</span>) <span class="co">#looks very linear, but variance is increasing (so not constant)</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-2.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">2</span>) <span class="co">#looks very normal.</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-3.png" width="672" /></p>
+</div>
+<div id="question-2-7" class="section level4">
+<h4>Question 2</h4>
+<p>The following regression was performed in R. The lm( ) output from the regression is shown below.</p>
+<p>What is the y-intercept and slope of the line for Tree #2 shown in the plot below?</p>
+<p><img src="FinalExamStudyGuide_files/figure-html/MLR2.png" /></p>
+<p>Y-intercept = 19.9609 Slope = 0.1250618</p>
+</div>
+<div id="question-3-7" class="section level4">
+<h4>Question 3</h4>
+<p>Suppose the regression model</p>
+<p><span class="math display">\[
+ Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i 
+\]</span> is used to model the KidsFeet dataset in R using this code, which you should run in R:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width <span class="op">+</span><span class="st"> </span><span class="kw">as.factor</span>(birthyear), <span class="dt">data=</span>KidsFeet)</a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="kw">pander</span>(<span class="kw">summary</span>(kids.lm))</a></code></pre></div>
+<table>
+<colgroup>
+<col width="38%" />
+<col width="14%" />
+<col width="17%" />
+<col width="13%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"> </th>
+<th align="center">Estimate</th>
+<th align="center">Std. Error</th>
+<th align="center">t value</th>
+<th align="center">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>(Intercept)</strong></td>
+<td align="center">11.13</td>
+<td align="center">3.143</td>
+<td align="center">3.541</td>
+<td align="center">0.001123</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>width</strong></td>
+<td align="center">1.558</td>
+<td align="center">0.3364</td>
+<td align="center">4.631</td>
+<td align="center">4.616e-05</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>as.factor(birthyear)88</strong></td>
+<td align="center">-0.504</td>
+<td align="center">0.4409</td>
+<td align="center">-1.143</td>
+<td align="center">0.2606</td>
+</tr>
+</tbody>
+</table>
+<table style="width:88%;">
+<caption>Fitting linear model: length ~ width + as.factor(birthyear)</caption>
+<colgroup>
+<col width="20%" />
+<col width="30%" />
+<col width="12%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Observations</th>
+<th align="center">Residual Std. Error</th>
+<th align="center"><span class="math inline">\(R^2\)</span></th>
+<th align="center">Adjusted <span class="math inline">\(R^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">39</td>
+<td align="center">1.021</td>
+<td align="center">0.4316</td>
+<td align="center">0.4001</td>
+</tr>
+</tbody>
+</table>
+<p>Note that a plot of this regression is shown for your reference.</p>
+<p><img src="FinalExamStudyGuide_files/figure-html/MLR3.png" /></p>
+<p>Which of the following correctly interprets the results of this regression?</p>
+<p>Because the p-value for the β2 term is not significant, the two lines should really just be one line.</p>
+</div>
 </div>
 </div>
 <div id="week-9-project-1-practice-final" class="section level2">
