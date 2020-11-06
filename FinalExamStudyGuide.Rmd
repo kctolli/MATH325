@@ -484,7 +484,6 @@ You should be able to:
 * Check the requirements using the expected counts.
 * Interpret the results using Pearson Residuals when the p-value is significant.
 
-
 ## Week 13: Permutation Tests {.tabset .tabset-fade}
 
 ### Overview
