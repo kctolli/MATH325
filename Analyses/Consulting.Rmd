@@ -1,0 +1,170 @@
+---
+title: "Spotify"
+subtitle: "Consulting Project"
+date: "Week 9"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r include=FALSE}
+library(mosaic)
+library(car)
+library(DT)
+library(pander)
+library(tidyverse)
+
+spotify <- read_csv("https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/spotify/data.csv") %>% 
+  na.omit() %>% 
+  select(-release_date, -id, -name, - artists) %>% 
+  filter(year >= 2015)
+
+pandary <- function(x){pander(summary(x))}
+```
+
+```{r eval=FALSE, include=FALSE}
+View(spotify)
+colnames(spotify)
+```
+
+## Background
+
+My friend [Freddy Velazquez](https://www.instagram.com/freddyv98/) is in need of help figuring out what makes music more popular. [Canillas (Freddy)](https://open.spotify.com/artist/40rHTqqZNlzw3TrcVXlSUI) has 26 monthly listeners, and is trying to get more listeners. This would help since his new album comes out soon. I will be using a Linear Regression model to figure out what makes music popular. The [spotify data](https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/spotify/data.csv) I am using is from 2015 to 2020.   
+
+<br /> <br /> <hr />
+
+## Data Analytics {.tabset .tabset-fade}
+
+### Basic Stats 
+
+#### Summary of Popularity
+
+```{r}
+pandary(spotify$popularity)
+```
+
+#### Fav Stats of Popularity based on Year
+
+```{r}
+pander(favstats(popularity ~ year, data = spotify)[,-10])
+```
+
+<br /> <br /> <hr />
+
+### Linear Regression {.tabset .tabset-pills}
+
+```{r}
+simple <- function(x){
+  
+  # Preform Regression
+  
+  mylm <- lm(popularity ~ x, data = spotify)
+  
+  # Diagnostic
+  
+  par(mfrow=c(1,3))
+  plot(mylm, which=1:2)
+  plot(mylm$residuals)
+  
+  # Create Plot
+  
+  myplot <- ggplot(spotify, aes(y = popularity, x = x)) +
+    geom_point(color = "red") +
+    geom_smooth(method = "lm", se=FALSE, color = "black") +
+    theme_bw()
+  
+  # Create List and Return List
+  
+  mylist <- list("lm" = mylm, "plot" = myplot)
+  return(mylist)
+}
+```
+
+#### Danceability
+
+```{r}
+lm_danceability <- simple(spotify$danceability)
+pandary(lm_danceability$lm)
+lm_danceability$plot
+```
+
+<br /> <br /> <hr />
+
+#### Duration
+
+```{r}
+lm_duration <- simple(spotify$duration_ms)
+pandary(lm_duration$lm)
+lm_duration$plot
+```
+
+<br /> <br /> <hr />
+
+#### Energy
+
+```{r}
+lm_energy <- simple(spotify$energy)
+pandary(lm_energy$lm)
+lm_energy$plot
+```
+
+<br /> <br /> <hr />
+
+#### Liveness
+
+```{r}
+lm_liveness <- simple(spotify$liveness)
+pandary(lm_liveness$lm)
+lm_liveness$plot
+```
+
+<br /> <br /> <hr />
+
+#### Loudness
+
+```{r}
+lm_loudness <- simple(spotify$loudness)
+pandary(lm_loudness$lm)
+lm_loudness$plot
+```
+
+<br /> <br /> <hr />
+
+#### Tempo
+
+```{r}
+lm_tempo <- simple(spotify$tempo)
+pandary(lm_tempo$lm)
+lm_tempo$plot
+```
+
+<br /> <br /> <hr />
+
+#### Year
+
+```{r}
+lm_year <- simple(spotify$year)
+pandary(lm_year$lm)
+lm_year$plot
+```
+
+<br /> <br /> <hr />
+
+## Interpretation
+
+First I would like to mention that as years go on new songs increase in popularity, which is good for you. Next lets see what each regression tells us. 
+
+* Danceability - Increasing popularity with increasing Danceability - Slope = 6.623
+* Duration - Decreasing popularity with increasing duration - Slope = -2.066e-05
+* Energy -  Decreasing popularity with increasing energy - Slope = -1.572
+* Liveness - Decreasing popularity with increasing liveness - Slope = -2.534
+* Loudness - Increasing popularity with increasing loudness - Slope = 0.04487
+* Tempo - Decreasing popularity with increasing tempo - Slope = -1.17e-06
+* Year - Increasing popularity with increasing year - Slope = 1.362
+
+So basically it is danceable and loud then it would have a high popularity.
+
+Freddy your music fits both being danceable and loud so so as lonas it's not super long that your music would be popular. 

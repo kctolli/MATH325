@@ -14,6 +14,10 @@ title: "Kruskal-Wallis Test"
 library(tidyverse)
 ```
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ----
 
 The nonparametric equivalent to one-way [ANOVA](ANOVA.html).

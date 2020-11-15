@@ -6,6 +6,9 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+``` 
 
 ```{r load, include=FALSE}
 library(mosaic)

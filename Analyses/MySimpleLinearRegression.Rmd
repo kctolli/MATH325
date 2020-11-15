@@ -4,6 +4,10 @@ subtitle: "Simple Linear Regression"
 date: "Week 7"
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(mosaic)
 library(car)

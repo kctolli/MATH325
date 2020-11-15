@@ -21,6 +21,9 @@ Come up with a chi squared test analysis of your own creation.
 
 -->
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
 
 ## Background
 

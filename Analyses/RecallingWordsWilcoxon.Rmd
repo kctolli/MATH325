@@ -11,6 +11,10 @@ date: "Week 4"
  }
 </script>
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ```{r, include=FALSE}
 library(mosaic)
 library(car)

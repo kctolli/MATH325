@@ -11,7 +11,7 @@
 
 
 
-<title>Math 325</title>
+<title>Study Guide</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -502,8 +502,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Math 325</h1>
-<h3 class="subtitle">Study Guide</h3>
+<h1 class="title toc-ignore">Study Guide</h1>
+<h3 class="subtitle">Math 325</h3>
 
 </div>
 
@@ -520,6 +520,8 @@ div.tocify {
 <li>Identify the two things needed to obtain a p-value.</li>
 <li>Recognize when it is appropriate to make inference and when it is appropriate to just describe data.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 <div id="weeks-1-2-r-intro-descriptive-statistics" class="section level2 tabset tabset-fade">
 <h2>Weeks 1 &amp; 2: R Intro &amp; Descriptive Statistics</h2>
@@ -531,6 +533,8 @@ div.tocify {
 <li>Use R to compute numerical and graphical summaries for a given dataset.</li>
 <li>Perform basic data manipulations in R with <code>subset()</code>, <code>[ , ]</code>, and <code>$</code>.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 <div id="describing-data-with-r" class="section level3">
 <h3>Describing Data with R</h3>
@@ -544,11 +548,11 @@ div.tocify {
 <p>Based on what you find in your graphic, which statistic would be most meaningful for describing the typical cost of the monthly gas bill for this residence?</p>
 <p>The three main choices of graphic for this question would be:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">stripchart</span>(Utilities<span class="op">$</span>totalbill, <span class="dt">method=</span><span class="st">&quot;stack&quot;</span>)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">boxplot</span>(Utilities<span class="op">$</span>totalbill)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">hist</span>(Utilities<span class="op">$</span>totalbill)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
 <p>If you run these codes, you should decide to either use the boxplot or the histogram because of the large sample size. The dot plot (stripchart) is simply not useful in this case because it is too messy. However, in either the boxplot or histogram, you should note a right skewed distribution. When data is skewed, the median is the best measure of “typical” values. Thus, the answer to this question would be median. See “Median” in your Numerical Summaries page of your Math 325 Notebook for further details.</p>
 </div>
 <div id="question-2" class="section level4">
@@ -564,7 +568,7 @@ div.tocify {
 <p>A good choice of graphic when there are two quantitative variables like “circumference” and “age” is a scatterplot. Placing “circumference” as the y-variable and “age” as the x-variable would allow us to clearly see the growth in “circumference” as the trees “age”.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">plot</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange)</a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">100</span>, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>The addition of the horizontal line at a y-value of 100 using “abline(…)” is a bonus piece of code that makes for easy reference on the graphic.</p>
 <p>From the ages given in the possible answers, 484 days is the one that is least likely to have a circumference of 100mm because the dots for that age (the ones on the far left of the graph) are incredibly far away from 100mm.</p>
 <br /> <br />
@@ -581,7 +585,6 @@ div.tocify {
 <a class="sourceLine" id="cb8-2" title="2"><span class="st">    </span><span class="kw">group_by</span>(am) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="st">    </span><span class="kw">summarise</span>(<span class="kw">mean</span>(hp)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb8-4" title="4"><span class="st">    </span><span class="kw">pander</span>()</a></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <table style="width:22%;">
 <colgroup>
 <col width="6%" />
@@ -610,18 +613,18 @@ div.tocify {
 <p>Use the mtcars dataset in R to make a graph that allows you to see how the quarter mile time (qsec) of 1974 Motor Trend vehicles is effected by the number of carburetors (carb) in the vehicle.</p>
 <p>Select the statement below that correctly describes this relationship. — On average, the more carburetors a vehicle has, the faster its quarter mile time.</p>
 <p>Since both qsec and carb are quantitative, a scatterplot is the best graphic.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">plot</span>(qsec <span class="op">~</span><span class="st"> </span>carb, <span class="dt">data=</span>mtcars)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">plot</span>(qsec <span class="op">~</span><span class="st"> </span>carb, <span class="dt">data=</span>mtcars)</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>This helps show that the average qsec time (remember, average is the middle of the dots) drops (or gets faster) as the number of carburetors increases.</p>
 </div>
 <div id="question-3-1" class="section level4">
 <h4>Question 3</h4>
 <p>Run the following codes in R. Then select the statement that most appropriately interprets the resulting graph.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">palette</span>(<span class="kw">c</span>(<span class="st">&quot;skyblue&quot;</span>,<span class="st">&quot;firebrick&quot;</span>))</a>
-<a class="sourceLine" id="cb11-2" title="2"></a>
-<a class="sourceLine" id="cb11-3" title="3"><span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>qsec, <span class="dt">data=</span>mtcars, <span class="dt">col=</span><span class="kw">as.factor</span>(am), <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">xlab=</span><span class="st">&quot;Quarter Mile Time (seconds)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Miles per Gallon&quot;</span>, <span class="dt">main=</span><span class="st">&quot;1974 Motor Trend Vehicles&quot;</span>)</a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;automatic&quot;</span>,<span class="st">&quot;manual&quot;</span>), <span class="dt">title=</span><span class="st">&quot;Transmission&quot;</span>, <span class="dt">bty=</span><span class="st">&#39;n&#39;</span>, <span class="dt">col=</span><span class="kw">palette</span>())</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">palette</span>(<span class="kw">c</span>(<span class="st">&quot;skyblue&quot;</span>,<span class="st">&quot;firebrick&quot;</span>))</a>
+<a class="sourceLine" id="cb10-2" title="2"></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>qsec, <span class="dt">data=</span>mtcars, <span class="dt">col=</span><span class="kw">as.factor</span>(am), <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">xlab=</span><span class="st">&quot;Quarter Mile Time (seconds)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Miles per Gallon&quot;</span>, <span class="dt">main=</span><span class="st">&quot;1974 Motor Trend Vehicles&quot;</span>)</a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;automatic&quot;</span>,<span class="st">&quot;manual&quot;</span>), <span class="dt">title=</span><span class="st">&quot;Transmission&quot;</span>, <span class="dt">bty=</span><span class="st">&#39;n&#39;</span>, <span class="dt">col=</span><span class="kw">palette</span>())</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>The graph shows that both vehicles with automatic and manual transmissions get better gas mileage the faster their quarter mile time.</p>
 <p>The graph produced by the code given shows gas mileage on the y-axis and quarter mile times on the x-axis. Also, as indicated by the legend, the color of the points is determined by whether the vehicle is automatic or manual transmission.</p>
 <p>Since both transmission types show positive moderate correlations, we can conclude that higher quarter mile times (which means slower vehicles) correlate with higher gas mileages.</p>
@@ -644,6 +647,8 @@ div.tocify {
 <li>Check requirements.</li>
 <li>Interpret the results.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 <div id="t-test" class="section level3">
 <h3>T-Test</h3>
@@ -652,11 +657,10 @@ div.tocify {
 <p>Ensure you have library(mosaic) loaded in RStudio and can View(Births78). This dataset records data for every day of the year. In other words, each row of this dataset repesents a day of the year.</p>
 <p>In a typical year, there are 52 weeks. However, 52 x 7 = 364, and as most of us know, there are 365 days in a year. This means that every year, at least one day gets to happen more than 52 times.</p>
 <p>Use appropriate R commands and the Births78 dataset to determine which day of the week in 1978 occurred 53 times.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">Births78 <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(wday) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-4" title="4"><span class="st">  </span><span class="kw">pander</span>()</a></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">Births78 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(wday) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="st">  </span><span class="kw">pander</span>()</a></code></pre></div>
 <table style="width:19%;">
 <colgroup>
 <col width="9%" />
@@ -711,9 +715,9 @@ div.tocify {
   H_a: \mu_\text{Wednesday} - \mu_\text{Thursday} \neq 0
 \]</span></p>
 <p>Select the p-value of the test from the options below.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">BirthsWedThu &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Births78, wday <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Wed&quot;</span>,<span class="st">&quot;Thu&quot;</span>))</a>
-<a class="sourceLine" id="cb14-2" title="2"></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="kw">t.test</span>(births <span class="op">~</span><span class="st"> </span>wday, <span class="dt">data=</span>BirthsWedThu, <span class="dt">mu=</span><span class="dv">0</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">BirthsWedThu &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Births78, wday <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Wed&quot;</span>,<span class="st">&quot;Thu&quot;</span>))</a>
+<a class="sourceLine" id="cb12-2" title="2"></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="kw">t.test</span>(births <span class="op">~</span><span class="st"> </span>wday, <span class="dt">data=</span>BirthsWedThu, <span class="dt">mu=</span><span class="dv">0</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</a></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -741,15 +745,14 @@ div.tocify {
 <p>This question needs library(car).</p>
 <p>Use the Salaries dataset in R to find the number of male and female assistant professors in the dataset.</p>
 <p>Run the following code to get the answer:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">library</span>(car)</a>
-<a class="sourceLine" id="cb16-2" title="2"></a>
-<a class="sourceLine" id="cb16-3" title="3"><span class="kw">View</span>(Salaries)</a>
-<a class="sourceLine" id="cb16-4" title="4">?Salaries</a></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">Salaries <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(rank, sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="st">  </span><span class="kw">pander</span>()</a></code></pre></div>
-<pre><code>## `summarise()` regrouping output by &#39;rank&#39; (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">library</span>(car)</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="kw">View</span>(Salaries)</a>
+<a class="sourceLine" id="cb14-4" title="4">?Salaries</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">Salaries <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(rank, sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="st">  </span><span class="kw">pander</span>()</a></code></pre></div>
 <table style="width:37%;">
 <colgroup>
 <col width="16%" />
@@ -801,18 +804,18 @@ div.tocify {
 <h4>Question 2</h4>
 <p>Create an appropriate graphic using the Salaries dataset in R that would allow you to compare the distribution of salaries for faculty in discipline A (“theoretical”) and discipline B (“applied”) departments.</p>
 <p>Run the following code to get the answer:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>Or, to be more complete:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries, <span class="dt">xlab=</span><span class="st">&quot;Discipline&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Salaries&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Faculty from U.S. Colleges&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries)</a></code></pre></div>
 <p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Or, to be more complete:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries, <span class="dt">xlab=</span><span class="st">&quot;Discipline&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Salaries&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Faculty from U.S. Colleges&quot;</span>)</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="question-3-3" class="section level4">
 <h4>Question 3</h4>
 <p>Perform an appropriate Wilcoxon Test of the following hypotheses using the Salaries dataset in R.</p>
 <p>H0:median discipline A salaries−median discipline B salaries=0 Ha:median difference of salaries≠0</p>
 <p>Select the response below showing the correct test statistic, p-value, and conclusion of the test based on a significance level of 0.05.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">wilcox.test</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">wilcox.test</span>(salary <span class="op">~</span><span class="st"> </span>discipline, <span class="dt">data=</span>Salaries) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</a></code></pre></div>
 <table style="width:83%;">
 <caption>Wilcoxon rank sum test with continuity correction: <code>salary</code> by <code>discipline</code></caption>
 <colgroup>
@@ -855,6 +858,8 @@ div.tocify {
 <li>Check requirements (constant variance and normal errors for ANOVA; not too many ties present for Kruskal-Wallis).</li>
 <li>Interpret the results.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 <div id="anova-test" class="section level3">
 <h3>ANOVA Test</h3>
@@ -889,15 +894,15 @@ div.tocify {
 \]</span></p>
 <p>Report the test statistic and conclusion of your test.</p>
 <p>Test is performed with:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">kruskal.test</span>(salary <span class="op">~</span><span class="st"> </span>rank, <span class="dt">data=</span>Salaries)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">kruskal.test</span>(salary <span class="op">~</span><span class="st"> </span>rank, <span class="dt">data=</span>Salaries)</a></code></pre></div>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  salary by rank
 ## Kruskal-Wallis chi-squared = 194.01, df = 2, p-value &lt; 2.2e-16</code></pre>
 <p>Conclusions are obtained from:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>rank, <span class="dt">data=</span>Salaries)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">boxplot</span>(salary <span class="op">~</span><span class="st"> </span>rank, <span class="dt">data=</span>Salaries)</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>which shows Full Professors have the highest distribution, Associate Professors the next highest, and Assistant Professors have the lowest distribution.</p>
 </div>
 <div id="question-2-5" class="section level4">
@@ -1008,6 +1013,8 @@ div.tocify {
 <li>Interpret the slope(s) and intercept of the regression.</li>
 <li>Make predictions using the regression model.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 <div id="simple-linear-regression" class="section level3">
 <h3>Simple Linear Regression</h3>
@@ -1015,8 +1022,8 @@ div.tocify {
 <h4>Question 1</h4>
 <p>Use the KidsFeet dataset from library(mosaic) to perform a regression of the length of a child’s foot (Y) on the width of a child’s foot (X).</p>
 <p>What is the estimated slope and intercept of the least squares regression line for this data?</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
-<a class="sourceLine" id="cb25-2" title="2"><span class="kw">summary</span>(kids.lm)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="kw">summary</span>(kids.lm)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = length ~ width, data = KidsFeet)
@@ -1041,10 +1048,10 @@ div.tocify {
 <p>Continue using the KidsFeet regression that you performed in the last problem. In other words, the regression of the length of a child’s foot (Y) on the width of the child’s foot (X).</p>
 <p>Plot the regression in R. Then select the plot below that correctly depicts the scatterplot and regression line of this regression.</p>
 <p>Run this code to get the answer:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
-<a class="sourceLine" id="cb27-2" title="2"><span class="kw">plot</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="kw">abline</span>(kids.lm)</a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="kw">plot</span>(length <span class="op">~</span><span class="st"> </span>width, <span class="dt">data=</span>KidsFeet)</a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="kw">abline</span>(kids.lm)</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="question-3-6" class="section level4">
 <h4>Question 3</h4>
@@ -1064,14 +1071,14 @@ div.tocify {
 <p>Use the Orange dataset in R to perform a linear regression of the circumference (y) of an orange tree according to the age of the tree (x).</p>
 <p>Which regression assumption is not satisfied for this regression?</p>
 <p>Run the following code to get the answer:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">plot</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange) <span class="co">#notice the fanning out of the points on the right</span></a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">orange.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange)</a>
-<a class="sourceLine" id="cb29-2" title="2"></a>
-<a class="sourceLine" id="cb29-3" title="3"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">1</span>) <span class="co">#looks very linear, but variance is increasing (so not constant)</span></a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-2.png" width="672" /></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">2</span>) <span class="co">#looks very normal.</span></a></code></pre></div>
-<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-21-3.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">plot</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange) <span class="co">#notice the fanning out of the points on the right</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">orange.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(circumference <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>Orange)</a>
+<a class="sourceLine" id="cb26-2" title="2"></a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">1</span>) <span class="co">#looks very linear, but variance is increasing (so not constant)</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-22-2.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">plot</span>(orange.lm, <span class="dt">which=</span><span class="dv">2</span>) <span class="co">#looks very normal.</span></a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-22-3.png" width="672" /></p>
 </div>
 <div id="question-2-7" class="section level4">
 <h4>Question 2</h4>
@@ -1086,8 +1093,8 @@ div.tocify {
 <p><span class="math display">\[
  Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i 
 \]</span> is used to model the KidsFeet dataset in R using this code, which you should run in R:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width <span class="op">+</span><span class="st"> </span><span class="kw">as.factor</span>(birthyear), <span class="dt">data=</span>KidsFeet)</a>
-<a class="sourceLine" id="cb31-2" title="2"><span class="kw">pander</span>(<span class="kw">summary</span>(kids.lm))</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">kids.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(length <span class="op">~</span><span class="st"> </span>width <span class="op">+</span><span class="st"> </span><span class="kw">as.factor</span>(birthyear), <span class="dt">data=</span>KidsFeet)</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="kw">pander</span>(<span class="kw">summary</span>(kids.lm))</a></code></pre></div>
 <table>
 <colgroup>
 <col width="38%" />
@@ -1158,11 +1165,17 @@ div.tocify {
 <p><img src="FinalExamStudyGuide_files/figure-html/MLR3.png" /></p>
 <p>Which of the following correctly interprets the results of this regression?</p>
 <p>Because the p-value for the β2 term is not significant, the two lines should really just be one line.</p>
+<br /> <br />
+<hr />
 </div>
 </div>
 </div>
 <div id="week-9-project-1-practice-final" class="section level2">
 <h2>Week 9: Project 1 &amp; Practice Final</h2>
+<ul>
+<li><a href="./Analyses/Consulting.html">Consulting Project</a></li>
+<li><a href="./SkillsQuiz/practicefinal.html">Practice Final</a> Earned a 68%</li>
+</ul>
 </div>
 <div id="weeks-10-11-logistic-regression" class="section level2 tabset tabset-fade">
 <h2>Weeks 10 &amp; 11: Logistic Regression</h2>
@@ -1179,6 +1192,8 @@ div.tocify {
 <li>Explain the difference between an odds and a probability.</li>
 <li>Make predictions of probabilities using the logistic model.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 </div>
 <div id="week-12-chi-squared-tests-of-independence" class="section level2 tabset tabset-fade">
@@ -1194,6 +1209,8 @@ div.tocify {
 <li>Check the requirements using the expected counts.</li>
 <li>Interpret the results using Pearson Residuals when the p-value is significant.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 </div>
 <div id="week-13-permutation-tests" class="section level2 tabset tabset-fade">
@@ -1206,6 +1223,8 @@ div.tocify {
 <li>Perform a permutation test in R for any of the scenarios including: Independent Samples, Paired Samples, Regression, or Chi-squared.</li>
 <li>Recognize that the only difference between a permutation test and the other tests taught in this course is in how the p-value is calculated. Everything else is the same.</li>
 </ul>
+<br /> <br />
+<hr />
 </div>
 </div>
 <div id="week-14-review-final-exam" class="section level2">

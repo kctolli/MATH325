@@ -1,11 +1,17 @@
 ---
-title: "Math 325" 
-subtitle: "Study Guide"
+title: "Study Guide" 
+subtitle: "Math 325"
 output: 
   html_document:
     toc: true
     toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
 
 ```{r, include=FALSE}
 library(mosaic)
@@ -27,6 +33,8 @@ In general, you should be able to:
 * Identify the two things needed to obtain a p-value.
 * Recognize when it is appropriate to make inference and when it is appropriate to just describe data.
 
+<br /> <br /> <hr />
+
 ## Weeks 1 & 2: R Intro & Descriptive Statistics {.tabset .tabset-fade}
 
 ### Overview
@@ -36,6 +44,8 @@ You should be able to:
 *	State the various types, proper usages, and proper interpretations of numerical and graphical summaries.
 *	Use R to compute numerical and graphical summaries for a given dataset.
 *	Perform basic data manipulations in R with `subset()`, `[ , ]`, and `$`.
+
+<br /> <br /> <hr />
 
 ### Describing Data with R
 
@@ -150,6 +160,8 @@ You should be able to:
 *	Correctly use `t.test()` or `wilcoxon.test()` in R.
 * Check requirements.
 * Interpret the results.
+
+<br /> <br /> <hr />
 
 ### T-Test
 
@@ -269,6 +281,8 @@ You should be able to:
 * Check requirements (constant variance and normal errors for ANOVA; not too many ties present for Kruskal-Wallis).
 * Interpret the results.
 
+<br /> <br /> <hr />
+
 ### ANOVA Test
 
 #### Question 1 
@@ -360,6 +374,8 @@ You should be able to:
 * Check requirements (linearity, constant variance, normal errors, fixed x-values, and independent errors).
 * Interpret the slope(s) and intercept of the regression.
 * Make predictions using the regression model.
+
+<br /> <br /> <hr />
 
 ### Simple Linear Regression
 
@@ -454,7 +470,12 @@ Which of the following correctly interprets the results of this regression?
 
 Because the p-value for the β2 term is not significant, the two lines should really just be one line.
 
+<br /> <br /> <hr />
+
 ## Week 9: Project 1 & Practice Final
+
+* [Consulting Project](./Analyses/Consulting.html)   
+* [Practice Final](./SkillsQuiz/practicefinal.html) Earned a 68%
 
 ## Weeks 10 & 11: Logistic Regression {.tabset .tabset-fade}
 
@@ -471,6 +492,8 @@ You should be able to:
 * Explain the difference between an odds and a probability.
 * Make predictions of probabilities using the logistic model.
 
+<br /> <br /> <hr />
+
 ## Week 12: Chi Squared Tests of Independence {.tabset .tabset-fade}
 
 ### Overview
@@ -484,6 +507,8 @@ You should be able to:
 * Check the requirements using the expected counts.
 * Interpret the results using Pearson Residuals when the p-value is significant.
 
+<br /> <br /> <hr />
+
 ## Week 13: Permutation Tests {.tabset .tabset-fade}
 
 ### Overview
@@ -493,5 +518,7 @@ You should be able to:
 *	State the logic behind the permutation test used to perform the Nonparametric Chi-squared Test.
 * Perform a permutation test in R for any of the scenarios including: Independent Samples, Paired Samples, Regression, or Chi-squared. 
 * Recognize that the only difference between a permutation test and the other tests taught in this course is in how the p-value is calculated. Everything else is the same.
+
+<br /> <br /> <hr />
 
 ## Week 14: Review & Final Exam

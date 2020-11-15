@@ -4,6 +4,9 @@ subtitle: "t Test"
 date: "Week 3"
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
 
 ```{r load, message=FALSE, warning=FALSE}
 library(tidyverse)

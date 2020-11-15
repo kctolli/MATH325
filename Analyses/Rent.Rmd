@@ -3,6 +3,10 @@ title: "Rent"
 date: "Week 1"
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ```{r load, include=FALSE}
 library(mosaic)
 library(pander)

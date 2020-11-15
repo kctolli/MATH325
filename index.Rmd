@@ -2,6 +2,10 @@
 title: "Table of Contents"
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 <!-- You can delete the following copyright statement if you wish: -->
 
 <div style="color:gray;"><!-- Code to change the following paragraphs to gray -->
@@ -43,14 +47,14 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 <!-- [Mean, median, five-number summary, standard deviation](NumericalSummaries.html) -->
 
-* Mean (average) - Center of Mass - `mean(object)`
-* Median - Middle Data Point - `median(object)`
-* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` 
-* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+* Mean (average) - Center of Mass - `mean(x)`
+* Median - Middle Data Point - `median(x)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(x, percentile)` 
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(x)`
 
 <br/>
 
---- *Use `summary(object)`*
+--- *Use `summary(x)`*
 
   - Gives the five number summary 
     + Min
@@ -108,17 +112,16 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
-* Mean (average) - Center of Mass - `mean(object)`
-* Median - Middle Data Point - `median(object)`
-* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
-* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+* Mean (average) - Center of Mass - `mean(x)`
+* Median - Middle Data Point - `median(x)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(x, percentile)` or `summary(x)`
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(x)`
 * n - Sample size - `n()`
 
 <br/>
 
---- *Use `group_by(columnGroupsName)`*
+--- *Use `group_by(y)`*
 
-  - columnGroupsName = Categorical X
   - Function from tidyverse package
   - Normally used with the summarise or mutate
     + Qualitative in Group By
@@ -170,20 +173,20 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
-* Minimum - Smallest occurring data value - `min(object)`
-* Maximum - Largest occurring data value - `max(object)`
-* Mean (average) - Center of Mass - `mean(object)`
-* Median - Middle Data Point - `median(object)`
-* Quartiles (five-number summary) - Spread of Data - `quantile(object, percentile)` or `summary(object)`
-* Standard Deviation - Measures how spread out the data are from the mean - `sd(object)`
+* Minimum - Smallest occurring data value - `min(x)`
+* Maximum - Largest occurring data value - `max(x)`
+* Mean (average) - Center of Mass - `mean(x)`
+* Median - Middle Data Point - `median(x)`
+* Quartiles (five-number summary) - Spread of Data - `quantile(x, percentile)` or `summary(x)`
+* Standard Deviation - Measures how spread out the data are from the mean - `sd(x)`
 * n - Sample size - `n()`
 
 <br/>
 
---- *Use `favstats(x ~ g, data=YourDataSet)`*
+--- *Use `favstats(x ~ y, data=YourDataSet)`*
 
   - x is a numeric vector of data values that represents the quantatitive response variable.
-  - g is a qualitative grouping variable defining which groups each value in x belongs to. 
+  - y is a qualitative grouping variable defining which groups each value in x belongs to. 
   - YourDataSet is the name of your data set.
 
 ##### Graphics
@@ -230,8 +233,8 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
-* Correlation - the strength and direction of the association - `cor(object1,object2)`
-* Mean (average) - Center of Mass - `mean(object)`
+* Correlation - the strength and direction of the association - `cor(x,y)`
+* Mean (average) - Center of Mass - `mean(x)`
 
 ##### Graphics
 
@@ -269,6 +272,9 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
+* Summary 
+  - Five Number Summary - `summary(y)`
+  - Ten Number Summary  - `favstats(y ~ x, data=YourDataSet)`
 
 
 ##### Graphics

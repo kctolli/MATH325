@@ -2,6 +2,10 @@
 title: "Template"
 ---
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ## Instructions / Background
 
 ## Questions and Hypotheses
