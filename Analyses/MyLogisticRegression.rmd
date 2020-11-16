@@ -1,5 +1,6 @@
 ---
-title: "Simple Logistic Regression"
+title: "Mission"
+subtitle: "Simple Logistic Regression"
 ---
 
 <!-- Find some data of interest to you that can be analyzed with a logistic regression. Complete your Logistic Regression Analysis using this file. 
@@ -18,4 +19,34 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```{r, include=FALSE}
 library(mosaic)
 library(ResourceSelection) 
+library(pander)
+library(tidyverse)
+library(DT) 
+library(knitr)
+
+mission <- read_csv("../Data/mission.csv") %>% na.omit()
+
+pandary <- function(x){
+  pander(summary(x))
+}
+```
+
+```{r, eval=FALSE, echo=FALSE}
+View(mission)
+```
+
+```{r}
+mission_glm <- glm(binary ~ Age, data = mission, family = binomial)
+pandary(mission_glm)
+```
+
+```{r}
+ggplot(mission, aes(Age,binary)) +
+  geom_point() +
+  geom_smooth(method=glm,method.args = list(family =binomial), se =FALSE) +
+  theme_bw()
+```
+
+```{r}
+predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response")
 ```
