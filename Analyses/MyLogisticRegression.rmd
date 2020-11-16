@@ -48,5 +48,5 @@ ggplot(mission, aes(Age,binary)) +
 ```
 
 ```{r}
-predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response")
+pander(predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response"))
 ```
