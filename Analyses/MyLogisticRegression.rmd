@@ -1,6 +1,7 @@
 ---
 title: "Mission"
 subtitle: "Simple Logistic Regression"
+week: "Week 10"
 ---
 
 <!-- Find some data of interest to you that can be analyzed with a logistic regression. Complete your Logistic Regression Analysis using this file. 
@@ -10,7 +11,6 @@ Hint, run the command
 > data() 
 
 in your Console to see available datasets in R that you could use for this Analysis. You are also welcome to collect data yourself, or find other available datasets online for this Analysis. Just be careful to not use anyone else's "analysis" for this Analysis. Also, no conducting surveys unless you have IRB approval to do so.
-
 Excel Command: =IF(B#="yes", 1, 0)
 
 -->
@@ -26,26 +26,33 @@ library(ResourceSelection)
 library(pander)
 library(tidyverse)
 library(DT) 
-library(readxl)
 
-mission <- read_excel("../Data/mission.xlsx") %>% na.omit()
+mission <- read_csv("../Data/mission.csv") %>% 
+  na.omit() %>% 
+  mutate(Mission = if_else(Mission == "yes", 1, 0))
 
-pandary <- function(x){
-  pander(summary(x))
-}
+pandary <- function(x){pander(summary(x))}
 ```
 
 ```{r, eval=FALSE, echo=FALSE}
 View(mission)
 ```
 
+## Background
+
+## Data Analysis {.tabset .tabset-fade}
+
+### Basic Statistics
+
+### Logistical Regression
+
 ```{r}
-mission_glm <- glm(binary ~ Age, data = mission, family = binomial)
+mission_glm <- glm(Mission ~ Age, data = mission, family = binomial)
 pandary(mission_glm)
 ```
 
 ```{r}
-ggplot(mission, aes(Age,binary)) +
+ggplot(mission, aes(Age,Mission)) +
   geom_point() +
   geom_smooth(method=glm,method.args = list(family =binomial), se =FALSE) +
   theme_bw()
@@ -54,3 +61,5 @@ ggplot(mission, aes(Age,binary)) +
 ```{r}
 pander(predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response"))
 ```
+
+## Interpretation

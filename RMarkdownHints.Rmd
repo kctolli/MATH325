@@ -10,14 +10,6 @@ Think of an `R Markdown File`, or `Rmd` for short, as a command center. You writ
 
 ### Hide Cheatsheet
 
-### Show
-
-Carefully read through all parts of this image to learn...
-
-![](./Images/Rmd2html.png)
-
-##
-
 The above tabs were created with the code:
 
     ## {.tabset .tabset-pills .tabset-fade}
@@ -28,7 +20,11 @@ The above tabs were created with the code:
 
     Text and image were placed here...
 
-    ##
+### Show
+
+Carefully read through all parts of this image to learn...
+
+![](./Images/Rmd2html.png)
 
 
 
