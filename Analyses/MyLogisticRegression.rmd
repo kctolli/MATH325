@@ -54,7 +54,9 @@ pandary(mission_glm)
 ```{r}
 ggplot(mission, aes(Age,Mission)) +
   geom_point() +
-  geom_smooth(method=glm,method.args = list(family =binomial), se =FALSE) +
+  geom_smooth(method = glm,
+              method.args = list(family = binomial), 
+              se = FALSE) +
   theme_bw()
 ```
 
