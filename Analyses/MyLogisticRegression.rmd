@@ -28,7 +28,7 @@ library(tidyverse)
 library(DT) 
 library(readxl)
 
-mission <- read_excel("../Data/mission.xlsx") %>% na.omit()
+mission <- read_excel("https://raw.githubusercontent.com/kctolli/MATH325/master/Data/mission.xlsx") %>% na.omit()
 
 pandary <- function(x){
   pander(summary(x))
