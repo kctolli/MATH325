@@ -26,16 +26,8 @@ navbar:
           href: ./ChiSquaredTests.html
         - text: "Randomization Testing"
           href: ./PermutationTests.html
-    - text: "Resources"
-      menu:
-        - text: "R Commands"
-          href: ./RCommands.html
-        - text: "R Markdown Hints"
-          href: ./RMarkdownHints.html
-        - text: "Final Study Guide"
-          href: ./FinalExamStudyGuide.html
-        - text: "MATH 221 Book"
-          href: https://byuistats.github.io/BYUI_M221_Book            
+    - text: "Final Study Guide"
+      href: ./FinalExamStudyGuide.html
 
           
 output_dir: '.'

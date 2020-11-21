@@ -1,5 +1,5 @@
 ---
-title: "Mission"
+title: "Called to Serve"
 subtitle: "Simple Logistic Regression"
 week: "Week 10"
 ---
@@ -27,7 +27,7 @@ library(pander)
 library(tidyverse)
 library(DT) 
 
-mission <- read_csv("../Data/mission.csv") %>% 
+mission <- read_csv("https://github.com/kctolli/MATH325/raw/master/Data/mission.csv") %>% 
   na.omit() %>% 
   mutate(Mission = if_else(Mission == "yes", 1, 0))
 
@@ -40,9 +40,22 @@ View(mission)
 
 ## Background
 
+What is the probability of people at certain ages served a mission? Is it an increase or decrease and you get older? 
+
+There are a few steps to answer this question. 
+
+1. Survey people - get age and if they served a mission
+2. Collect and wrangle data
+3. Use Logistic Regression model to answer the questions
+4. Interpret data
+
 ## Data Analysis {.tabset .tabset-fade}
 
 ### Basic Statistics
+
+```{r}
+pander(favstats(Age ~ Mission, data = mission)[,-10])
+```
 
 ### Logistical Regression
 
@@ -53,7 +66,7 @@ pandary(mission_glm)
 
 ```{r}
 ggplot(mission, aes(Age,Mission)) +
-  geom_point() +
+  geom_point(color = "black") +
   geom_smooth(method = glm,
               method.args = list(family = binomial), 
               se = FALSE) +
@@ -61,7 +74,13 @@ ggplot(mission, aes(Age,Mission)) +
 ```
 
 ```{r}
-pander(predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response"))
+hoslem.test(mission_glm$y, mission_glm$fitted, g=10)
 ```
 
 ## Interpretation
+
+From the regression we learn that as you get older the odds you served a mission increase by 0.9688. There are a few interesting insights we learn from the data and regression. With COVID-19 sending missionaries home can cause 19 year olds to be returned missionaries. We can see the probabilities of each age using the `predict` function in R.  
+
+```{r}
+pander(predict(mission_glm, data.frame(Age = c(18, 19, 20, 21, 22, 23, 24, 25)), type = "response"))
+```
