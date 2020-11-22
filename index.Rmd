@@ -243,7 +243,7 @@ This page, and all pages of this notebook, are meant to be customized to become 
 ##### Numerical 
 
 * Correlation - the strength and direction of the association - `cor(x,y)`
-* Mean (average) - Center of Mass - `mean(x)`
+* Summary - Ten Number Summary  - `favstats(y ~ x, data=YourDataSet)`
 
 ##### Graphics
 
@@ -360,7 +360,9 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
-
+* Summary 
+  - Five Number Summary - `summary(y)`
+  - Ten Number Summary  - `favstats(y ~ x, data=YourDataSet)`
 
 ##### Graphics
 
@@ -769,9 +771,9 @@ Hint: pressing the "up" arrow on your keyboard brings up the last command you ty
 
 <br/>
 
-<span style="color:orange;">This is "the end" of the *Getting Started* tutorial.</span> <span style="color:gray;">To find the "completion code" you will need to study, and "click open" each of the example codes above. Below are R Cheat sheets and R notes. </span>
+<span style="color:orange;">This is "the end" of the *Getting Started* tutorial.</span> <span style="color:gray;">To find the "completion code" you will need to study, and "click open" each of the example codes above. Below are R notes. </span>
 
-**R Cheat Sheets**
+##### R Cheatsheets
 
 * [R Colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
 * [R Base Graphics Cheat Sheet](http://www.joyce-robbins.com/wp-content/uploads/2016/04/BaseGraphicsCheatsheet.pdf)
@@ -780,12 +782,11 @@ Hint: pressing the "up" arrow on your keyboard brings up the last command you ty
 * [R Studio Cheat Sheets](https://rstudio.com/resources/cheatsheets/)
 * [Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
 
-**R Notes**
+##### R Notes
 
 ```{r}
 # Add your own notes here...
 # Add R commands you want to remember here...
-
 ```
 
 ```{r, eval=FALSE}
@@ -793,11 +794,9 @@ Hint: pressing the "up" arrow on your keyboard brings up the last command you ty
 # Useful when you want to remember code, but not run it in this file.
 ```
 
-
 </div> </div>
 
 <br /> <br /> 
-
 
 ### R Commands
 
@@ -890,8 +889,7 @@ mean
 
 
 </div>
-<br />
-<hr />
+<br /> <hr />
 
 
 
@@ -2690,7 +2688,6 @@ Linking to parts of your textbook:
 
 * `[Numerical Summaries](NumericalSummaries.html)` *becomes* [Numerical Summaries](NumericalSummaries.html)
 * `[Boxplots](GraphicalSummaries.html#boxplots)` *becomes* [Boxplots](GraphicalSummaries.html#boxplots)
-* `[R Commands](RCommands.html)` *becomes* [R Commands](RCommands.html)
 
 Linking to outside resources:
 
@@ -2845,65 +2842,7 @@ C) This is the third.
 ```
 
 </div>
-    
-#### Math Equations
-
-Use the dollar signs `$x=5$` to write $x=5$ or `$z=\frac{x-\mu}{\sigma}$` to write $z=\frac{x-\mu}{\sigma}$. For a nicely centered equation use the double dollar signs `$$ $$` on separate lines 
-
-```{r, eval=FALSE}
-$$
-  z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
-$$
-```
-
-to get
-$$
-  z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
-$$
-
-Or
-
-```{r, eval=FALSE}
-$$
-  H_0: \mu_1 = \mu_2
-$$
-$$ 
-  H_a: \mu_1 \neq \mu_2
-$$
-```
-
-to get
-$$
-  H_0: \mu_{\text{Group 1}} = \mu_{\text{Group 2}}
-$$
-$$ 
-  H_a: \mu_{\text{Group 1}} \neq \mu_{\text{Group 2}}
-$$
-
-Symbol list:
-
-| Symbol | LaTeX Math Code |
-|--------|------------------|
-| $\alpha$ | `$\alpha$` |
-| $\beta$ | `$\beta$` |
-| $\sigma$ | `$\sigma$` |
-| $\epsilon$ | `$\epsilon$` |
-| $\bar{x}$ | `$\bar{x}$` |
-| $\hat{Y}$ | `$\hat{Y}$` |
-| $=$ | `$=$` |
-| $\ne$ | `$\ne$` or `$\neq$` |
-| $>$ | `$>$` |
-| $<$ | `$<$` |
-| $\ge$ | `$\ge$` |
-| $\le$ | `$\le$` |
-| $\{ \}$ | `$\{ \}$` |
-| $\text{Type just text}$ | `$\text{Type just text}$` |
-| $\overbrace{Y_i}^\text{label}$ | `$\overbrace{Y_i}^\text{label}$`|
-| $\underbrace{Y_i}_\text{label}$ | `$\underbrace{Y_i}_\text{label}$`|
-
-
-
-<br />
+  
 
 #### Insert a Picture
 
@@ -2912,25 +2851,6 @@ To add a picture to your document, say some notes you took down on paper from cl
 Use the code: `![](./Images/insertPictureNotes.jpg)` to get...
 
 ![](./Images/insertPictureNotes.jpg)
-
-<br />
-
-#### Tables
-
-There are many ways to [make tables](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables) in R Markdown. Here is a simple way to make a "pipe" table.
-
-```{r, eval=FALSE}
-| Name          | Age           | Gender       | 
-|---------------|---------------|--------------|
-| Jill          | 8             |  Female      |
-| Jack          | 9             |  Male        |
-```
-
-| Name          | Age           | Gender       | 
-|---------------|---------------|--------------|
-| Jill          | 8             |  Female      |
-| Jack          | 9             |  Male        |
-
 
 <br />
 
@@ -2967,6 +2887,86 @@ Go to the [rmarkdown.rstudio.com](http://rmarkdown.rstudio.com/html_document_for
 <br /> <br /> 
 
 <div style="clear:both;"></div>
+
+### Latex
+
+Latex is used in RMDs to create Math Equations
+
+Use the dollar signs `$x=5$` to write $x=5$ or `$z=\frac{x-\mu}{\sigma}$` to write $z=\frac{x-\mu}{\sigma}$. For a nicely centered equation use the double dollar signs `$$ $$` on separate lines 
+
+```{r, eval=FALSE}
+$$
+  z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
+$$
+```
+
+to get
+$$
+  z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
+$$
+
+Or
+
+```{r, eval=FALSE}
+$$
+  H_0: \mu_1 = \mu_2
+$$
+$$ 
+  H_a: \mu_1 \neq \mu_2
+$$
+```
+
+to get
+$$
+  H_0: \mu_{\text{Group 1}} = \mu_{\text{Group 2}}
+$$
+$$ 
+  H_a: \mu_{\text{Group 1}} \neq \mu_{\text{Group 2}}
+$$
+
+#### Symbol list:
+
+| Symbol | LaTeX Math Code |
+|--------|------------------|
+| $\alpha$ | `$\alpha$` |
+| $\beta$ | `$\beta$` |
+| $\sigma$ | `$\sigma$` |
+| $\epsilon$ | `$\epsilon$` |
+| $\bar{x}$ | `$\bar{x}$` |
+| $\hat{Y}$ | `$\hat{Y}$` |
+| $=$ | `$=$` |
+| $\ne$ | `$\ne$` or `$\neq$` |
+| $>$ | `$>$` |
+| $<$ | `$<$` |
+| $\ge$ | `$\ge$` |
+| $\le$ | `$\le$` |
+| $\{ \}$ | `$\{ \}$` |
+| $\text{Type just text}$ | `$\text{Type just text}$` |
+| $\overbrace{Y_i}^\text{label}$ | `$\overbrace{Y_i}^\text{label}$`|
+| $\underbrace{Y_i}_\text{label}$ | `$\underbrace{Y_i}_\text{label}$`|
+
+
+<br />
+
+#### Tables
+
+There are many ways to [make tables](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables) in R Markdown. Here is a simple way to make a "pipe" table.
+
+```{r, eval=FALSE}
+| Name          | Age           | Gender       | 
+|---------------|---------------|--------------|
+| Jill          | 8             |  Female      |
+| Jack          | 9             |  Male        |
+```
+
+| Name          | Age           | Gender       | 
+|---------------|---------------|--------------|
+| Jill          | 8             |  Female      |
+| Jack          | 9             |  Male        |
+
+
+<br />
+
 
 
 #

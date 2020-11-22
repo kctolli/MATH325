@@ -981,10 +981,12 @@ div.tocify {
 </div>
 </div>
 </div>
-<div id="weeks-7-8-linear-regression" class="section level2 tabset tabset-fade">
-<h2>Weeks 7 &amp; 8: Linear Regression</h2>
-<div id="overview-3" class="section level3">
+<div id="weeks-7---11-regression" class="section level2 tabset tabset-fade">
+<h2>Weeks 7 - 11: Regression</h2>
+<div id="overview-3" class="section level3 tabset tabset-pills">
 <h3>Overview</h3>
+<div id="linear" class="section level4">
+<h4>Linear</h4>
 <p>You should be able to:</p>
 <ul>
 <li>Identify a scenario as a linear regression.</li>
@@ -995,8 +997,23 @@ div.tocify {
 <li>Interpret the slope(s) and intercept of the regression.</li>
 <li>Make predictions using the regression model.</li>
 </ul>
+</div>
+<div id="logistic" class="section level4">
+<h4>Logistic</h4>
+<p>You should be able to:</p>
+<ul>
+<li>Identify a scenario as a logistic regression.</li>
+<li>Recognize the explanatory variables and binomial response variable of the regression.</li>
+<li>State the Z Test hypotheses for any single coefficient in the regression.</li>
+<li>Correctly use <code>glm()</code>, <code>summary()</code>, and <code>curve()</code> in R.</li>
+<li>Check the goodness-of-fit of the logistic regression using an appropriate goodness-of-fit test (deviance residuals vs Hosmer-Lemeshow tests).</li>
+<li>Interpret the effect of a slope term on the odds ratio.</li>
+<li>Explain the difference between an odds and a probability.</li>
+<li>Make predictions of probabilities using the logistic model.</li>
+</ul>
 <br /> <br />
 <hr />
+</div>
 </div>
 <div id="simple-linear-regression" class="section level3">
 <h3>Simple Linear Regression</h3>
@@ -1151,37 +1168,102 @@ div.tocify {
 <hr />
 </div>
 </div>
+<div id="simple-logistic-regression" class="section level3">
+<h3>Simple Logistic Regression</h3>
+<div id="question-1-8" class="section level4">
+<h4>Question 1</h4>
+<p>Run the following codes in R.</p>
+<p>library(mosaic)</p>
+<p>View(Gestation)</p>
+<p>?Gestation</p>
+<p>Use an appropriate test to determine if the birth weight in ounces of a baby (wt) can be used to predict the probability that the mother smoked at all (smoke&gt;0) during or prior to the pregnancy. The graphic of the correct analysis is shown below.</p>
+<p>What are the values of b0 and b1 for the curve shown in the graphic below?</p>
+<p><img src="FinalExamStudyGuide_files/figure-html/Log1.png" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">myglm &lt;-<span class="st"> </span><span class="kw">glm</span>(smoke<span class="op">&gt;</span><span class="dv">0</span> <span class="op">~</span><span class="st"> </span>wt, <span class="dt">data=</span>Gestation, <span class="dt">family=</span>binomial)</a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="kw">pander</span>(<span class="kw">summary</span>(myglm))</a></code></pre></div>
+<table style="width:93%;">
+<colgroup>
+<col width="25%" />
+<col width="16%" />
+<col width="18%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"> </th>
+<th align="center">Estimate</th>
+<th align="center">Std. Error</th>
+<th align="center">z value</th>
+<th align="center">Pr(&gt;|z|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>(Intercept)</strong></td>
+<td align="center">26.57</td>
+<td align="center">67575</td>
+<td align="center">0.0003931</td>
+<td align="center">0.9997</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>wt</strong></td>
+<td align="center">8.432e-11</td>
+<td align="center">559</td>
+<td align="center">1.509e-13</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>(Dispersion parameter for binomial family taken to be 1 )</p>
+<table style="width:75%;">
+<colgroup>
+<col width="29%" />
+<col width="45%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center">Null deviance:</td>
+<td align="center">0.000e+00 on 1225 degrees of freedom</td>
+</tr>
+<tr class="even">
+<td align="center">Residual deviance:</td>
+<td align="center">7.113e-09 on 1224 degrees of freedom</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="week-9-project-1-practice-final" class="section level2">
-<h2>Week 9: Project 1 &amp; Practice Final</h2>
-<ul>
-<li><a href="./Analyses/Consulting.html">Consulting Project</a><br />
-</li>
-<li><a href="./SkillsQuiz/practicefinal.html">Practice Final</a> Earned a 68%</li>
-</ul>
+<div id="question-2-8" class="section level4">
+<h4>Question 2</h4>
+<p>Here is the output of a logistic regression performed in R.</p>
+<p>Coefficients: Estimate Std. Error z value Pr(&gt;|z|)<br />
+(Intercept) -6.6035 2.3514 -2.808 0.00498 mpg 0.3070 0.1148 2.673 0.00751</p>
+<p>What is the predicted value for P(Yi=1|xi=25) ?</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">exp</span>(<span class="op">-</span><span class="fl">6.6035</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.3070</span><span class="op">*</span><span class="dv">25</span>) <span class="op">/</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span><span class="fl">6.6035</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.3070</span><span class="op">*</span><span class="dv">25</span>))</a></code></pre></div>
+<pre><code>## [1] 0.7448821</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="co">#predict(glmObject, data.frame(mpg=25), type=&quot;response&quot;)</span></a></code></pre></div>
 </div>
-<div id="weeks-10-11-logistic-regression" class="section level2 tabset tabset-fade">
-<h2>Weeks 10 &amp; 11: Logistic Regression</h2>
-<div id="overview-4" class="section level3">
-<h3>Overview</h3>
-<p>You should be able to:</p>
-<ul>
-<li>Identify a scenario as a logistic regression.</li>
-<li>Recognize the explanatory variables and binomial response variable of the regression.</li>
-<li>State the Z Test hypotheses for any single coefficient in the regression.</li>
-<li>Correctly use <code>glm()</code>, <code>summary()</code>, and <code>curve()</code> in R.</li>
-<li>Check the goodness-of-fit of the logistic regression using an appropriate goodness-of-fit test (deviance residuals vs Hosmer-Lemeshow tests).</li>
-<li>Interpret the effect of a slope term on the odds ratio.</li>
-<li>Explain the difference between an odds and a probability.</li>
-<li>Make predictions of probabilities using the logistic model.</li>
-</ul>
+<div id="question-3-8" class="section level4">
+<h4>Question 3</h4>
+<p>Consider again the logistic regression output shown below.</p>
+<p>Coefficients: Estimate Std. Error z value Pr(&gt;|z|)<br />
+(Intercept) -6.6035 2.3514 -2.808 0.00498 mpg 0.3070 0.1148 2.673 0.00751</p>
+<p>Which of the following correctly interprets these results?</p>
+<p>To intepret the effect of mpg (the x-variable) on the odds, we compute exp(0.3070), which gives the value of eb1 . See the Overview page of Logistic Regression for an explanation.</p>
+<p>Coefficients: Estimate Std. Error z value Pr(&gt;|z|)<br />
+(Intercept) -6.6035 2.3514 -2.808 0.00498 <em>mpg 0.3070</em> 0.1148 2.673 0.00751</p>
+<p>Since exp(0.3070) = 1.359341, we find that the odds of a success, i.e., that Yi =1 increases by 35.9341%, which rounds to 36% for every 1 unit increase in x.</p>
+<p>Notices that the 35.9341 came from 1.359341. If you have 1.36 of what you originally had, then you increased by 0.36 or 36%.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">exp</span>(<span class="fl">0.3070</span>)</a></code></pre></div>
+<pre><code>## [1] 1.359341</code></pre>
 <br /> <br />
 <hr />
 </div>
 </div>
+</div>
 <div id="week-12-chi-squared-tests-of-independence" class="section level2 tabset tabset-fade">
 <h2>Week 12: Chi Squared Tests of Independence</h2>
-<div id="overview-5" class="section level3">
+<div id="overview-4" class="section level3">
 <h3>Overview</h3>
 <p>You should be able to:</p>
 <ul>
@@ -1198,7 +1280,7 @@ div.tocify {
 </div>
 <div id="week-13-permutation-tests" class="section level2 tabset tabset-fade">
 <h2>Week 13: Permutation Tests</h2>
-<div id="overview-6" class="section level3">
+<div id="overview-5" class="section level3">
 <h3>Overview</h3>
 <p>You should be able to:</p>
 <ul>

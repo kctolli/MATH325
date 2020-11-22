@@ -625,7 +625,7 @@ $(document).ready(function () {
 <h5 id="numerical-3">Numerical</h5>
 <ul>
 <li>Correlation - the strength and direction of the association - <code>cor(x,y)</code></li>
-<li>Mean (average) - Center of Mass - <code>mean(x)</code></li>
+<li>Summary - Ten Number Summary - <code>favstats(y ~ x, data=YourDataSet)</code></li>
 </ul>
 <h5 id="graphics-3">Graphics</h5>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplot.png" alt="Scatterplot" title="Scatterplot"> </a></p>
@@ -736,6 +736,13 @@ $(document).ready(function () {
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 <h5 id="numerical-6">Numerical</h5>
+<ul>
+<li>Summary
+<ul>
+<li>Five Number Summary - <code>summary(y)</code></li>
+<li>Ten Number Summary - <code>favstats(y ~ x, data=YourDataSet)</code></li>
+</ul></li>
+</ul>
 <h5 id="graphics-6">Graphics</h5>
 <p><a href="GraphicalSummaries.html#scatterplots"> <img class="myhover" src="Images/scatterplotbinomYmult.png" alt="Scatterplot with Binomial Y" title="Scatterplot with Binomial Y, including coloring and shading"> </a></p>
 <!--- End of Add content area.  ------------------>
@@ -1057,8 +1064,8 @@ $(document).ready(function () {
 </div>
 </div>
 <p><br/></p>
-<p><span style="color:orange;">This is “the end” of the <em>Getting Started</em> tutorial.</span> <span style="color:gray;">To find the “completion code” you will need to study, and “click open” each of the example codes above. Below are R Cheat sheets and R notes. </span></p>
-<p><strong>R Cheat Sheets</strong></p>
+<p><span style="color:orange;">This is “the end” of the <em>Getting Started</em> tutorial.</span> <span style="color:gray;">To find the “completion code” you will need to study, and “click open” each of the example codes above. Below are R notes. </span></p>
+<h5 id="r-cheatsheets">R Cheatsheets</h5>
 <ul>
 <li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R Colors</a></li>
 <li><a href="http://www.joyce-robbins.com/wp-content/uploads/2016/04/BaseGraphicsCheatsheet.pdf">R Base Graphics Cheat Sheet</a></li>
@@ -1067,7 +1074,7 @@ $(document).ready(function () {
 <li><a href="https://rstudio.com/resources/cheatsheets/">R Studio Cheat Sheets</a></li>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard Shortcuts</a></li>
 </ul>
-<p><strong>R Notes</strong></p>
+<h5 id="r-notes">R Notes</h5>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Add your own notes here...</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co"># Add R commands you want to remember here...</span></a></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Using ```{r, eval=FALSE} turns off the chunk, but still shows it.</span></a>
@@ -4306,7 +4313,6 @@ Text and image were placed here...</code></pre>
 <ul>
 <li><code>[Numerical Summaries](NumericalSummaries.html)</code> <em>becomes</em> <a href="NumericalSummaries.html">Numerical Summaries</a></li>
 <li><code>[Boxplots](GraphicalSummaries.html#boxplots)</code> <em>becomes</em> <a href="GraphicalSummaries.html#boxplots">Boxplots</a></li>
-<li><code>[R Commands](RCommands.html)</code> <em>becomes</em> <a href="RCommands.html">R Commands</a></li>
 </ul>
 <p>Linking to outside resources:</p>
 <ul>
@@ -4429,28 +4435,67 @@ Text and image were placed here...</code></pre>
 </div>
 </div>
 </div>
-<div id="math-equations" class="section level4">
-<h4>Math Equations</h4>
+<div id="insert-a-picture" class="section level4">
+<h4>Insert a Picture</h4>
+<p>To add a picture to your document, say some notes you took down on paper from class,</p>
+<p>Use the code: <code>![](./Images/insertPictureNotes.jpg)</code> to get…</p>
+<p><img src="Images/insertPictureNotes.jpg" /></p>
+<p><br /></p>
+</div>
+<div id="themes" class="section level4">
+<h4>Themes</h4>
+<p>Notice in the YAML (at the top of the RMD file) there is a line that reads:</p>
+<p>“theme: cerulean”</p>
+<p>Other possible themes are</p>
+<ul>
+<li>“default”, “cerulean”, “journal”, “flatly”, “readable”, “spacelab”, “united”, and “cosmo”.</li>
+</ul>
+<p>You can also change the <code>highlighting</code> by adding the line “highlight: tango” to the YAML as follows.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="op">---</span></a>
+<a class="sourceLine" id="cb17-2" title="2">title<span class="op">:</span><span class="st"> &quot;Markdown Hints&quot;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="st">  </span>html_document<span class="op">:</span></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="st">    </span>theme<span class="op">:</span><span class="st"> </span>cerulean</a>
+<a class="sourceLine" id="cb17-6" title="6">    highlight<span class="op">:</span><span class="st"> </span>tango</a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="op">---</span></a></code></pre></div>
+<p>Other highlighting options are</p>
+<ul>
+<li>“default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, “haddock”, and “textmate”.</li>
+</ul>
+</div>
+<div id="more-information" class="section level4">
+<h4>More Information</h4>
+<p>Go to the <a href="http://rmarkdown.rstudio.com/html_document_format.html">rmarkdown.rstudio.com</a> website for more information on how to use R Markdown.</p>
+<p><br /> <br /></p>
+<div style="clear:both;">
+
+</div>
+</div>
+</div>
+<div id="latex" class="section level3">
+<h3>Latex</h3>
+<p>Latex is used in RMDs to create Math Equations</p>
 <p>Use the dollar signs <code>$x=5$</code> to write <span class="math inline">\(x=5\)</span> or <code>$z=\frac{x-\mu}{\sigma}$</code> to write <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span>. For a nicely centered equation use the double dollar signs <code>$$ $$</code> on separate lines</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span>z =<span class="st"> </span>\frac{\bar{x}<span class="op">-</span>\mu}{\frac{\sigma}{\sqrt{n}}}</a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="st">  </span>z =<span class="st"> </span>\frac{\bar{x}<span class="op">-</span>\mu}{\frac{\sigma}{\sqrt{n}}}</a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
 <p>to get <span class="math display">\[
   z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
 \]</span></p>
 <p>Or</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="st">  </span>H_<span class="dv">0</span><span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> =<span class="st"> </span>\mu_<span class="dv">2</span></a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb18-4" title="4"><span class="er">$$</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb18-5" title="5"><span class="st">  </span>H_a<span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> \neq \mu_<span class="dv">2</span></a>
-<a class="sourceLine" id="cb18-6" title="6"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span>H_<span class="dv">0</span><span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> =<span class="st"> </span>\mu_<span class="dv">2</span></a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="er">$$</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="st">  </span>H_a<span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> \neq \mu_<span class="dv">2</span></a>
+<a class="sourceLine" id="cb19-6" title="6"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
 <p>to get <span class="math display">\[
   H_0: \mu_{\text{Group 1}} = \mu_{\text{Group 2}}
 \]</span> <span class="math display">\[ 
   H_a: \mu_{\text{Group 1}} \neq \mu_{\text{Group 2}}
 \]</span></p>
-<p>Symbol list:</p>
+<div id="symbol-list" class="section level4">
+<h4>Symbol list:</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4527,20 +4572,13 @@ Text and image were placed here...</code></pre>
 </table>
 <p><br /></p>
 </div>
-<div id="insert-a-picture" class="section level4">
-<h4>Insert a Picture</h4>
-<p>To add a picture to your document, say some notes you took down on paper from class,</p>
-<p>Use the code: <code>![](./Images/insertPictureNotes.jpg)</code> to get…</p>
-<p><img src="Images/insertPictureNotes.jpg" /></p>
-<p><br /></p>
-</div>
 <div id="tables" class="section level4">
 <h4>Tables</h4>
 <p>There are many ways to <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables">make tables</a> in R Markdown. Here is a simple way to make a “pipe” table.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="op">|</span><span class="st"> </span>Name          <span class="op">|</span><span class="st"> </span>Age           <span class="op">|</span><span class="st"> </span>Gender       <span class="op">|</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">--------------</span><span class="er">|</span></a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="er">|</span><span class="st"> </span>Jill          <span class="op">|</span><span class="st"> </span><span class="dv">8</span>             <span class="op">|</span><span class="st">  </span>Female      <span class="op">|</span></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="er">|</span><span class="st"> </span>Jack          <span class="op">|</span><span class="st"> </span><span class="dv">9</span>             <span class="op">|</span><span class="st">  </span>Male        <span class="op">|</span></a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="op">|</span><span class="st"> </span>Name          <span class="op">|</span><span class="st"> </span>Age           <span class="op">|</span><span class="st"> </span>Gender       <span class="op">|</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">--------------</span><span class="er">|</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="er">|</span><span class="st"> </span>Jill          <span class="op">|</span><span class="st"> </span><span class="dv">8</span>             <span class="op">|</span><span class="st">  </span>Female      <span class="op">|</span></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="er">|</span><span class="st"> </span>Jack          <span class="op">|</span><span class="st"> </span><span class="dv">9</span>             <span class="op">|</span><span class="st">  </span>Male        <span class="op">|</span></a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -4563,35 +4601,6 @@ Text and image were placed here...</code></pre>
 </tbody>
 </table>
 <p><br /></p>
-</div>
-<div id="themes" class="section level4">
-<h4>Themes</h4>
-<p>Notice in the YAML (at the top of the RMD file) there is a line that reads:</p>
-<p>“theme: cerulean”</p>
-<p>Other possible themes are</p>
-<ul>
-<li>“default”, “cerulean”, “journal”, “flatly”, “readable”, “spacelab”, “united”, and “cosmo”.</li>
-</ul>
-<p>You can also change the <code>highlighting</code> by adding the line “highlight: tango” to the YAML as follows.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="op">---</span></a>
-<a class="sourceLine" id="cb20-2" title="2">title<span class="op">:</span><span class="st"> &quot;Markdown Hints&quot;</span></a>
-<a class="sourceLine" id="cb20-3" title="3">output<span class="op">:</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="st">  </span>html_document<span class="op">:</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="st">    </span>theme<span class="op">:</span><span class="st"> </span>cerulean</a>
-<a class="sourceLine" id="cb20-6" title="6">    highlight<span class="op">:</span><span class="st"> </span>tango</a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="op">---</span></a></code></pre></div>
-<p>Other highlighting options are</p>
-<ul>
-<li>“default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, “haddock”, and “textmate”.</li>
-</ul>
-</div>
-<div id="more-information" class="section level4">
-<h4>More Information</h4>
-<p>Go to the <a href="http://rmarkdown.rstudio.com/html_document_format.html">rmarkdown.rstudio.com</a> website for more information on how to use R Markdown.</p>
-<p><br /> <br /></p>
-<div style="clear:both;">
-
-</div>
 </div>
 </div>
 </div>

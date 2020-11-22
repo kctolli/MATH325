@@ -361,9 +361,11 @@ The Wilcoxon Rank Sum test sums the ranks from one of the groups for its test st
 
 <br /> <br /> <hr />
 
-## Weeks 7 & 8: Linear Regression {.tabset .tabset-fade}
+## Weeks 7 - 11: Regression {.tabset .tabset-fade}
 
-### Overview
+### Overview {.tabset .tabset-pills}
+
+#### Linear 
 
 You should be able to:
 
@@ -374,6 +376,19 @@ You should be able to:
 * Check requirements (linearity, constant variance, normal errors, fixed x-values, and independent errors).
 * Interpret the slope(s) and intercept of the regression.
 * Make predictions using the regression model.
+
+#### Logistic
+
+You should be able to:
+
+* Identify a scenario as a logistic regression.
+* Recognize the explanatory variables and binomial response variable of the regression.
+* State the Z Test hypotheses for any single coefficient in the regression.
+*	Correctly use `glm()`, `summary()`, and `curve()` in R.
+* Check the goodness-of-fit of the logistic regression using an appropriate goodness-of-fit test (deviance residuals vs Hosmer-Lemeshow tests).
+* Interpret the effect of a slope term on the odds ratio.
+* Explain the difference between an odds and a probability.
+* Make predictions of probabilities using the logistic model.
 
 <br /> <br /> <hr />
 
@@ -472,25 +487,72 @@ Because the p-value for the β2 term is not significant, the two lines should re
 
 <br /> <br /> <hr />
 
-## Week 9: Project 1 & Practice Final
+### Simple Logistic Regression
 
-* [Consulting Project](./Analyses/Consulting.html)   
-* [Practice Final](./SkillsQuiz/practicefinal.html) Earned a 68%
+#### Question 1
 
-## Weeks 10 & 11: Logistic Regression {.tabset .tabset-fade}
+Run the following codes in R.
 
-### Overview
+  library(mosaic)
 
-You should be able to:
+  View(Gestation)
 
-* Identify a scenario as a logistic regression.
-* Recognize the explanatory variables and binomial response variable of the regression.
-* State the Z Test hypotheses for any single coefficient in the regression.
-*	Correctly use `glm()`, `summary()`, and `curve()` in R.
-* Check the goodness-of-fit of the logistic regression using an appropriate goodness-of-fit test (deviance residuals vs Hosmer-Lemeshow tests).
-* Interpret the effect of a slope term on the odds ratio.
-* Explain the difference between an odds and a probability.
-* Make predictions of probabilities using the logistic model.
+  ?Gestation
+
+Use an appropriate test to determine if the birth weight in ounces of a baby (wt) can be used to predict the probability that the mother smoked at all (smoke>0) during or prior to the pregnancy. The graphic of the correct analysis is shown below.
+
+What are the values of b0 and b1 for the curve shown in the graphic below?
+
+![](./FinalExamStudyGuide_files/figure-html/Log1.png)
+
+```{r}
+myglm <- glm(smoke>0 ~ wt, data=Gestation, family=binomial)
+pander(summary(myglm))
+```
+
+#### Question 2
+
+Here is the output of a logistic regression performed in R.
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -6.6035     2.3514  -2.808  0.00498
+mpg             0.3070     0.1148   2.673  0.00751
+
+What is the predicted value for P(Yi=1|xi=25) ?
+
+```{r}
+exp(-6.6035 + 0.3070*25) / (1 + exp(-6.6035 + 0.3070*25))
+#predict(glmObject, data.frame(mpg=25), type="response")
+```
+
+#### Question 3
+
+Consider again the logistic regression output shown below.
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -6.6035     2.3514  -2.808  0.00498
+mpg             0.3070     0.1148   2.673  0.00751
+
+Which of the following correctly interprets these results?
+
+To intepret the effect of mpg (the x-variable) on the odds, we compute exp(0.3070), which gives the value of eb1 . See the Overview page of Logistic Regression for an explanation.
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -6.6035     2.3514  -2.808  0.00498
+*mpg             0.3070*     0.1148   2.673  0.00751
+
+
+Since exp(0.3070) = 1.359341, we find that the odds of a success, i.e., that Yi =1 increases by 35.9341%, which rounds to 36% for every 1 unit increase in x.
+
+Notices that the 35.9341 came from 1.359341. If you have 1.36 of what you originally had, then you increased by 0.36 or 36%.
+
+```{r}
+exp(0.3070)
+```
+
 
 <br /> <br /> <hr />
 
