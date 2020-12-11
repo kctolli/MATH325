@@ -1,5 +1,7 @@
 ---
 title: "Chi Squared Test"
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -25,6 +27,126 @@ Come up with a chi squared test analysis of your own creation.
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
+```{r, include=FALSE}
+library(mosaic)
+library(car)
+library(DT)
+library(pander)
+library(tidyverse)
+library(data.table)
+
+pandary <- function(x){pander(summary(x))}
+
+pander5 <- function(x){pander(x>5)}
+```
+
+```{r}
+# Use this R-Chunk to import all your datasets!
+Guns <- read_csv("https://github.com/kctolli/MATH335/raw/master/Case_Studies/Case_Study_04/analysis/full_data.csv") %>% 
+  select(-X1) %>% na.omit() %>% 
+  filter(!is.na(intent)) %>% filter(!is.na(age)) %>% 
+  select(intent, age, race, education, sex)
+```
+
+```{r, eval = FALSE}
+View(Guns)
+```
+
 ## Background
 
+The world is a dangerous place. During 2015 and 2016 there was a lot of discussion in the news about police shootings. FiveThirtyEight reported on gun deaths in 2016. As leaders in data journalism, they have posted a clean version of this data in their [GitHub](https://github.com/fivethirtyeight/guns-data) repo called full_data.csv for us to use. The data of the gun deaths was recorded over the coarse of two years (2012-2014).
 
+## Hypotheses & Data Analysis {.tabset .tabset-fade}
+
+### Is intent associated with education regardless of race? 
+
+$$
+  H_{01}:\ \text{Intent and education are not associated.}
+$$
+
+$$
+  H_{a1}:\ \text{Intent and education are associated.}
+$$
+
+
+```{r}
+# Test H_{01}:
+gun1 <- table(setDT(Guns %>% select(intent, education)))
+chi.gun1 <- chisq.test(gun1); chi.gun1
+```
+
+
+```{r}
+pander5(chi.gun1$expected)
+```
+
+All expected counts are greater than 5, so the requirements are met. 
+
+```{r}
+barplot(gun1, beside=TRUE, legend.text=TRUE, xlab="Education", main="Education vs Intent")
+```
+
+<br />
+<hr />
+
+### Is intent associated with race?
+
+$$
+  H_{02}:\ \text{Intent and race are not associated.}
+$$
+
+$$
+  H_{a2}:\ \text{Intent and race are associated.}
+$$
+
+```{r}
+# Test H_{02}:
+gun2 <- table(setDT(Guns %>% select(race, intent)))
+chi.gun2 <- chisq.test(gun2); chi.gun2
+```
+
+```{r}
+pander5(chi.gun2$expected)
+```
+
+All expected counts are greater than 5, so the requirements are met. 
+
+```{r}
+barplot(gun2, beside=TRUE, legend.text=TRUE, xlab="Intent", main="Intent vs Race")
+```
+
+<br />
+<hr />
+
+### Is race associated with education? 
+
+$$
+  H_{03}:\ \text{Education and race are not associated.}
+$$
+
+$$
+  H_{a3}:\ \text{Education and race are associated.}
+$$
+
+```{r}
+# Test H_{03}:
+gun3 <- table(setDT(Guns %>% select(race, education)))
+chi.gun3 <- chisq.test(gun3); chi.gun3
+```
+
+```{r}
+pander5(chi.gun3$expected)
+```
+
+All expected counts are greater than 5, so the requirements are met. 
+
+```{r}
+barplot(gun3, beside=TRUE, legend.text=TRUE, xlab="Education", main="Education vs Race")
+```
+
+<br />
+<hr />
+
+## Interpretation
+
+With each of the of the tests we learn what data is like for the each of the data. For the 3 tests the p-value is the same at < 2.2e-16. Each of the tests did pass the greater than 5 test (If this failed, it will still be appropriate as long as all expected counts are at least 1 and the average expected count is at least 5).

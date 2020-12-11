@@ -400,7 +400,7 @@ This page, and all pages of this notebook, are meant to be customized to become 
 
 ##### Numerical 
 
-
+* Table - `table(x)`
 
 ##### Graphics
 
@@ -555,7 +555,49 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   - [Recalling Words](./Analyses/RecallingWordsWilcoxon.html)
 * [Kruskal-Wallis Tests](./Kruskal.html)
   - [Chocolate](./Analyses/ChocolateKruskal-WallisTest.html)
-* [Permutation Tests](./PermutationTests.html)
+
+<div style="padding-left:0px;">
+
+<span class="tooltipr">
+<ul><li><a href="javascript:showhide('hovertobegin')">Permutation Tests</a></li></ul>
+  <span class="tooltipRtext">This comes from the <a href = ./PermutationTests.html>Permutation Tests</a> page of this book <br/> Random Testing - A nonparametric approach to computing the p-value for any test statistic in just about any scenario.</span>
+</span>
+<div id="hovertobegin" style="display:none;padding-left:20px;">
+
+![](./Images/legoPermutationExample.png)
+
+The process of a permutation test is:
+
+1. Compute a test statistic for the original data.
+2. Re-sample the data (“shake it up and dump it out”) thousands of times, computing a new test statistic each time, to create a sampling distribution of the test statistic.
+3. Compute the p-value of the permutation test as the percentage of test statistics that are as extreme or more extreme than the one originally observed.
+
+```{r eval=FALSE}
+#Step 1 Compute a test statistic for the original data.
+myTest <- …perform the initial test…
+observedTestStat <- myTest$statistic
+
+#Step 2
+N <- 2000      
+permutedTestStats <- rep(NA, N)
+for (i in  1:N){
+  permutedData <- …randomly permute the data…
+  permutedTest <- …perform test with permutedData…
+  permutedTestStats[i] <- permutedTest$statistic
+}
+
+hist(permutedTestStats)
+abline(v=observedTestStat)
+
+#Step 3
+sum(permutedTestStats >= observedTestStat)/N
+sum(permutedTestStats <= observedTestStat)/N
+```
+
+</div> </div>
+
+<br /> <br /> 
+
 
 <!-- End your notes before here. ------------------------------------- -->
 <!-- # -->
@@ -2844,6 +2886,25 @@ C) This is the third.
 </div>
   
 
+##### Tables
+
+There are many ways to [make tables](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables) in R Markdown. Here is a simple way to make a "pipe" table.
+
+```{r, eval=FALSE}
+| Name          | Age           | Gender       | 
+|---------------|---------------|--------------|
+| Jill          | 8             |  Female      |
+| Jack          | 9             |  Male        |
+```
+
+| Name          | Age           | Gender       | 
+|---------------|---------------|--------------|
+| Jill          | 8             |  Female      |
+| Jack          | 9             |  Male        |
+
+
+<br />
+
 #### Insert a Picture
 
 To add a picture to your document, say some notes you took down on paper from class,
@@ -2948,24 +3009,6 @@ $$
 
 <br />
 
-#### Tables
-
-There are many ways to [make tables](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables) in R Markdown. Here is a simple way to make a "pipe" table.
-
-```{r, eval=FALSE}
-| Name          | Age           | Gender       | 
-|---------------|---------------|--------------|
-| Jill          | 8             |  Female      |
-| Jack          | 9             |  Male        |
-```
-
-| Name          | Age           | Gender       | 
-|---------------|---------------|--------------|
-| Jill          | 8             |  Female      |
-| Jack          | 9             |  Male        |
-
-
-<br />
 
 
 

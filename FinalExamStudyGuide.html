@@ -1277,6 +1277,57 @@ div.tocify {
 <br /> <br />
 <hr />
 </div>
+<div id="chi-squared" class="section level3">
+<h3>Chi Squared</h3>
+<div id="question-1-9" class="section level4">
+<h4>Question 1</h4>
+<p>What type of statistical test would be appropriate for understanding how gender impacts the risk a person of a certain age has of having a heart attack?</p>
+<p>We are trying to predict an outcome, whether or not the person will experience a heart attack, using their age and gender. Age is a quantitative measurement, gender is a qualitative measurement, and the response variable Y could be 1 for a heart attack and 0 for no heart attack. This is the perfect scenario of a multiple logistic regression.</p>
+</div>
+<div id="question-2-9" class="section level4">
+<h4>Question 2</h4>
+<p>Which statistical method would be best suited for determining how the age and gender of an individual can predict their annual income, measured in thousands of dollars?</p>
+<p>The response variable of this scenario, annual income measured in thousands, is quantitative. Since we have a quantitative explanatory variable of age and a qualitative explanatory variable of gender, a multiple linear regression would be the best choice.</p>
+</div>
+<div id="question-3-9" class="section level4">
+<h4>Question 3</h4>
+<p>Run the following codes in R:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">plot</span>((Wind <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">~</span><span class="st"> </span>Temp, <span class="dt">data=</span>airquality, <span class="dt">xlab=</span><span class="st">&quot;Daily Average Temperature&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Probability Daily Average Wind Speed (mph) &gt; 10&quot;</span>, <span class="dt">main=</span><span class="st">&quot;La Guardia Airport Measurements in 1973&quot;</span>)</a></code></pre></div>
+<p><img src="FinalExamStudyGuide_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">air.glm &lt;-<span class="st"> </span><span class="kw">glm</span>(Wind <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">~</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span><span class="kw">as.factor</span>(Month), <span class="dt">data=</span>airquality, <span class="dt">family=</span>binomial)</a></code></pre></div>
+<p>During which month is there a significant change in the probability that the daily average wind speed will be greater than 10 mph, for all values of daily average temperature?</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">summary</span>(<span class="kw">glm</span>(Wind <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">~</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span><span class="kw">as.factor</span>(Month), <span class="dt">data=</span>airquality, <span class="dt">family=</span>binomial))</a></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Wind &gt; 10 ~ Temp + as.factor(Month), family = binomial, 
+##     data = airquality)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.7457  -0.9825  -0.6264   1.0925   1.8717  
+## 
+## Coefficients:
+##                   Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)        6.99664    1.92840   3.628 0.000285 ***
+## Temp              -0.10140    0.02867  -3.537 0.000405 ***
+## as.factor(Month)6  0.87217    0.65487   1.332 0.182919    
+## as.factor(Month)7  0.73891    0.74202   0.996 0.319348    
+## as.factor(Month)8  1.00550    0.73050   1.376 0.168682    
+## as.factor(Month)9  1.25238    0.64839   1.932 0.053418 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 211.57  on 152  degrees of freedom
+## Residual deviance: 190.09  on 147  degrees of freedom
+## AIC: 202.09
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<br /> <br />
+<hr />
+</div>
+</div>
 </div>
 <div id="week-13-permutation-tests" class="section level2 tabset tabset-fade">
 <h2>Week 13: Permutation Tests</h2>

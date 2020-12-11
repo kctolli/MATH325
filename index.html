@@ -776,6 +776,9 @@ $(document).ready(function () {
 <div style="padding-left:125px;color:gray;">
 <!-- Add your customizations in the area below: -->
 <h5 id="numerical-7">Numerical</h5>
+<ul>
+<li>Table - <code>table(x)</code></li>
+</ul>
 <h5 id="graphics-7">Graphics</h5>
 <p><a href="GraphicalSummaries.html#bar-charts"> <img class="myhover" src="Images/barplot.png" alt="Bar Chart" title="Bar Chart"> </a></p>
 <!--- End of Add content area.  ------------------>
@@ -958,8 +961,45 @@ $(document).ready(function () {
 <ul>
 <li><a href="./Analyses/ChocolateKruskal-WallisTest.html">Chocolate</a></li>
 </ul></li>
-<li><a href="./PermutationTests.html">Permutation Tests</a></li>
 </ul>
+<div style="padding-left:0px;">
+<span class="tooltipr">
+<ul>
+<li>
+<a href="javascript:showhide('hovertobegin')">Permutation Tests</a>
+</li>
+</ul>
+<span class="tooltipRtext">This comes from the <a href = ./PermutationTests.html>Permutation Tests</a> page of this book <br/> Random Testing - A nonparametric approach to computing the p-value for any test statistic in just about any scenario.</span> </span>
+<div id="hovertobegin" style="display:none;padding-left:20px;">
+<p><img src="Images/legoPermutationExample.png" /></p>
+<p>The process of a permutation test is:</p>
+<ol style="list-style-type: decimal">
+<li>Compute a test statistic for the original data.</li>
+<li>Re-sample the data (“shake it up and dump it out”) thousands of times, computing a new test statistic each time, to create a sampling distribution of the test statistic.</li>
+<li>Compute the p-value of the permutation test as the percentage of test statistics that are as extreme or more extreme than the one originally observed.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#Step 1 Compute a test statistic for the original data.</span></a>
+<a class="sourceLine" id="cb1-2" title="2">myTest &lt;-<span class="st"> </span>…perform the initial test…</a>
+<a class="sourceLine" id="cb1-3" title="3">observedTestStat &lt;-<span class="st"> </span>myTest<span class="op">$</span>statistic</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">#Step 2</span></a>
+<a class="sourceLine" id="cb1-6" title="6">N &lt;-<span class="st"> </span><span class="dv">2000</span>      </a>
+<a class="sourceLine" id="cb1-7" title="7">permutedTestStats &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, N)</a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="cf">for</span> (i <span class="cf">in</span>  <span class="dv">1</span><span class="op">:</span>N){</a>
+<a class="sourceLine" id="cb1-9" title="9">  permutedData &lt;-<span class="st"> </span>…randomly permute the data…</a>
+<a class="sourceLine" id="cb1-10" title="10">  permutedTest &lt;-<span class="st"> </span>…perform test with permutedData…</a>
+<a class="sourceLine" id="cb1-11" title="11">  permutedTestStats[i] &lt;-<span class="st"> </span>permutedTest<span class="op">$</span>statistic</a>
+<a class="sourceLine" id="cb1-12" title="12">}</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="kw">hist</span>(permutedTestStats)</a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="kw">abline</span>(<span class="dt">v=</span>observedTestStat)</a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">#Step 3</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="kw">sum</span>(permutedTestStats <span class="op">&gt;=</span><span class="st"> </span>observedTestStat)<span class="op">/</span>N</a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="kw">sum</span>(permutedTestStats <span class="op">&lt;=</span><span class="st"> </span>observedTestStat)<span class="op">/</span>N</a></code></pre></div>
+</div>
+</div>
+<p><br /> <br /></p>
 <!-- End your notes before here. ------------------------------------- -->
 <!-- # -->
 <div style="clear:both;">
@@ -1075,10 +1115,10 @@ $(document).ready(function () {
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard Shortcuts</a></li>
 </ul>
 <h5 id="r-notes">R Notes</h5>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Add your own notes here...</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># Add R commands you want to remember here...</span></a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Using ```{r, eval=FALSE} turns off the chunk, but still shows it.</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co"># Useful when you want to remember code, but not run it in this file.</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Add your own notes here...</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co"># Add R commands you want to remember here...</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Using ```{r, eval=FALSE} turns off the chunk, but still shows it.</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Useful when you want to remember code, but not run it in this file.</span></a></code></pre></div>
 </div>
 </div>
 <p><br /> <br /></p>
@@ -4344,13 +4384,13 @@ Text and image were placed here...</code></pre>
 </div>
 <div style="padding-left:350px;">
 <p>Use the code:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">To achieve the result<span class="op">:</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="st">  </span></a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="er">*</span><span class="st"> </span>This is the first item.</a>
-<a class="sourceLine" id="cb13-4" title="4"></a>
-<a class="sourceLine" id="cb13-5" title="5"><span class="op">*</span><span class="st"> </span>This is the second.</a>
-<a class="sourceLine" id="cb13-6" title="6"></a>
-<a class="sourceLine" id="cb13-7" title="7"><span class="op">*</span><span class="st"> </span>This is the third.</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">To achieve the result<span class="op">:</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="er">*</span><span class="st"> </span>This is the first item.</a>
+<a class="sourceLine" id="cb14-4" title="4"></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="op">*</span><span class="st"> </span>This is the second.</a>
+<a class="sourceLine" id="cb14-6" title="6"></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="op">*</span><span class="st"> </span>This is the third.</a></code></pre></div>
 </div>
 <div style="clear:both;">
 
@@ -4368,13 +4408,13 @@ Text and image were placed here...</code></pre>
 </div>
 <div style="padding-left:350px;">
 <p>Use the code:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">To achieve the result<span class="op">:</span></a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="fl">1.</span> This is the first item.</a>
-<a class="sourceLine" id="cb14-4" title="4"></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="fl">2.</span> This is the second.</a>
-<a class="sourceLine" id="cb14-6" title="6"></a>
-<a class="sourceLine" id="cb14-7" title="7"><span class="fl">3.</span> This is the third.</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">To achieve the result<span class="op">:</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="fl">1.</span> This is the first item.</a>
+<a class="sourceLine" id="cb15-4" title="4"></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="fl">2.</span> This is the second.</a>
+<a class="sourceLine" id="cb15-6" title="6"></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="fl">3.</span> This is the third.</a></code></pre></div>
 </div>
 <div style="clear:both;">
 
@@ -4392,13 +4432,13 @@ Text and image were placed here...</code></pre>
 </div>
 <div style="padding-left:350px;">
 <p>Use the code:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">To achieve the result<span class="op">:</span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span></a>
-<a class="sourceLine" id="cb15-3" title="3">A<span class="er">)</span> This is the first item.</a>
-<a class="sourceLine" id="cb15-4" title="4"></a>
-<a class="sourceLine" id="cb15-5" title="5">B<span class="er">)</span> This is the second.</a>
-<a class="sourceLine" id="cb15-6" title="6"></a>
-<a class="sourceLine" id="cb15-7" title="7">C<span class="er">)</span> This is the third.</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">To achieve the result<span class="op">:</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="st">  </span></a>
+<a class="sourceLine" id="cb16-3" title="3">A<span class="er">)</span> This is the first item.</a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5">B<span class="er">)</span> This is the second.</a>
+<a class="sourceLine" id="cb16-6" title="6"></a>
+<a class="sourceLine" id="cb16-7" title="7">C<span class="er">)</span> This is the third.</a></code></pre></div>
 </div>
 <div style="clear:both;">
 
@@ -4421,18 +4461,48 @@ Text and image were placed here...</code></pre>
 </ol>
 </div>
 <div style="padding-left:350px;">
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="fl">1.</span> What is <span class="op">$</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span><span class="op">$</span>?</a>
-<a class="sourceLine" id="cb16-2" title="2"></a>
-<a class="sourceLine" id="cb16-3" title="3">    a. <span class="op">**</span><span class="dv">4</span><span class="op">**</span></a>
-<a class="sourceLine" id="cb16-4" title="4"><span class="st">    </span></a>
-<a class="sourceLine" id="cb16-5" title="5"><span class="st">    </span>b. <span class="dv">8</span></a>
-<a class="sourceLine" id="cb16-6" title="6">  </a>
-<a class="sourceLine" id="cb16-7" title="7"><span class="fl">2.</span> What is <span class="op">$</span><span class="dv">3</span>\times5<span class="op">$</span>?</a>
-<a class="sourceLine" id="cb16-8" title="8"></a>
-<a class="sourceLine" id="cb16-9" title="9">    a. <span class="dv">14</span></a>
-<a class="sourceLine" id="cb16-10" title="10">    </a>
-<a class="sourceLine" id="cb16-11" title="11">    b. <span class="op">**</span><span class="dv">15</span><span class="op">**</span></a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="fl">1.</span> What is <span class="op">$</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span><span class="op">$</span>?</a>
+<a class="sourceLine" id="cb17-2" title="2"></a>
+<a class="sourceLine" id="cb17-3" title="3">    a. <span class="op">**</span><span class="dv">4</span><span class="op">**</span></a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="st">    </span></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="st">    </span>b. <span class="dv">8</span></a>
+<a class="sourceLine" id="cb17-6" title="6">  </a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="fl">2.</span> What is <span class="op">$</span><span class="dv">3</span>\times5<span class="op">$</span>?</a>
+<a class="sourceLine" id="cb17-8" title="8"></a>
+<a class="sourceLine" id="cb17-9" title="9">    a. <span class="dv">14</span></a>
+<a class="sourceLine" id="cb17-10" title="10">    </a>
+<a class="sourceLine" id="cb17-11" title="11">    b. <span class="op">**</span><span class="dv">15</span><span class="op">**</span></a></code></pre></div>
 </div>
+</div>
+<div id="tables" class="section level5">
+<h5>Tables</h5>
+<p>There are many ways to <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables">make tables</a> in R Markdown. Here is a simple way to make a “pipe” table.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="op">|</span><span class="st"> </span>Name          <span class="op">|</span><span class="st"> </span>Age           <span class="op">|</span><span class="st"> </span>Gender       <span class="op">|</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">--------------</span><span class="er">|</span></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="er">|</span><span class="st"> </span>Jill          <span class="op">|</span><span class="st"> </span><span class="dv">8</span>             <span class="op">|</span><span class="st">  </span>Female      <span class="op">|</span></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="er">|</span><span class="st"> </span>Jack          <span class="op">|</span><span class="st"> </span><span class="dv">9</span>             <span class="op">|</span><span class="st">  </span>Male        <span class="op">|</span></a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jill</td>
+<td>8</td>
+<td>Female</td>
+</tr>
+<tr class="even">
+<td>Jack</td>
+<td>9</td>
+<td>Male</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
 </div>
 </div>
 <div id="insert-a-picture" class="section level4">
@@ -4451,13 +4521,13 @@ Text and image were placed here...</code></pre>
 <li>“default”, “cerulean”, “journal”, “flatly”, “readable”, “spacelab”, “united”, and “cosmo”.</li>
 </ul>
 <p>You can also change the <code>highlighting</code> by adding the line “highlight: tango” to the YAML as follows.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="op">---</span></a>
-<a class="sourceLine" id="cb17-2" title="2">title<span class="op">:</span><span class="st"> &quot;Markdown Hints&quot;</span></a>
-<a class="sourceLine" id="cb17-3" title="3">output<span class="op">:</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="st">  </span>html_document<span class="op">:</span></a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="st">    </span>theme<span class="op">:</span><span class="st"> </span>cerulean</a>
-<a class="sourceLine" id="cb17-6" title="6">    highlight<span class="op">:</span><span class="st"> </span>tango</a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="op">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="op">---</span></a>
+<a class="sourceLine" id="cb19-2" title="2">title<span class="op">:</span><span class="st"> &quot;Markdown Hints&quot;</span></a>
+<a class="sourceLine" id="cb19-3" title="3">output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="st">  </span>html_document<span class="op">:</span></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="st">    </span>theme<span class="op">:</span><span class="st"> </span>cerulean</a>
+<a class="sourceLine" id="cb19-6" title="6">    highlight<span class="op">:</span><span class="st"> </span>tango</a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="op">---</span></a></code></pre></div>
 <p>Other highlighting options are</p>
 <ul>
 <li>“default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, “haddock”, and “textmate”.</li>
@@ -4476,19 +4546,19 @@ Text and image were placed here...</code></pre>
 <h3>Latex</h3>
 <p>Latex is used in RMDs to create Math Equations</p>
 <p>Use the dollar signs <code>$x=5$</code> to write <span class="math inline">\(x=5\)</span> or <code>$z=\frac{x-\mu}{\sigma}$</code> to write <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span>. For a nicely centered equation use the double dollar signs <code>$$ $$</code> on separate lines</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="st">  </span>z =<span class="st"> </span>\frac{\bar{x}<span class="op">-</span>\mu}{\frac{\sigma}{\sqrt{n}}}</a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="st">  </span>z =<span class="st"> </span>\frac{\bar{x}<span class="op">-</span>\mu}{\frac{\sigma}{\sqrt{n}}}</a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
 <p>to get <span class="math display">\[
   z = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
 \]</span></p>
 <p>Or</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span>H_<span class="dv">0</span><span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> =<span class="st"> </span>\mu_<span class="dv">2</span></a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="op">$</span><span class="er">$</span></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="er">$$</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="st">  </span>H_a<span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> \neq \mu_<span class="dv">2</span></a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="st">  </span>H_<span class="dv">0</span><span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> =<span class="st"> </span>\mu_<span class="dv">2</span></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="op">$</span><span class="er">$</span></a>
+<a class="sourceLine" id="cb21-4" title="4"><span class="er">$$</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="st">  </span>H_a<span class="op">:</span><span class="st"> </span>\mu_<span class="dv">1</span> \neq \mu_<span class="dv">2</span></a>
+<a class="sourceLine" id="cb21-6" title="6"><span class="op">$</span><span class="er">$</span></a></code></pre></div>
 <p>to get <span class="math display">\[
   H_0: \mu_{\text{Group 1}} = \mu_{\text{Group 2}}
 \]</span> <span class="math display">\[ 
@@ -4567,36 +4637,6 @@ Text and image were placed here...</code></pre>
 <tr class="even">
 <td><span class="math inline">\(\underbrace{Y_i}_\text{label}\)</span></td>
 <td><code>$\underbrace{Y_i}_\text{label}$</code></td>
-</tr>
-</tbody>
-</table>
-<p><br /></p>
-</div>
-<div id="tables" class="section level4">
-<h4>Tables</h4>
-<p>There are many ways to <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables">make tables</a> in R Markdown. Here is a simple way to make a “pipe” table.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="op">|</span><span class="st"> </span>Name          <span class="op">|</span><span class="st"> </span>Age           <span class="op">|</span><span class="st"> </span>Gender       <span class="op">|</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">---------------</span><span class="er">|</span><span class="op">--------------</span><span class="er">|</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="er">|</span><span class="st"> </span>Jill          <span class="op">|</span><span class="st"> </span><span class="dv">8</span>             <span class="op">|</span><span class="st">  </span>Female      <span class="op">|</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="er">|</span><span class="st"> </span>Jack          <span class="op">|</span><span class="st"> </span><span class="dv">9</span>             <span class="op">|</span><span class="st">  </span>Male        <span class="op">|</span></a></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Age</th>
-<th>Gender</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Jill</td>
-<td>8</td>
-<td>Female</td>
-</tr>
-<tr class="even">
-<td>Jack</td>
-<td>9</td>
-<td>Male</td>
 </tr>
 </tbody>
 </table>

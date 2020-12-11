@@ -571,6 +571,38 @@ You should be able to:
 
 <br /> <br /> <hr />
 
+### Chi Squared
+
+#### Question 1
+
+What type of statistical test would be appropriate for understanding how gender impacts the risk a person of a certain age has of having a heart attack?
+
+We are trying to predict an outcome, whether or not the person will experience a heart attack, using their age and gender. Age is a quantitative measurement, gender is a qualitative measurement, and the response variable Y could be 1 for a heart attack and 0 for no heart attack. This is the perfect scenario of a multiple logistic regression.
+
+#### Question 2 
+
+Which statistical method would be best suited for determining how the age and gender of an individual can predict their annual income, measured in thousands of dollars?
+
+The response variable of this scenario, annual income measured in thousands, is quantitative. Since we have a quantitative explanatory variable of age and a qualitative explanatory variable of gender, a multiple linear regression would be the best choice.
+
+#### Question 3
+
+Run the following codes in R:
+
+```{r}
+plot((Wind > 10) ~ Temp, data=airquality, xlab="Daily Average Temperature", ylab="Probability Daily Average Wind Speed (mph) > 10", main="La Guardia Airport Measurements in 1973")
+
+air.glm <- glm(Wind > 10 ~ Temp + as.factor(Month), data=airquality, family=binomial)
+```
+
+During which month is there a significant change in the probability that the daily average wind speed will be greater than 10 mph, for all values of daily average temperature?
+
+```{r}
+summary(glm(Wind > 10 ~ Temp + as.factor(Month), data=airquality, family=binomial))
+```
+
+<br /> <br /> <hr />
+
 ## Week 13: Permutation Tests {.tabset .tabset-fade}
 
 ### Overview
@@ -580,6 +612,14 @@ You should be able to:
 *	State the logic behind the permutation test used to perform the Nonparametric Chi-squared Test.
 * Perform a permutation test in R for any of the scenarios including: Independent Samples, Paired Samples, Regression, or Chi-squared. 
 * Recognize that the only difference between a permutation test and the other tests taught in this course is in how the p-value is calculated. Everything else is the same.
+
+### Random Testing
+
+#### Question 1
+
+#### Question 2
+
+#### Question 3
 
 <br /> <br /> <hr />
 
