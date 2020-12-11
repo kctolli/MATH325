@@ -1261,10 +1261,12 @@ div.tocify {
 </div>
 </div>
 </div>
-<div id="week-12-chi-squared-tests-of-independence" class="section level2 tabset tabset-fade">
-<h2>Week 12: Chi Squared Tests of Independence</h2>
-<div id="overview-4" class="section level3">
+<div id="week-12---13-chi-squared-tests-of-independence-permutation-tests" class="section level2 tabset tabset-fade">
+<h2>Week 12 - 13: Chi Squared Tests of Independence &amp; Permutation Tests</h2>
+<div id="overview-4" class="section level3 tabset tabset-pills">
 <h3>Overview</h3>
+<div id="chi-squared-test" class="section level4">
+<h4>Chi-Squared Test</h4>
 <p>You should be able to:</p>
 <ul>
 <li>Identify a scenario as appropriate for a Chi squared Test.</li>
@@ -1274,11 +1276,21 @@ div.tocify {
 <li>Check the requirements using the expected counts.</li>
 <li>Interpret the results using Pearson Residuals when the p-value is significant.</li>
 </ul>
+</div>
+<div id="randomization-testing" class="section level4">
+<h4>Randomization Testing</h4>
+<p>You should be able to:</p>
+<ul>
+<li>State the logic behind the permutation test used to perform the Nonparametric Chi-squared Test.</li>
+<li>Perform a permutation test in R for any of the scenarios including: Independent Samples, Paired Samples, Regression, or Chi-squared.</li>
+<li>Recognize that the only difference between a permutation test and the other tests taught in this course is in how the p-value is calculated. Everything else is the same.</li>
+</ul>
 <br /> <br />
 <hr />
 </div>
-<div id="chi-squared" class="section level3">
-<h3>Chi Squared</h3>
+</div>
+<div id="chi-squared-tests-of-independence" class="section level3">
+<h3>Chi Squared Tests of Independence</h3>
 <div id="question-1-9" class="section level4">
 <h4>Question 1</h4>
 <p>What type of statistical test would be appropriate for understanding how gender impacts the risk a person of a certain age has of having a heart attack?</p>
@@ -1328,23 +1340,39 @@ div.tocify {
 <hr />
 </div>
 </div>
-</div>
-<div id="week-13-permutation-tests" class="section level2 tabset tabset-fade">
-<h2>Week 13: Permutation Tests</h2>
-<div id="overview-5" class="section level3">
-<h3>Overview</h3>
-<p>You should be able to:</p>
-<ul>
-<li>State the logic behind the permutation test used to perform the Nonparametric Chi-squared Test.</li>
-<li>Perform a permutation test in R for any of the scenarios including: Independent Samples, Paired Samples, Regression, or Chi-squared.</li>
-<li>Recognize that the only difference between a permutation test and the other tests taught in this course is in how the p-value is calculated. Everything else is the same.</li>
-</ul>
+<div id="random-testing" class="section level3">
+<h3>Random Testing</h3>
+<div id="question-1-10" class="section level4">
+<h4>Question 1</h4>
+<p>Which statistical test would be the most appropriate for analyzing the following data?</p>
+<p>A local restaurant records how many customers purchased a meal during the breakfast hours (7-9 AM), the lunch-time hours (10 AM - 2 PM) and the dinner-time hours (4 PM - 9 PM). They have this information for several months and want to know how the meal traffic (number of customers) differs on weekends vs. weekdays.</p>
+<p>The data from this experiment would look similar to the following.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Customer ID</th>
+<th>Time of Day</th>
+<th>Day of Week</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Breakfast</td>
+<td>Weekday</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Lunch</td>
+<td>Weekend</td>
+</tr>
+</tbody>
+</table>
+<p>There are two variables (columns) to this dataset, “Time of Day” and “Day of Week”. Since both are qualitative, the most appropriate test is the chi squared test of independence.</p>
 <br /> <br />
 <hr />
 </div>
 </div>
-<div id="week-14-review-final-exam" class="section level2">
-<h2>Week 14: Review &amp; Final Exam</h2>
 </div>
 
 
