@@ -3009,8 +3009,25 @@ $$
 
 <br />
 
+<div style="clear:both;"></div>
 
+### Resources
 
+The [R for Data Science](https://r4ds.had.co.nz/) Book is used for data wrangling and visualization.
+
+  * [Data Wrangling and Visualization](https://byuistats.github.io/M335/) website gives a great resource for R. 
+  
+[Data Intuition and Insight](https://kctolli.github.io/CSE150/) is an introduction to data science using visualization and statistical inference. 
+  
+  * [Supplemental Readings](https://byuistats.github.io/BYUI_CSE150_StatBook/) - covers statistical concepts
+  * [MATH 221](http://statistics.byuimath.com/index.php?title=Main_Page) - Intro to Stats
+
+[R Documentation](https://www.rdocumentation.org/)
+  
+  * [Tidyverse](https://www.tidyverse.org/)
+  * [R packages](https://r-pkgs.org/intro.html)
+  
+<br />
 
 #
 <div style="clear:both;"></div>
