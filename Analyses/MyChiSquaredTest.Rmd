@@ -75,12 +75,17 @@ gun1 <- table(setDT(Guns %>% select(intent, education)))
 chi.gun1 <- chisq.test(gun1); chi.gun1
 ```
 
-
 ```{r}
 pander5(chi.gun1$expected)
 ```
 
 All expected counts are greater than 5, so the requirements are met. 
+
+```{r}
+pander(chi.gun1$residuals)
+```
+
+The residuals allow us to visualize how the points follow the test. The values show how far off the data is from the expected values. 
 
 ```{r}
 barplot(gun1, beside=TRUE, legend.text=TRUE, xlab="Education", main="Education vs Intent")
@@ -112,6 +117,12 @@ pander5(chi.gun2$expected)
 All expected counts are greater than 5, so the requirements are met. 
 
 ```{r}
+pander(chi.gun2$residuals)
+```
+
+The residuals allow us to visualize how the points follow the test. The values show how far off the data is from the expected values. 
+
+```{r}
 barplot(gun2, beside=TRUE, legend.text=TRUE, xlab="Intent", main="Intent vs Race")
 ```
 
@@ -139,6 +150,12 @@ pander5(chi.gun3$expected)
 ```
 
 All expected counts are greater than 5, so the requirements are met. 
+
+```{r}
+pander(chi.gun3$residuals)
+```
+
+The residuals allow us to visualize how the points follow the test. The values show how far off the data is from the expected values.  
 
 ```{r}
 barplot(gun3, beside=TRUE, legend.text=TRUE, xlab="Education", main="Education vs Race")

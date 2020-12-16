@@ -98,7 +98,7 @@ abline(2.266e+04, -1.933e-01, col=palette()[1])
 
 abline(2.266e04 + 2.925e03, -1.933e-01 + 2.781e-02, col=palette()[2])
 
-legend("topleft", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
+legend("topright", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
 ```
 
 #### Equal Slopes Model
@@ -121,7 +121,7 @@ abline(2.225e+04, -1.727e-01, col=palette()[1])
 
 abline(2.225e+04 + 3.477e+03, -1.727e-01, col=palette()[2])
 
-legend("topleft", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
+legend("topright", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
 ```
 
 #### Equal Intercepts Model
@@ -144,7 +144,7 @@ abline(2.482e+04, -2.873e-01, col=palette()[1])
 
 abline(2.482e+04, -2.873e-01 + 1.546e-01, col=palette()[2])
 
-legend("topleft", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
+legend("topright", legend=c("Not Leather", "Leather"), pch=1, col=palette(), title="Seat Type", bty="n")
 ```
 
 #### Simple Linear Model {.tabset .tabset-fade}
@@ -203,4 +203,12 @@ $$
  \underbrace{\hat{Y_i}}_\text{Price} = 22660 + -0.1933 \underbrace{X_{1i}}_\text{Mileage} + 2925 \underbrace{X_{2i}}_\text{Leather} + 0.02781 \underbrace{X_{1i} X_{2i}}_\text{Mileage:Leather} 
 $$
 
-The above equation is based on the full model. We can learn from the equation how to get the price of a car based on mileage and seat type (whether or not the seats have leather). As mileage increases price decreases. If a car has leather seats then the price increases.
+The above equation is based on the full linear model.
+
+  * Base Price: $22660
+  * Mileage Drop: $-0.1933
+  * Seat Type Base: $2925
+  * Mileage and Seat Type Modifier: $0.02781
+
+
+We can learn from the equation how to get the price of a car based on mileage and seat type (whether or not the seats have leather). As mileage increases price decreases. If a car has leather seats then the price increases.
