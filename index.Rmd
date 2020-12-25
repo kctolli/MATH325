@@ -544,6 +544,7 @@ Four of the most widely used parametric distributions are:
 * [Logistic Regression](./LogisticRegression.html)
   - [Called to Serve](./Analyses/MyLogisticRegression.html)
 * [Chi-squared Tests](./ChiSquaredTests.html)
+  - [Guns](./Analyses/MyChiSquaredTest.html)
 
 #### Nonparametric Methods
 
@@ -563,6 +564,8 @@ Nonparametric methods place minimal assumptions on the distribution of data. The
   <span class="tooltipRtext">This comes from the <a href = ./PermutationTests.html>Permutation Tests</a> page of this book <br/> Random Testing - A nonparametric approach to computing the p-value for any test statistic in just about any scenario.</span>
 </span>
 <div id="hovertobegin" style="display:none;padding-left:20px;">
+
+Permutation Tests depend completely on this single idea. If all patterns in the data really are simply due to random chance, then the null hypothesis is true. Further, random **re**-samples of the data should show similar lack of patterns. However, if the pattern in the data is *real*, then random **re**-samples of the data will show very different patterns from the original.
 
 ![](./Images/legoPermutationExample.png)
 
