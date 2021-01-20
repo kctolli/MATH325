@@ -3049,5 +3049,10 @@ The [R for Data Science](https://r4ds.had.co.nz/) Book is used for data wranglin
 
 ----
 
-<footer> &nbsp; &nbsp; "Education is not the learning of facts it's rather the training of the mind to think" --- Albert Eistein <br /> </footer>
+<footer> &nbsp; &nbsp; "Education is not the learning of facts it's rather the training of the mind to think" --- Albert Einstein <br /> </footer>
 
+<br /><br />
+
+© Copyright Kyle Tolliver, 2020
+
+###### *--- [Licensed](https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE) under [GNU General Public License v3.0](./site_libs/LICENSE.txt) *
