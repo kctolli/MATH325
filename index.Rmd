@@ -537,14 +537,26 @@ Four of the most widely used parametric distributions are:
   - [High School Seniors](./Analyses/HighSchoolSeniorstTest.html)
 * [ANOVA Tests](./ANOVA.html)
   - [Day Care](./Analyses/DayCareANOVA.html)
+* [Chi-squared Tests](./ChiSquaredTests.html)
+  - [Guns](./Analyses/MyChiSquaredTest.html)
+
+<div style="padding-left:0px;">
+
+<span class="tooltipr">
+<ul><li><a href="javascript:showhide('regress')">Regression Models</a></li></ul>
+  <span class="tooltipRtext"><a href=" https://saundersg.github.io/Applied-Linear-Regression/" style="color:white;">Applied Linear Regression Book</a></span>
+</span>
+<div id="regress" style="display:none;padding-left:20px;">
+
 * [Linear Regression](./LinearRegression.html)  
   - [Phone Prices](./Analyses/MySimpleLinearRegression.html)
   - [Car Prices](./Analyses/CarPricesLR.html)
   - [Spotify Consulting](./Analyses/Consulting.html)
 * [Logistic Regression](./LogisticRegression.html)
   - [Called to Serve](./Analyses/MyLogisticRegression.html)
-* [Chi-squared Tests](./ChiSquaredTests.html)
-  - [Guns](./Analyses/MyChiSquaredTest.html)
+
+</div>
+</div>
 
 #### Nonparametric Methods
 
