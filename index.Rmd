@@ -543,9 +543,7 @@ Four of the most widely used parametric distributions are:
 <div style="padding-left:0px;">
 
 <span class="tooltipr">
-<ul><li><a href="javascript:showhide('regress')">Regression Models</a></li></ul>
-  <span class="tooltipRtext"><a href=" https://saundersg.github.io/Applied-Linear-Regression/" style="color:white;">Applied Linear Regression Book</a></span>
-</span>
+<ul><li><a href="javascript:showhide('regress')">Regression Models</a></li></ul></span>
 <div id="regress" style="display:none;padding-left:20px;">
 
 * [Linear Regression](./LinearRegression.html)  
@@ -554,6 +552,8 @@ Four of the most widely used parametric distributions are:
   - [Spotify Consulting](./Analyses/Consulting.html)
 * [Logistic Regression](./LogisticRegression.html)
   - [Called to Serve](./Analyses/MyLogisticRegression.html)
+
+--- [Applied Linear Regression Book](https://saundersg.github.io/Applied-Linear-Regression/)
 
 </div>
 </div>
